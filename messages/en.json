@@ -1,0 +1,12 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact Us",
+    "services": "Our Services"
+  },
+  "nav": {
+    "language": "Language"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "common": {
+    "welcome": "مرحباً",
+    "home": "الرئيسية",
+    "about": "عن",
+    "contact": "اتصل بنا",
+    "services": "خدماتنا"
+  },
+  "nav": {
+    "language": "اللغة"
+  }
+}
