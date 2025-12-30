@@ -5,7 +5,7 @@ interface ContainerProps {
     className?: string;
 }
 
-export default function SectionContainer({ children, className }: ContainerProps) {
+export default function Section({ children, className }: ContainerProps) {
     return <div className={cn("max-w-360 mx-auto px-4 sm:px-6 lg:px-8 w-full", className)}>{children}</div>;
 }
 
@@ -15,12 +15,9 @@ interface OuterProps {
     className?: string;
 }
 
-SectionContainer.OuterSection = function OuterSection({ backgroundImageUrl, children, className }: OuterProps) {
+Section.Outer = function Outer({ backgroundImageUrl, children, className }: OuterProps) {
     return (
-        <section
-            className={cn("w-full py-16 sm:py-20 lg:py-24", className)}
-            style={{ background: backgroundImageUrl ? `url(${backgroundImageUrl})` : undefined }}
-        >
+        <section className={cn("w-full", className)} style={{ background: backgroundImageUrl ? `url(${backgroundImageUrl})` : undefined }}>
             {children}
         </section>
     );

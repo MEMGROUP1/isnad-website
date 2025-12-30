@@ -67,7 +67,7 @@ export default async function LocaleLayout({
 
     return (
         <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
-            <body className={`${expoArabic.variable} font-sans antialiased dark`}>
+            <body className={`${expoArabic.variable} font-sans antialiased`}>
                 <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
             </body>
         </html>
