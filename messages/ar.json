@@ -1,12 +1,22 @@
 {
-  "common": {
-    "welcome": "مرحباً",
-    "home": "الرئيسية",
-    "about": "عن",
-    "contact": "اتصل بنا",
-    "services": "خدماتنا"
-  },
-  "nav": {
-    "language": "اللغة"
-  }
+    "common": {
+        "welcome": "مرحباً",
+        "home": "الرئيسية",
+        "about": "عن",
+        "contact": "اتصل بنا",
+        "services": "خدماتنا"
+    },
+    "nav": {
+        "language": "اللغة",
+
+        "links": {
+            "home": "الرئيسية",
+            "about": "عن اسناد",
+            "developers": "المطورين",
+            "projects": "المشاريع",
+            "companies": "الشركات"
+        },
+
+        "contact": "تواصل معنا"
+    }
 }

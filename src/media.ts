@@ -7,4 +7,4 @@
  */
 
 // Logo & Branding
-export { default as Logo } from "/logo.svg";
+export { default as Logo } from "../public/svgs/logo.svg";
