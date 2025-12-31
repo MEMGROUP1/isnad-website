@@ -10,27 +10,27 @@ import { Locale } from "@/i18n/request";
 const expoArabic = localFont({
     src: [
         {
-            path: "../../../public/font/ExpoArabic-Light.ttf",
+            path: "../../../public/font/Expo Arabic/expo-arabic-light.otf",
             weight: "300",
             style: "normal",
         },
         {
-            path: "../../../public/font/ExpoArabic-Book.ttf",
+            path: "../../../public/font/Expo Arabic/expo-arabic-book.ttf",
             weight: "400",
             style: "normal",
         },
         {
-            path: "../../../public/font/ExpoArabic-Medium.ttf",
+            path: "../../../public/font/Expo Arabic/expo-arabic-medium.otf",
             weight: "500",
             style: "normal",
         },
         {
-            path: "../../../public/font/ExpoArabic-SemiBold.ttf",
+            path: "../../../public/font/Expo Arabic/expo-arabic-semibold.ttf",
             weight: "600",
             style: "normal",
         },
         {
-            path: "../../../public/font/ExpoArabic-Bold.otf",
+            path: "../../../public/font/Expo Arabic/expo-arabic-bold.otf",
             weight: "700",
             style: "normal",
         },
