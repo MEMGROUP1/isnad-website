@@ -18,5 +18,15 @@
         },
 
         "contact": "Get in Touch"
+    },
+
+    "home": {
+        "hero": {
+            "title": "Iraqi Company Specialized in Real Estate Marketing",
+            "desc": "Discover luxurious properties that combine elegant design, ideal location, and integrated facilities to suit your lifestyle.",
+
+            "start_search_now": "Start Searching Now",
+            "contact_us": "Contact Us"
+        }
     }
 }

@@ -18,11 +18,11 @@ export default function Navbar() {
 
     return (
         <nav className="max-w-[90vw] w-full flex justify-center items-stretch mx-auto py-4">
-            <div className="flex items-stretch gap-8">
+            <div className="flex items-center gap-8">
                 <Image src={Logo} alt="Logo" />
 
                 <Select>
-                    <SelectTrigger size="auto" className="bg-white/5 rounded-full data-placeholder:text-white border-white/10 px-6">
+                    <SelectTrigger size="auto" className="bg-white/5 backdrop-blur-2xl rounded-full data-placeholder:text-white border-white/10 px-6! py-2.5!">
                         <SelectValue placeholder="IQ" />
                     </SelectTrigger>
 
