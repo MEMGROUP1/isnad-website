@@ -20,7 +20,13 @@ Section.Outer = function Outer({ backgroundImageUrl, children, className, ...pro
     return (
         <section {...props} className={cn("w-full h-screen relative", className)}>
             {backgroundImageUrl && (
-                <Image width={2186} height={1440} src={backgroundImageUrl ?? ""} alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none -z-10" />
+                <Image
+                    width={2186}
+                    height={1440}
+                    src={backgroundImageUrl ?? ""}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover pointer-events-none -z-10"
+                />
             )}
             {children}
         </section>

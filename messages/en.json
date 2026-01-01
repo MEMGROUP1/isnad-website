@@ -33,6 +33,17 @@
             "subtitle": "Isnad... The Foundation <br/> of Success and Excellence",
             "lunch": "Isnad for Real Estate Investment and Marketing, affiliated with MIM Holding Group, was launched in 2017.",
             "paragraph": "To be the reference in the real estate consulting sector, in addition to the exceptional and comprehensive skills of a work team that transfers work to distinguished spaces. <br/> <br/>   Isnad for Real Estate Investment and Marketing seeks, through its vision, management, and work team, to build a strong and transparent relationship between it and investment opportunities, based on a comprehensive vision of real estate, its features, and what it will offer to the client."
+        },
+        "company_numbers": {
+            "title": "Isnad Company Numbers",
+            "subtitle": "Isnad... Numbers that Prove <br/> Excellence and Continuity",
+            "lunch": "Isnad for Real Estate Investment and Marketing, affiliated with MIM Holding Group, was launched in 2017.",
+            "cards": {
+                "available_units": "Available Residential and Commercial Units.",
+                "selected_developments": "Carefully Selected Development Projects.",
+                "trusted_investors": "Investors Who Trust Isnad.",
+                "realized_value": "Realized Value Through Trusted Real Estate Deals."
+            }
         }
     }
 }
