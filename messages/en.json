@@ -44,6 +44,28 @@
                 "trusted_investors": "Investors Who Trust Isnad.",
                 "realized_value": "Realized Value Through Trusted Real Estate Deals."
             }
+        },
+        "real_estate_cities": {
+            "title": "Isnad Real Estate | Cities and Integrated Residential Complexes",
+            "desc": "A growing portfolio of cities and residential complexes developed by Isnad Real Estate according to the highest standards of urban planning and modern living.",
+
+            "cards": {
+                "card_1": {
+                    "header": "+5,200 Residential Units",
+                    "desc": "Integrated cities planned according to modern urban standards",
+                    "button": "View Residential Units"
+                },
+                "card_2": {
+                    "header": "+12 Cities",
+                    "desc": "Residential and commercial projects under implementation and development",
+                    "button": "View All Cities"
+                },
+                "card_3": {
+                    "header": "+48 Projects",
+                    "desc": "Diverse real estate projects catering to various investment needs",
+                    "button": "Explore All Projects"
+                }
+            }
         }
     }
 }

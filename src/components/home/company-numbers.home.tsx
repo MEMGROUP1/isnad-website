@@ -32,7 +32,7 @@ export default function HomeCompanyNumbers() {
         <Section.Outer className="h-auto">
             <Section className="flex items-stretch *:flex-1 gap-10 py-16 h-auto">
                 <div className="flex flex-col">
-                    <h3 className="mb-10 font-medium font-sans">{t("title")}</h3>
+                    <h3 className="mb-10 font-sans">{t("title")}</h3>
 
                     <h1 dangerouslySetInnerHTML={{ __html: t("subtitle") }} className="text-[72px] mb-16 leading-[100%]"></h1>
 

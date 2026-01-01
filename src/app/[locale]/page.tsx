@@ -1,6 +1,7 @@
 import HomeAbout from "@/components/home/about.home";
 import HomeCompanyNumbers from "@/components/home/company-numbers.home";
 import { HomeHero } from "@/components/home/hero.home";
+import HomeRealEstateCities from "@/components/home/real-estate-cities.home";
 
 export default function Home() {
     return (
@@ -10,6 +11,8 @@ export default function Home() {
             <HomeAbout />
 
             <HomeCompanyNumbers />
+
+            <HomeRealEstateCities />
         </>
     );
 }
