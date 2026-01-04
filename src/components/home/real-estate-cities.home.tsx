@@ -26,6 +26,7 @@ export default function HomeRealEstateCities() {
                         <article className="backdrop-blur-[32px] p-4 rounded-3xl border border-white/10">
                             <h4 className="text-lg">{t("cards.card_1.header")}</h4>
                             <p className="text-sm mb-10">{t("cards.card_1.desc")}</p>
+                            
                             <Button variant={"blur"} className="w-full">
                                 {t("cards.card_2.button")}
                             </Button>
