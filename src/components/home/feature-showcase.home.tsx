@@ -30,7 +30,7 @@ export default function HomeFeatureShowcase() {
     ];
 
     return (
-        <section className="flex items-stretch gap-2 overflow-auto *:flex-1 bg-primary">
+        <section className="flex flex-wrap items-stretch gap-2 overflow-auto *:flex-1 bg-primary">
             {cards.map((card, index) => (
                 <FeatureCard key={card.image + index} image={card.image} features={card.features} tags={card.tags} />
             ))}

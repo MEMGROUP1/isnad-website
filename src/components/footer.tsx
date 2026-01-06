@@ -30,7 +30,7 @@ export default function Footer() {
             <Image src="/images/footer-image.png" alt="" width={1430} height={370} className="absolute w-full h-full pointer-events-none" />
 
             <div className="max-w-360 mx-auto w-full">
-                <div className="flex justify-between">
+                <div className="flex flex-col md:flex-row justify-between gap-6">
                     <div className="space-y-4">
                         <div className="flex items-center gap-4 mb-10">
                             <Image className="w-28" src={Logo} alt="Logo" />
@@ -96,7 +96,7 @@ export default function Footer() {
                         }}
                     ></div>
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-6">
                         <div className="flex items-center">
                             <Image src={MemLogo} alt="Mem Logo" />
                         </div>

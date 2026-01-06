@@ -4,9 +4,8 @@ import { Logo } from "@/media";
 import Image from "next/image";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 import { Button } from "./ui/button";
-import { usePathname } from "@/i18n/routing";
+import { Link, usePathname } from "@/i18n/routing";
 import BurgerMenu from "./burger-menu";
 
 export default function Navbar() {
@@ -22,7 +21,7 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="max-w-[90vw] w-full flex justify-between items-stretch mx-auto py-4">
+        <nav className="max-w-360 w-full flex justify-between items-stretch mx-auto py-4">
             <div className="flex items-center gap-8">
                 <BurgerMenu />
 
@@ -48,7 +47,7 @@ export default function Navbar() {
                     <Link
                         href={link.href}
                         key={link.href + link.label}
-                        data-active={pathname.includes(link.href)}
+                        data-active={pathname.endsWith(link.href)}
                         className="block border border-transparent px-5 py-2.5 rounded-full hover:bg-white/10 transition-colors h-full text-white data-[active=true]:border-white/15 data-[active=true]:bg-white/15"
                     >
                         {link.label}
