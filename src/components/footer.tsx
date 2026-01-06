@@ -18,11 +18,11 @@ export default function Footer() {
     ];
 
     const socials = [
-        { label: "Instagram", href: "https://www.instagram.com/isnadco/", icon: InstagramIcon },
-        { label: "Facebook", href: "https://www.facebook.com/IsnadCo", icon: FacebookIcon },
-        { label: "LinkedIn", href: "https://www.linkedin.com/company/isnadco/", icon: LinkedInIcon },
-        { label: "Whatsapp", href: "https://wa.me/+966595955522", icon: WhatsappIcon },
-        { label: "Email", href: "mailto:info@isnadco.com", icon: EmailIcon },
+        { label: "Instagram", href: "https://www.instagram.com", icon: InstagramIcon },
+        { label: "Facebook", href: "https://www.facebook.com", icon: FacebookIcon },
+        { label: "LinkedIn", href: "https://www.linkedin.com", icon: LinkedInIcon },
+        { label: "Whatsapp", href: "", icon: WhatsappIcon },
+        { label: "Email", href: "mailto:", icon: EmailIcon },
     ];
 
     return (
