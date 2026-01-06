@@ -1,21 +1,22 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type, @typescript-eslint/no-unused-vars
 interface Props {
+    className?: string;
     // TODO: Add props
 }
 
-export default function HomeCard() {
+export default function HomeCard({ className }: Props) {
     // eslint-disable-next-line react-hooks/purity
     const [randomNumber] = useState(Math.floor(Math.random() * 1000));
 
     return (
         <article
-            className="text-white relative w-75 h-100 rounded-md overflow-hidden flex flex-col"
+            className={cn("text-white relative w-75 h-100 rounded-md overflow-hidden flex flex-col", className)}
             style={{ background: "linear-gradient(180deg, rgba(25, 25, 25, 0) 41.78%, rgba(8, 24, 47, 0.9) 84.1%);" }}
         >
             <Image

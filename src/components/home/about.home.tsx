@@ -13,13 +13,13 @@ export default function HomeAbout() {
             }}
         >
             <Section.Inner className="flex flex-col">
-                <div className="mt-auto mb-16 flex *:flex-1 text-white">
-                    <div className="">
+                <div className="mt-auto mb-16 flex flex-col lg:flex-row *:flex-1 text-white">
+                    <div className="mt-75 lg:mt-0">
                         <h3 className="mb-10 font-sans">{t("title")}</h3>
 
-                        <h1 dangerouslySetInnerHTML={{ __html: t("subtitle") }} className="text-[72px] mb-16 leading-[100%]"></h1>
+                        <h1 dangerouslySetInnerHTML={{ __html: t("subtitle") }} className="text-[40px] md:text-[56px] lg:text-[72px] mb-16 leading-[100%]"></h1>
 
-                        <h2 className="text-2xl max-w-xl">{t("lunch")}</h2>
+                        <h2 className="text-2xl max-w-xl mb-8 lg:mb-0">{t("lunch")}</h2>
                     </div>
 
                     <div className="flex">

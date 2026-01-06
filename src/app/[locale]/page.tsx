@@ -18,7 +18,7 @@ export default function Home() {
             <HomeRealEstateCities />
 
             <HomeRealEstateDevelopers />
-            
+
             <HomePartnersAndOffers />
 
             <HomeFeatureShowcase />

@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { usePathname } from "@/i18n/routing";
+import BurgerMenu from "./burger-menu";
 
 export default function Navbar() {
     const t = useTranslations("nav");
@@ -21,14 +22,16 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="max-w-[90vw] w-full flex justify-center items-stretch mx-auto py-4">
+        <nav className="max-w-[90vw] w-full flex justify-between items-stretch mx-auto py-4">
             <div className="flex items-center gap-8">
+                <BurgerMenu />
+
                 <Image src={Logo} alt="Logo" />
 
                 <Select>
                     <SelectTrigger
                         size="auto"
-                        className="bg-white/5 backdrop-blur-2xl rounded-full data-placeholder:text-white border-white/10 px-6! py-2.5!"
+                        className="bg-white/5 backdrop-blur-2xl rounded-full data-placeholder:text-white border-white/10 px-6! py-2.5! hidden lg:flex"
                     >
                         <SelectValue placeholder="IQ" />
                     </SelectTrigger>
@@ -40,7 +43,7 @@ export default function Navbar() {
                 </Select>
             </div>
 
-            <div className="bg-[#08182F7A] rounded-full px-1 py-0.75 flex items-center gap-6 mx-auto border border-white/5 h-full">
+            <div className="bg-[#08182F7A] rounded-full px-1 py-0.75 hidden lg:flex items-center gap-6 mx-auto border border-white/5 h-full">
                 {links.map((link) => (
                     <Link
                         href={link.href}
