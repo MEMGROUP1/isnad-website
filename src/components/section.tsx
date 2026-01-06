@@ -29,5 +29,5 @@ interface ContainerProps {
 }
 
 Section.Inner = function Inner({ children, className }: ContainerProps) {
-    return <div className={cn("max-w-360 mx-auto px-4 sm:px-6 lg:px-8 w-full h-full", className)}>{children}</div>;
+    return <div className={cn("max-w-360 mx-auto px-4 lg:px-0 w-full h-full", className)}>{children}</div>;
 };

@@ -17,7 +17,7 @@ export default function HomeCard({ className }: Props) {
     return (
         <article
             className={cn("text-white relative w-75 h-100 rounded-md overflow-hidden flex flex-col", className)}
-            style={{ background: "linear-gradient(180deg, rgba(25, 25, 25, 0) 41.78%, rgba(8, 24, 47, 0.9) 84.1%);" }}
+            style={{ background: "linear-gradient(180deg, rgba(25, 25, 25, 0) 41.78%, rgba(8, 24, 47, 0.9) 84.1%)" }}
         >
             <Image
                 src="/images/home/hero/home-hero.jpg"
