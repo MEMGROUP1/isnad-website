@@ -10,9 +10,9 @@ export default function Footer() {
 
     const links = [
         { label: t("links.home"), href: "/" },
-        { label: t("links.developers"), href: "/developers" },
-        { label: t("links.contact_us"), href: "/contact" },
         { label: t("links.about_isnad"), href: "/about" },
+        { label: t("links.contact_us"), href: "/contact" },
+        { label: t("links.developers"), href: "/developers" },
         { label: t("links.projects"), href: "/projects" },
         { label: t("links.companies"), href: "/companies" },
     ];
@@ -80,8 +80,8 @@ export default function Footer() {
                             <FooterSectionTitle text={t("contact")} />
 
                             <div className="text-end" dir="ltr">
-                                <h1 className="text-[24px] text-[#97A8BF] w-full">+964 (782) 1200 800</h1>
-                                <h1 className="text-[24px] text-[#97A8BF] w-full">info@mem.iq.com</h1>
+                                <h1 className="text-[#97A8BF] w-full">6303</h1>
+                                <h1 className="text-[#97A8BF] w-full">info@isnad-iq.com</h1>
                             </div>
                         </div>
                     </div>
@@ -99,8 +99,6 @@ export default function Footer() {
                     <div className="flex items-center justify-between">
                         <div className="flex items-center">
                             <Image src={MemLogo} alt="Mem Logo" />
-
-                            <small className="ms-2">{t("site_by")}</small>
                         </div>
 
                         <small dir="ltr">{t("copyright")}</small>

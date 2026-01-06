@@ -1,22 +1,12 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-interface ContainerProps {
-    children: React.ReactNode;
-    className?: string;
-}
-
-export default function Section({ children, className }: ContainerProps) {
-    return <div className={cn("max-w-360 mx-auto px-4 sm:px-6 lg:px-8 w-full h-full", className)}>{children}</div>;
-}
-
 interface OuterProps extends React.HTMLAttributes<HTMLDivElement> {
     backgroundImageUrl?: string;
     children: React.ReactNode;
     className?: string;
 }
-
-Section.Outer = function Outer({ backgroundImageUrl, children, className, ...props }: OuterProps) {
+export default function Section({ backgroundImageUrl, children, className, ...props }: OuterProps) {
     return (
         <section {...props} className={cn("w-full h-screen relative", className)}>
             {backgroundImageUrl && (
@@ -31,4 +21,13 @@ Section.Outer = function Outer({ backgroundImageUrl, children, className, ...pro
             {children}
         </section>
     );
+}
+
+interface ContainerProps {
+    children: React.ReactNode;
+    className?: string;
+}
+
+Section.Inner = function Inner({ children, className }: ContainerProps) {
+    return <div className={cn("max-w-360 mx-auto px-4 sm:px-6 lg:px-8 w-full h-full", className)}>{children}</div>;
 };

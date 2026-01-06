@@ -7,14 +7,14 @@ export default function HomeRealEstateCities() {
     const t = useTranslations("home.real_estate_cities");
 
     return (
-        <Section.Outer
+        <Section
             className="flex max-h-154.5"
             backgroundImageUrl="/images/home/real-estate-cities/bg.png"
             style={{
                 background: "linear-gradient(180deg, rgba(7, 20, 39, 0) 0%, rgba(8, 24, 47, 0.86) 68.03%, #08182F 100%)",
             }}
         >
-            <Section className="flex items-center justify-end mt-auto gap-8 h-fit *:flex-1 py-8">
+            <Section.Inner className="flex items-center justify-end mt-auto gap-8 h-fit *:flex-1 py-8">
                 <div className="text-white">
                     <h1 className="text-5xl mb-6">{t("title")}</h1>
 
@@ -26,7 +26,7 @@ export default function HomeRealEstateCities() {
                         <article className="backdrop-blur-[32px] p-4 rounded-3xl border border-white/10">
                             <h4 className="text-lg">{t("cards.card_1.header")}</h4>
                             <p className="text-sm mb-10">{t("cards.card_1.desc")}</p>
-                            
+
                             <Button variant={"blur"} className="w-full">
                                 {t("cards.card_2.button")}
                             </Button>
@@ -69,7 +69,7 @@ export default function HomeRealEstateCities() {
                         </article>
                     </div>
                 </div>
-            </Section>
-        </Section.Outer>
+            </Section.Inner>
+        </Section>
     );
 }

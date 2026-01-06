@@ -5,15 +5,15 @@ import { Button } from "../ui/button";
 import HomeCard from "../home-card";
 
 export function HomeHero() {
-    const t = useTranslations("home.hero")
+    const t = useTranslations("home.hero");
 
     return (
-        <Section.Outer
+        <Section
             backgroundImageUrl="/images/home/hero/home-hero.jpg"
             style={{ background: "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(8, 24, 47, 0.5) 80.27%, #08182F 100%)" }}
         >
             <div style={{ background: "linear-gradient(180deg, rgba(8, 24, 47, 0.4) 13.08%, rgba(25, 76, 149, 0) 100%);" }}>
-                <Section className="flex flex-col min-h-screen">
+                <Section.Inner className="flex flex-col min-h-screen">
                     <Navbar />
 
                     <div className="flex justify-between items-end mt-auto">
@@ -24,8 +24,12 @@ export function HomeHero() {
                             </div>
 
                             <div className="mt-12 flex gap-4">
-                                <Button className="py-3.5 min-w-50" variant={"white"}>{t("start_search_now")}</Button>
-                                <Button className="py-3.5 min-w-50" variant={"blur"}>{t("contact_us")}</Button>
+                                <Button className="py-3.5 min-w-50" variant={"white"}>
+                                    {t("start_search_now")}
+                                </Button>
+                                <Button className="py-3.5 min-w-50" variant={"blur"}>
+                                    {t("contact_us")}
+                                </Button>
                             </div>
                         </div>
 
@@ -35,8 +39,8 @@ export function HomeHero() {
                             <HomeCard />
                         </div>
                     </div>
-                </Section>
+                </Section.Inner>
             </div>
-        </Section.Outer>
+        </Section>
     );
 }

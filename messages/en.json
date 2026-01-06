@@ -45,6 +45,14 @@
                 "realized_value": "Realized Value Through Trusted Real Estate Deals."
             }
         },
+        
+        "real_estate_developers": {
+            "title": "Famous Real Estate Developers We Have Worked With",
+            "desc": "The Cross-Marketing Program connects you with the best companies to provide you with approved discounts and reliable services through a smart electronic system and instant QR Code.",
+            "show_all": "Show All Developers",
+            "join_us": "Join as a Partner"
+        },
+
         "real_estate_cities": {
             "title": "Isnad Real Estate | Cities and Integrated Residential Complexes",
             "desc": "A growing portfolio of cities and residential complexes developed by Isnad Real Estate according to the highest standards of urban planning and modern living.",

@@ -5,14 +5,14 @@ export default function HomeAbout() {
     const t = useTranslations("home.about");
 
     return (
-        <Section.Outer
+        <Section
             backgroundImageUrl="/images/home/about/about-bg.png"
             className="pb-16"
             style={{
                 background: "linear-gradient(180deg, rgba(7, 20, 39, 0) 0%, rgba(8, 24, 47, 0.86) 68.03%, #08182F 100%)",
             }}
         >
-            <Section className="flex flex-col">
+            <Section.Inner className="flex flex-col">
                 <div className="mt-auto mb-16 flex *:flex-1 text-white">
                     <div className="">
                         <h3 className="mb-10 font-sans">{t("title")}</h3>
@@ -26,7 +26,7 @@ export default function HomeAbout() {
                         <p className="mt-auto" dangerouslySetInnerHTML={{ __html: t("paragraph") }}></p>
                     </div>
                 </div>
-            </Section>
-        </Section.Outer>
+            </Section.Inner>
+        </Section>
     );
 }

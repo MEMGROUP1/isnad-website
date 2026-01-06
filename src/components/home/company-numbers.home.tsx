@@ -29,8 +29,8 @@ export default function HomeCompanyNumbers() {
     ];
 
     return (
-        <Section.Outer className="h-auto">
-            <Section className="flex items-stretch *:flex-1 gap-10 py-16 h-auto">
+        <Section className="h-auto">
+            <Section.Inner className="flex items-stretch *:flex-1 gap-10 py-16 h-auto">
                 <div className="flex flex-col">
                     <h3 className="mb-10 font-sans">{t("title")}</h3>
 
@@ -49,7 +49,7 @@ export default function HomeCompanyNumbers() {
                         </article>
                     ))}
                 </div>
-            </Section>
-        </Section.Outer>
+            </Section.Inner>
+        </Section>
     );
 }
