@@ -22,7 +22,10 @@ export default function Navbar() {
                 <Image src={Logo} alt="Logo" />
 
                 <Select>
-                    <SelectTrigger size="auto" className="bg-white/5 backdrop-blur-2xl rounded-full data-placeholder:text-white border-white/10 px-6! py-2.5!">
+                    <SelectTrigger
+                        size="auto"
+                        className="bg-white/5 backdrop-blur-2xl rounded-full data-placeholder:text-white border-white/10 px-6! py-2.5!"
+                    >
                         <SelectValue placeholder="IQ" />
                     </SelectTrigger>
 

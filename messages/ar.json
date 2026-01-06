@@ -70,5 +70,22 @@
             "join_as_partner": "انضم كشريك معنا",
             "isnad_discount": "اكثر من 30 تقدم خصومات الاسناد تصل حتى 40%"
         }
+    },
+
+    "footer": {
+        "social_media": "التواصل الاجتماعي",
+        "contact": "تواصل",
+        "slogan": "نحن لك سند",
+        "page_links": "روابط الصفحات",
+        "links": {
+            "home": "الرئيسية",
+            "developers": "المطورين",
+            "contact_us": "تواصل معنا",
+            "about_isnad": "عن اسناد",
+            "projects": "المشاريع",
+            "companies": "الشركات"
+        },
+        "site_by": "الموقع بواسطة",
+        "copyright": "© ISNAD Global 2025 / Privacy Policy"
     }
 }

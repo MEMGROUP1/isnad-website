@@ -8,3 +8,5 @@
 
 // Logo & Branding
 export { default as Logo } from "../public/svgs/logo.svg";
+
+export { default as MemLogo } from "../public/svgs/mem-logo.svg";

@@ -75,5 +75,22 @@
             "join_as_partner": "Join as a Partner",
             "isnad_discount": "More than 30 companies offer Isnad discounts of up to 40%"
         }
+    },
+
+    "footer": {
+        "social_media": "Social Media",
+        "contact": "Contact",
+        "slogan": "We Are Your Support",
+        "page_links": "Page Links",
+        "links": {
+            "home": "Home",
+            "developers": "Developers",
+            "contact_us": "Contact Us",
+            "about_isnad": "About Isnad",
+            "projects": "Projects",
+            "companies": "Companies"
+        },
+        "site_by": "Website By",
+        "copyright": "© ISNAD Global 2025 / Privacy Policy"
     }
 }

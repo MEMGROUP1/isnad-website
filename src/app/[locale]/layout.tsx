@@ -6,6 +6,7 @@ import { getMessages } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { Locale } from "@/i18n/request";
+import Footer from "@/components/footer";
 
 const expoArabic = localFont({
     src: [
@@ -68,7 +69,10 @@ export default async function LocaleLayout({
     return (
         <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
             <body className={`${expoArabic.variable} font-sans antialiased`}>
-                <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+                <NextIntlClientProvider messages={messages}>
+                    {children}
+                    <Footer />
+                </NextIntlClientProvider>
             </body>
         </html>
     );
