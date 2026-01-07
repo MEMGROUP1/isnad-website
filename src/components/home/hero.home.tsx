@@ -24,10 +24,10 @@ export function HomeHero() {
                             </div>
 
                             <div className="mt-12 flex gap-4">
-                                <Button className="py-3.5 min-w-50" variant={"white"}>
+                                <Button className="py-3.5 flex-1 lg:max-w-50" variant={"white"}>
                                     {t("start_search_now")}
                                 </Button>
-                                <Button className="py-3.5 min-w-50" variant={"blur"}>
+                                <Button className="py-3.5 flex-1 lg:max-w-50" variant={"blur"}>
                                     {t("contact_us")}
                                 </Button>
                             </div>

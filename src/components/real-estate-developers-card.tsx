@@ -21,8 +21,8 @@ export default function RealEstateDevelopersCard() {
                 </div>
 
                 <div className="">
-                    <h4 className="text-white">FINآفاق جديدة للتطوير</h4>
-                    <div className="flex items-center">
+                    <h4 className="text-white">FINآفلق جديدة للتطوير</h4>
+                    <div className="flex items-center text-sm">
                         <span className="text-[#B8C6E3]">المجمعات: 6</span>
                         <span className="mx-2 text-[#132032]">|</span>
                         <span className="text-[#B8C6E3]">المشاريع: 12</span>
