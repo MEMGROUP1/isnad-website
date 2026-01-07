@@ -1,6 +1,6 @@
 "use client";
 
-import CompaniesCard from "@/components/cards/companies-card";
+import CompanyCard from "@/components/cards/company-card";
 import Section from "@/components/section";
 import { useTranslations } from "next-intl";
 
@@ -14,7 +14,7 @@ export default function Page() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {Array.from({ length: 8 }).map((_, index) => (
-                        <CompaniesCard key={index + "companies-card"} />
+                        <CompanyCard key={index + "companies-card"} />
                     ))}
                 </div>
             </Section.Inner>

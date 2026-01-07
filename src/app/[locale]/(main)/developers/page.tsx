@@ -10,7 +10,10 @@ export default function Page() {
     return (
         <Section className="lg:h-auto py-14">
             <Section.Inner>
-                <h1 className="text-[32px] md:text-[38px] lg:text-[48px] max-w-147.5 mb-10 text-white">{t("title")}</h1>
+                <h1
+                    className="text-[32px] md:text-[38px] lg:text-[48px] mb-10 text-white"
+                    dangerouslySetInnerHTML={{ __html: t("title") }}
+                ></h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {Array.from({ length: 8 }).map((_, index) => (
