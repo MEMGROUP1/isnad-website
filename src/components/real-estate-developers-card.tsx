@@ -14,15 +14,22 @@ interface Props {
 export default function RealEstateDevelopersCard() {
     return (
         <article className="flex flex-col gap-3 px-2 py-3 rounded-3xl border border-white/8">
-            <div className="flex items-stretch gap-2">
+            <div className="flex items-center gap-2">
                 {/* avatar */}
-                <div className="border border-image-[linear-gradient(208.75deg,_#8FABDA_-5.54%,_#FF924F_97.09%)_1] size-8.25 rounded-full p-px overflow-hidden">
-                    <Image src={DevelopersAvatarFallback} alt={""} className="scale-105" />
+                <div
+                    className="size-8.25 rounded-full p-px overflow-hidden"
+                    style={{
+                        background: "linear-gradient(208.75deg, #8FABDA -5.54%, #FF924F 97.09%)",
+                    }}
+                >
+                    <div className="p-px rounded-full bg-primary">
+                        <Image src={DevelopersAvatarFallback} alt={""} className="rounded-full" />
+                    </div>
                 </div>
 
                 <div className="">
                     <h4 className="text-white">FINآفلق جديدة للتطوير</h4>
-                    <div className="flex items-center text-sm">
+                    <div className="flex items-center text-xs">
                         <span className="text-[#B8C6E3]">المجمعات: 6</span>
                         <span className="mx-2 text-[#132032]">|</span>
                         <span className="text-[#B8C6E3]">المشاريع: 12</span>
