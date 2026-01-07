@@ -12,7 +12,7 @@ export function HomeHero() {
             backgroundImageUrl="/images/home/hero/home-hero.jpg"
             style={{ background: "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(8, 24, 47, 0.5) 80.27%, #08182F 100%)" }}
         >
-            <div style={{ background: "linear-gradient(180deg, rgba(8, 24, 47, 0.4) 13.08%, rgba(25, 76, 149, 0) 100%);" }}>
+            <div style={{ background: "linear-gradient(180deg, rgba(8, 24, 47, 0.4) 13.08%, rgba(25, 76, 149, 0) 100%)" }}>
                 <Section.Inner className="flex flex-col min-h-screen">
                     <Navbar />
 
