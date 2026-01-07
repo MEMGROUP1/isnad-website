@@ -1,4 +1,4 @@
-import FeatureCard from "../feature-card";
+import FeatureCard from "../cards/feature-card";
 
 export default function HomeFeatureShowcase() {
     const cards = [

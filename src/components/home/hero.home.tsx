@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import Navbar from "../navbar";
 import Section from "../section";
 import { Button } from "../ui/button";
-import HomeCard from "../home-card";
+import HomeCard from "../cards/home-card";
 
 export function HomeHero() {
     const t = useTranslations("home.hero");
