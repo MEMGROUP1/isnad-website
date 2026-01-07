@@ -1,10 +1,10 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { ArrowRightIcon } from "@/assets/icons";
 import { DevelopersAvatarFallback, DevelopersImageFallback } from "@/media";
 import Image from "next/image";
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface Props {
