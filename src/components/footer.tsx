@@ -26,7 +26,7 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="w-full bg-primary px-16 py-12 flex flex-col items-center justify-center overflow-hidden text-white relative">
+        <footer className="w-full bg-primary px-4 md:px-8 lg:px-16 py-12 flex flex-col items-center justify-center overflow-hidden text-white relative">
             <Image src="/images/footer-image.png" alt="" width={1430} height={370} className="absolute w-full h-full pointer-events-none" />
 
             <div className="max-w-360 mx-auto w-full">
@@ -45,7 +45,7 @@ export default function Footer() {
                                     <Link
                                         key={link.href}
                                         href={link.href}
-                                        className="text-sm text-center rounded-[48px] py-2.75 px-4 opacity-100 text-white bg-white/5 hover:bg-white/10 min-w-31.5 cursor-pointer transition-colors duration-300 flex items-center justify-center"
+                                        className="text-sm text-center rounded-[48px] py-2.75 px-4 opacity-100 text-white bg-white/5 hover:bg-white/10 min-w-full lg:min-w-31.5 cursor-pointer transition-colors duration-300 flex items-center justify-center"
                                     >
                                         {link.label}
                                     </Link>
