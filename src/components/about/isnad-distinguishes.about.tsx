@@ -28,7 +28,10 @@ export default function AboutIsnadDistinguishes() {
 
                 <div className="flex flex-col md:flex-row flex-wrap gap-4">
                     {cards.map((card, index) => (
-                        <div key={index + "AboutIsnadDistinguishes"} className="bg-[#EBEFF5] p-8 flex flex-col justify-between min-h-97.5 md:min-w-90 text-[#08182F] flex-1">
+                        <div
+                            key={index + "AboutIsnadDistinguishes"}
+                            className="bg-[#EBEFF5] p-8 flex flex-col justify-between min-h-97.5 md:min-w-90 text-[#08182F] flex-1"
+                        >
                             <h2 className="text-[32px]">{card.title}</h2>
                             <p>{card.desc}</p>
                         </div>
