@@ -97,6 +97,71 @@
         "title": "Explore the Latest Featured <br/> Real Estate Projects"
     },
 
+    "about": {
+        "hero": {
+            "title": "About Isnad Real Estate",
+            "system_count": "Companies in the System",
+            "trust_count": "Real Estate Developers Trust Isnad",
+            "in_isnad": "At Isnad, we do not just sell a property, but we build an integrated investment vision. We believe that a successful real estate decision begins with accurate information and deep analysis.",
+            "about_subtitle": "About Isnad",
+            "about_paragraph": "Isnad for Real Estate Investment and Marketing is a leading Iraqi company established in 2017, aiming to be the premier reference in high-end real estate consultancy and marketing in Iraq, through professional solutions based on analysis, trust, and global standards."
+        },
+        "vision_and_our_values": {
+            "vision": {
+                "title": "Our Vision Towards the Future of <br /> Real Estate Investment",
+                "desc": "To be the most trusted real estate reference in Iraq, and the first partner for every investor seeking safe decisions, sustainable value, and an investment future built on clarity and trust."
+            },
+            "our_values": {
+                "title": "Our Values That Drive Our Decisions <br /> and Partnerships",
+                "desc": "We believe at Isnad that true success starts with values: Efficiency in performance, Transparency in transactions, Integration in partnership, and Innovation in solutions... Firm values that guide every decision we take, and form the foundation upon which we build our relationship with our clients and transform investment into a reliable and sustainable experience."
+            }
+        },
+        "isnad_distinguishes": {
+            "title": "What Distinguishes Isnad From Competitors",
+            "cards": {
+                "market_expertise": {
+                    "title": "Real Estate Market Expertise",
+                    "desc": "Accumulated expertise in the Iraqi real estate market backed by a precise understanding of challenges and opportunities."
+                },
+                "smart_analysis": {
+                    "title": "Smart Investment Analysis",
+                    "desc": "Decisions based on feasibility studies, opportunity analysis, and real assessment of risks and returns."
+                },
+                "transparency": {
+                    "title": "Transparency in Transactions",
+                    "desc": "Full clarity in information, prices, and procedures, to ensure continuous trust with our clients."
+                }
+            }
+        },
+        "services": {
+            "title": "Comprehensive Investment Services Placing in Your Hands <br/> Clear Vision and Reliable Real Estate Opportunities",
+            "list": {
+                "consultancy": "Real Estate Consultancy",
+                "resale": "Resale",
+                "marketing": {
+                    "title": "Real Estate Marketing",
+                    "desc": "Integrated marketing solutions including content, research, ads, and digital marketing."
+                },
+                "affiliate": "Co-Marketing",
+                "turnkey": "Turnkey Solutions"
+            },
+            "view_all": "View All",
+            "join_partner": "Join as a Partner"
+        },
+        "partners_section": {
+            "title": "Leadership That Builds Cities... <br/> and Builds Trust",
+            "desc": "A team of experts leads Isnad Real Estate projects with a strategic vision and field experience in developing cities and residential complexes.",
+            "categories": {
+                "gardens": "Landscaping",
+                "facades": "Glass Facades",
+                "plumbing": "Plumbing and Sanitary",
+                "curtains": "Curtains and Furnishings",
+                "doors": "Doors and Windows",
+                "painting": "Painting and Decorating"
+            }
+        }
+    },
+
     "footer": {
         "social_media": "Social Media",
         "contact": "Contact",
