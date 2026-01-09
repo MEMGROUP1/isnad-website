@@ -1,16 +1,33 @@
 import { useTranslations } from "next-intl";
 import Section from "../section";
+import Image from "next/image";
 
 export default function AboutVisionAndOurValuesHero() {
     const t = useTranslations("about.vision_and_our_values");
 
     return (
-        <Section className="bg-primary">
-            <Section.Inner className="flex flex-col">
-                <div className="">
-
+        <Section className="bg-primary lg:h-auto">
+            <Section.Inner className="flex flex-col gap- py-22">
+                <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
+                    <div className="">
+                        <Image className="min-w-135 h-135" src={"/images/about/vision-and-our-values/image-1.jpg"} width={500} height={540} alt={""} />
+                    </div>
+                    <div className="flex flex-col gap-10">
+                        <h1 className="text-[32px] md:text-[38px] lg:text-[48px]" dangerouslySetInnerHTML={{ __html: t("vision.title") }}></h1>
+                        <p className="text-[#B8C6E3] text-[22px]">{t("vision.desc")}</p>
+                    </div>
                 </div>
-                <div className=""></div>
+
+                <div className="flex flex-col-reverse lg:flex-row items-center gap-12">
+                    <div className="flex flex-col gap-10">
+                        <h1 className="text-[32px] md:text-[38px] lg:text-[48px]" dangerouslySetInnerHTML={{ __html: t("our_values.title") }}></h1>
+                        <p className="text-[#B8C6E3] text-[22px]">{t("our_values.desc")}</p>
+                    </div>
+
+                    <div className="min-w-max">
+                        <Image className="min-w-135 h-135" src={"/images/about/vision-and-our-values/image-2.png"} width={500} height={540} alt={""} />
+                    </div>
+                </div>
             </Section.Inner>
         </Section>
     );
