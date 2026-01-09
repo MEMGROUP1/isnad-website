@@ -22,7 +22,7 @@ export default function AboutIsnadDistinguishes() {
     ];
 
     return (
-        <Section className="bg-primary lg:h-auto">
+        <Section className="bg-primary lg:h-auto pb-16">
             <Section.Inner>
                 <h1 className="text-[40px] md:text-[56px] lg:text-[72px] mb-8.5" dangerouslySetInnerHTML={{ __html: t("title") }}></h1>
 
