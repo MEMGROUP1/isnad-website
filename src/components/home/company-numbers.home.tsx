@@ -9,17 +9,17 @@ export default function HomeCompanyNumbers() {
         {
             number: "M$128+",
             label: t("cards.realized_value"),
-            className: "size-full flex border border-[#C573405C]",
+            className: "size-full flex border border-[#C573405C] text-black",
         },
         {
             number: "18,950+",
             label: t("cards.trusted_investors"),
-            className: "size-full flex border border-[#C573405C]",
+            className: "size-full flex border border-[#C573405C] text-black",
         },
         {
             number: "145+",
             label: t("cards.selected_developments"),
-            className: "size-full flex border border-[#C573405C]",
+            className: "size-full flex border border-[#C573405C] text-black",
         },
         {
             number: "7,320+",
