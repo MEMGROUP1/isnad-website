@@ -1,6 +1,6 @@
 "use client";
 
-import RealEstateDevelopersCard from "@/components/real-estate-developers-card";
+import RealEstateDevelopersCard from "@/components/cards/real-estate-developers-card";
 import Section from "@/components/section";
 import { useTranslations } from "next-intl";
 
