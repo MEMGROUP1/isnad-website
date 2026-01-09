@@ -31,7 +31,7 @@ export default function HomeCompanyNumbers() {
     return (
         <Section className="lg:h-auto bg-white">
             <Section.Inner className="flex flex-col lg:flex-row items-stretch *:flex-1 gap-10 py-16 h-auto">
-                <div className="flex flex-col">
+                <div className="flex flex-col text-black">
                     <h3 className="mb-10 font-sans">{t("title")}</h3>
 
                     <h1 dangerouslySetInnerHTML={{ __html: t("subtitle") }} className="text-[40px] md:text-[42px] mb-16 leading-[100%]"></h1>

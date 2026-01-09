@@ -12,7 +12,7 @@ interface Props {
  * CompaniesCard
  * Displays company details card with hover reveal animation.
  */
-export default function CompanyCard({ className, disableHoverEffect = true, ...props }: Props) {
+export default function CompanyCard({ className, disableHoverEffect = false, ...props }: Props) {
     const tags = ["الوسم الأول", "الوسم الثاني", "الوسم الثالث"];
 
     return (

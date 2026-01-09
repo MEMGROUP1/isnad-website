@@ -106,6 +106,7 @@
             "subtitle": "About Isnad",
             "paragraph": "Isnad for Real Estate Investment and Marketing is a leading Iraqi company established in 2017, aiming to be the premier reference in high-end real estate consultancy and marketing in Iraq, through professional solutions based on analysis, trust, and global standards."
         },
+
         "vision_and_our_values": {
             "vision": {
                 "title": "Our Vision Towards the Future of <br /> Real Estate Investment",
@@ -116,8 +117,9 @@
                 "desc": "We believe at Isnad that true success starts with values: Efficiency in performance, Transparency in transactions, Integration in partnership, and Innovation in solutions... Firm values that guide every decision we take, and form the foundation upon which we build our relationship with our clients and transform investment into a reliable and sustainable experience."
             }
         },
+
         "isnad_distinguishes": {
-            "title": "What Distinguishes Isnad From Competitors",
+            "title": "What Distinguishes Isnad <br/> From Competitors",
             "cards": {
                 "market_expertise": {
                     "title": "Real Estate Market Expertise",
