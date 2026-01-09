@@ -15,11 +15,11 @@ export default function HomePartnersAndOffers() {
                     <p className="mt-4 mb-10 text-lg max-w-142.5 text-white/70">{t("desc")}</p>
 
                     <div className="flex gap-4">
-                        <Button className="min-w-50 py-4 h-auto" variant={"white"}>
+                        <Button className="py-4 flex-1 lg:max-w-50" variant={"white"}>
                             {t("show_partners")}
                         </Button>
 
-                        <Button className="min-w-50 py-4 h-auto" variant={"blur"}>
+                        <Button className="py-4 flex-1 lg:max-w-50" variant={"blur"}>
                             {t("join_as_partner")}
                         </Button>
                     </div>

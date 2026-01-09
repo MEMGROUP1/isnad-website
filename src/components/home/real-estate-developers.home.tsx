@@ -59,11 +59,11 @@ export default function HomeRealEstateDevelopers() {
                         <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">{t("title")}</h1>
                         <p className="text-lg text-gray-200 max-w-lg leading-relaxed">{t("desc")}</p>
 
-                        <div className="mt-10 flex gap-4">
-                            <Button className="py-3.5 min-w-50" variant={"white"}>
+                        <div className="mt-10 flex gap-4 w-full">
+                            <Button className="py-3.5 flex-1 lg:max-w-50" variant={"white"}>
                                 {t("show_all")}
                             </Button>
-                            <Button className="py-3.5 min-w-50" variant={"blur"}>
+                            <Button className="py-3.5 flex-1 lg:max-w-50" variant={"blur"}>
                                 {t("join_us")}
                             </Button>
                         </div>
