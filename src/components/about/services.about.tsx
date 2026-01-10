@@ -7,7 +7,7 @@ export function AboutServices() {
     const t = useTranslations("about.services");
 
     return (
-        <Section className="bg-[#EBEFF5]">
+        <Section className="bg-[#EBEFF5] lg:h-auto">
             <Section.Inner className="py-25.5 md:py-22 lg:py-40">
                 <h1 className="mb-10 text-[32px] md:text-[38px] lg:text-[48px] text-[#08182F]" dangerouslySetInnerHTML={{ __html: t("title") }}></h1>
 
@@ -26,7 +26,7 @@ export function AboutServices() {
                         <div className="space-y-4 mb-10">
                             <h2 className="border-b border-black/50 pb-4 text-[32px] text-black/50">{t("list.consultancy")}</h2>
 
-                            <h2 className="border-b border-white pb-4 text-[32px] text-black/50">{t("resale")}</h2>
+                            <h2 className="border-b border-white pb-4 text-[32px] text-black/50">{t("list.resale")}</h2>
 
                             <div className="px-4 py-3 bg-white text-black space-y-4">
                                 <h2 className="text-[32px]">{t("list.marketing.title")}</h2>
