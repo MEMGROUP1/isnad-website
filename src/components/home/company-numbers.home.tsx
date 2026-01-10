@@ -38,7 +38,7 @@ export default function HomeCompanyNumbers() {
 
                     <h2 className="text-2xl max-w-xl">{t("lunch")}</h2>
 
-                    <Image width={636} height={355} src={"/images/home/about/about-bg.png"} alt={""} className="object-cover mt-12 h-88.75 w-full" />
+                    <Image width={636} height={355} src={"/images/home/about/about-bg.png"} alt={""} className="object-cover mt-12 h-88.75 w-full flex-1" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 *:border border-[#C573405C]">
