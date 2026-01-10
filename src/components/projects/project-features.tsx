@@ -50,9 +50,9 @@ export function ProjectFeatures({ complex, className }: ProjectFeaturesProps) {
 
             <button
                 onClick={() => setReadMore(!readMore)}
-                className="text-[#E7A356] hover:text-[#fcc27b] text-sm font-normal transition-colors self-center mt-2 cursor-pointer"
+                className="text-secondary hover:text-[#fcc27b] text-sm font-normal transition-colors self-center mt-2 cursor-pointer"
             >
-                {readMore ? (locale === "ar" ? "عرض أقل" : "Show Less") : locale === "ar" ? "قراءة المزيد" : "Read More"}
+                {readMore ? (locale === "ar" ? "عرض أقل" : "Show Less") : locale === "ar" ? "عرض كل الخدمات" : "View All Services"}
             </button>
         </div>
     );

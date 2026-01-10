@@ -21,7 +21,7 @@ export function ProjectGallery({ files = [], className }: ProjectGalleryProps) {
     return (
         <div className={cn("w-full flex flex-col gap-4", className)}>
             {/* Main Active Image */}
-            <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-3xl overflow-hidden border border-white/10 bg-gray-900 shadow-2xl group">
+            <div className="relative w-full h-75 md:h-100 lg:h-125 rounded-3xl overflow-hidden border border-white/10 bg-gray-900 shadow-2xl group">
                  <Image 
                     key={activeImage.id} // Re-mount image component on change to trigger animation
                     src={activeImage.path} 

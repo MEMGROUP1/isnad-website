@@ -2,8 +2,10 @@
 
 import { ArrowRight2Icon } from "@/assets/icons";
 import { ProjectDescription } from "@/components/projects/project-description";
+import { ProjectDeveloperInfo } from "@/components/projects/project-developer-info";
 import { ProjectFeatures } from "@/components/projects/project-features";
 import { ProjectGallery } from "@/components/projects/project-gallery";
+import { ProjectInstallment } from "@/components/projects/project-installment";
 import { ProjectMap } from "@/components/projects/project-map";
 import { ProjectSidebar } from "@/components/projects/project-sidebar";
 import { RelatedProjects } from "@/components/projects/related-projects";
@@ -35,7 +37,7 @@ const mockComplex: Complex = {
                 { ar: "حراسة", en: "Security Guards" },
                 { ar: "كاميرات مراقبة", en: "Surveillance Cameras" },
                 { ar: "بوابة أمنية", en: "Security Gate" },
-            ]
+            ],
         },
         {
             key: "services",
@@ -45,7 +47,7 @@ const mockComplex: Complex = {
                 { ar: "منظومة غاز", en: "Gas System" },
                 { ar: "منظومة صرف صحي", en: "Sewage System" },
                 { ar: "تبريد مركزي", en: "Central Cooling" },
-            ]
+            ],
         },
         {
             key: "gym",
@@ -55,9 +57,21 @@ const mockComplex: Complex = {
                 { ar: "مطاعم", en: "Restaurants" },
                 { ar: "مركز صحي", en: "Health Center" },
                 { ar: "قاعة مناسبات", en: "Event Hall" },
-            ]
-        }
-    ]
+            ],
+        },
+    ],
+    installment: {
+        min_down_payment: 25,
+        max_years: 9,
+    },
+    starting_price: 150000000,
+    max_price: 290000000,
+    developer: {
+        name: { ar: "إسناد", en: "ISNAD" },
+        logo: "", // Empty to trigger CSS fallback
+        complexes_count: 3,
+        properties_count: 200,
+    },
 };
 
 export default function ProjectPage() {
@@ -107,6 +121,18 @@ export default function ProjectPage() {
 
                     {/* Description Section */}
                     <ProjectDescription description={mockComplex.description} />
+
+                    {/* Installment Section */}
+                    {mockComplex.installment && (
+                        <ProjectInstallment
+                            installment={mockComplex.installment}
+                            startingPrice={mockComplex.starting_price}
+                            maxPrice={mockComplex.max_price ?? 1000000000}
+                        />
+                    )}
+
+                    {/* Developer & Price Info */}
+                    {mockComplex.developer && <ProjectDeveloperInfo developer={mockComplex.developer} />}
 
                     {/* Features Card */}
                     <ProjectFeatures complex={mockComplex} />

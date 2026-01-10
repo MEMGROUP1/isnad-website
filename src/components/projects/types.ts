@@ -29,6 +29,18 @@ export interface Complex {
     location: Location;
     files: ComplexFile[];
     features?: FeatureCategory[];
+    installment?: {
+        min_down_payment?: number;
+        max_years?: number;
+    };
+    starting_price?: number; // In IQD usually
+    max_price?: number; // In IQD usually
+    developer?: {
+        name: LocalizedString;
+        logo: string;
+        complexes_count: number;
+        properties_count: number;
+    };
 }
 
 export interface FeatureCategory {
