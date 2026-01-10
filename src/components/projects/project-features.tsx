@@ -1,6 +1,10 @@
+"use client";
+
+import { FeatureCheckIcon, FeaturesStarsIcon } from "@/assets/icons";
 import { cn } from "@/lib/utils";
+import { useParams } from "next/navigation";
 import { Complex } from "./types";
-import { CheckCircle2Icon, ShieldCheckIcon, DumbbellIcon, CarIcon, UtensilsIcon, SnowflakeIcon } from "lucide-react";
+import { useState } from "react";
 
 interface ProjectFeaturesProps {
     complex?: Complex;
@@ -8,32 +12,47 @@ interface ProjectFeaturesProps {
 }
 
 export function ProjectFeatures({ complex, className }: ProjectFeaturesProps) {
-    // Mock features for UI demonstration since we don't know the exact structure
-    const features = [
-        { icon: ShieldCheckIcon, label: "الأمان والمراقبة" },
-        { icon: CarIcon, label: "موقف سيارات" },
-        { icon: DumbbellIcon, label: "صالة رياضية" },
-        { icon: UtensilsIcon, label: "مطاعم وكافيات" },
-        { icon: SnowflakeIcon, label: "تكييف مركزي" },
-        { icon: CheckCircle2Icon, label: "مساحات خضراء" },
-    ];
+    const [readMore, setReadMore] = useState(false);
+    
+    const params = useParams();
+    const locale = (params.locale as "ar" | "en") || "ar";
+
+    // Fallback features if data not provided in complex
+    const features = complex?.features || [];
+
+    if (features.length === 0) return null; // Or render empty state
 
     return (
-        <div className={cn("flex flex-col gap-4 p-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md", className)}>
-            <div className="flex items-center gap-2 text-white/80 border-b border-white/10 pb-3 mb-2">
-                 <h3 className="text-sm font-medium">المميزات والخدمات</h3>
+        <div className={cn("flex flex-col gap-6 p-6 rounded-3xl border border-[#212F43] bg-white/5", className)}>
+            <div className="flex items-center gap-2 text-white/90 pb-2 border-b border-white/10">
+                <FeaturesStarsIcon className="w-6 h-6 text-white" />
+                <h3 className="text-base font-medium">{locale === "ar" ? "مميزات والخدمات" : "Features & Services"}</h3>
             </div>
-            
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-                {features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-gray-300">
-                        <feature.icon className="w-4 h-4 text-primary" />
-                        <span className="text-sm">{feature.label}</span>
-                    </div>
-                ))}
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+                {features.map((category, idx) => {
+                    return (
+                        <div key={idx} className="flex flex-col gap-4">
+                            <ul className="flex flex-col gap-3">
+                                {category.items.map((item, i) => (
+                                    <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                                        <div className="shrink-0 mt-0.5">
+                                            <FeatureCheckIcon className="w-5 h-5 text-[#B8C6E3]" />
+                                        </div>
+                                        <span>{item[locale] || item.en}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    );
+                })}
             </div>
-             <button className="mt-2 text-primary text-sm hover:underline self-start">
-                عرض كل الخدمات
+
+            <button
+                onClick={() => setReadMore(!readMore)}
+                className="text-[#E7A356] hover:text-[#fcc27b] text-sm font-normal transition-colors self-center mt-2 cursor-pointer"
+            >
+                {readMore ? (locale === "ar" ? "عرض أقل" : "Show Less") : locale === "ar" ? "قراءة المزيد" : "Read More"}
             </button>
         </div>
     );

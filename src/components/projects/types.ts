@@ -28,5 +28,11 @@ export interface Complex {
     governorate: Governorate;
     location: Location;
     files: ComplexFile[];
-    // Add other fields as inferred
+    features?: FeatureCategory[];
+}
+
+export interface FeatureCategory {
+    key: string;
+    title: LocalizedString;
+    items: LocalizedString[];
 }

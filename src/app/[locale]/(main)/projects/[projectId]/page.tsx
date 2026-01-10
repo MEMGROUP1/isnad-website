@@ -9,7 +9,7 @@ import { ProjectSidebar } from "@/components/projects/project-sidebar";
 import { RelatedProjects } from "@/components/projects/related-projects";
 import { Complex } from "@/components/projects/types";
 import Section from "@/components/section";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 // Mock Data for demonstration
 const mockComplex: Complex = {
@@ -27,6 +27,37 @@ const mockComplex: Complex = {
         { id: 1, path: "/images/home/hero/home-hero.jpg", type: "image" },
         { id: 2, path: "/images/home/hero/home-hero.jpg", type: "image" },
     ],
+    features: [
+        {
+            key: "security",
+            title: { ar: "الأمان والمراقبة", en: "Security & Surveillance" },
+            items: [
+                { ar: "حراسة", en: "Security Guards" },
+                { ar: "كاميرات مراقبة", en: "Surveillance Cameras" },
+                { ar: "بوابة أمنية", en: "Security Gate" },
+            ]
+        },
+        {
+            key: "services",
+            title: { ar: "خدمات المعيشة والراحة", en: "Living & Comfort Services" },
+            items: [
+                { ar: "مساحات خضراء", en: "Green Spaces" },
+                { ar: "منظومة غاز", en: "Gas System" },
+                { ar: "منظومة صرف صحي", en: "Sewage System" },
+                { ar: "تبريد مركزي", en: "Central Cooling" },
+            ]
+        },
+        {
+            key: "gym",
+            title: { ar: "قاعة ألعاب رياضية - GYM", en: "Gym & Sports Hall" },
+            items: [
+                { ar: "المرافق والخدمات العامة", en: "Public Facilities & Services" },
+                { ar: "مطاعم", en: "Restaurants" },
+                { ar: "مركز صحي", en: "Health Center" },
+                { ar: "قاعة مناسبات", en: "Event Hall" },
+            ]
+        }
+    ]
 };
 
 export default function ProjectPage() {
@@ -37,6 +68,8 @@ export default function ProjectPage() {
     // Mock loading state
     const isLoading = false;
     const error = null;
+
+    const { back } = useRouter();
 
     if (isLoading) {
         return (
@@ -55,18 +88,18 @@ export default function ProjectPage() {
     }
 
     return (
-        <Section className="py-0 min-h-screen lg:h-auto bg-[#020B16] flex flex-col items-center">
+        <Section className="py-0 min-h-screen lg:h-auto bg-primary flex flex-col items-center">
             <Section.Inner className="flex flex-col xl:flex-row gap-8 px-4 md:px-8 w-full">
                 {/* Main Content Area */}
                 <div className="flex flex-col gap-4 flex-1 w-full min-w-0">
                     {/* Header with Back Button */}
                     <div className="flex justify-between items-center pt-4">
-                        <Link
-                            href="/projects"
+                        <button
+                            onClick={() => back()}
                             className="bg-white/5 hover:bg-white/10 text-white p-3 rounded-2xl border border-white/10 backdrop-blur-md transition-all self-start"
                         >
                             <ArrowRight2Icon className="w-5 h-5" />
-                        </Link>
+                        </button>
                     </div>
 
                     {/* Gallery Section */}
@@ -86,7 +119,7 @@ export default function ProjectPage() {
                 </div>
 
                 {/* Right Sidebar (Sticky on Large Screens if needed, but per design usually distinct column) */}
-                <ProjectSidebar complex={mockComplex} className="h-fit mt-4 sticky top-4" />
+                <ProjectSidebar complex={mockComplex} className="h-fit mt-4 mb-8 sticky top-4" />
             </Section.Inner>
         </Section>
     );
