@@ -141,3 +141,10 @@ export const LocationIcon = (props: React.SVGProps<SVGSVGElement>) => (
         />
     </svg>
 );
+
+export const ArrowRight2Icon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path d="M14.0459 5.57422L20.4992 11.9998L14.0459 18.4265" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path opacity="0.4" d="M20.5 12H4.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);

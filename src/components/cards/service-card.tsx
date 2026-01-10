@@ -25,7 +25,7 @@ export default function ServiceCard({ className, services }: Partial<Props>) {
             }}
             ></div>
 
-            <div className="absolute bottom-16 left-0 ltr:-rotate-14 rtl:rotate-14 w-full p-6 z-20">
+            <div className="absolute bottom-24 left-0 ltr:-rotate-14 rtl:rotate-14 w-full p-6 z-20">
                 <h3 className="text-[22px] max-w-60">دايز للاثاث Daze Furniture</h3>
                 <p>{services?.join(", ") ?? "غرف نوم، صالات، سفرة، أثاث مكتبي، تفصيل حسب الطلب"}</p>
             </div>

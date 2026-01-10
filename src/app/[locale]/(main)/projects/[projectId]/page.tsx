@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowRight2Icon } from "@/assets/icons";
 import { ProjectDescription } from "@/components/projects/project-description";
 import { ProjectFeatures } from "@/components/projects/project-features";
 import { ProjectGallery } from "@/components/projects/project-gallery";
@@ -8,7 +9,6 @@ import { ProjectSidebar } from "@/components/projects/project-sidebar";
 import { RelatedProjects } from "@/components/projects/related-projects";
 import { Complex } from "@/components/projects/types";
 import Section from "@/components/section";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 // Mock Data for demonstration
@@ -58,15 +58,14 @@ export default function ProjectPage() {
         <Section className="py-0 min-h-screen lg:h-auto bg-[#020B16] flex flex-col items-center">
             <Section.Inner className="flex flex-col xl:flex-row gap-8 px-4 md:px-8 w-full">
                 {/* Main Content Area */}
-                <div className="flex flex-col gap-6 flex-1 w-full min-w-0">
+                <div className="flex flex-col gap-4 flex-1 w-full min-w-0">
                     {/* Header with Back Button */}
-                    <div className="flex justify-between items-center mb-2">
+                    <div className="flex justify-between items-center pt-4">
                         <Link
                             href="/projects"
                             className="bg-white/5 hover:bg-white/10 text-white p-3 rounded-2xl border border-white/10 backdrop-blur-md transition-all self-start"
                         >
-                            <ArrowRight className="w-5 h-5 rtl:hidden" />
-                            <ArrowLeft className="w-5 h-5 ltr:hidden" />
+                            <ArrowRight2Icon className="w-5 h-5" />
                         </Link>
                     </div>
 
@@ -87,7 +86,7 @@ export default function ProjectPage() {
                 </div>
 
                 {/* Right Sidebar (Sticky on Large Screens if needed, but per design usually distinct column) */}
-                <ProjectSidebar complex={mockComplex} className="h-fit xl:sticky xl:top-32" />
+                <ProjectSidebar complex={mockComplex} className="h-fit mt-4 sticky top-4" />
             </Section.Inner>
         </Section>
     );
