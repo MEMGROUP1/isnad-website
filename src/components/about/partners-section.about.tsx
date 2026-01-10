@@ -108,7 +108,7 @@ export default function AboutPartnersSection() {
             {/* services cards */}
             <div 
                 ref={containerRef}
-                className="absolute start-1/3 top-1/2 -translate-y-1/2 flex items-center h-[120%] gap-4 transition-transform duration-100 ease-out will-change-transform"
+                className="absolute start-1/3 top-1/2 -translate-y-1/2 flex items-center h-[120%] gap-4 transition-transform duration-500 ease-out will-change-transform"
             >
                 {partnersData[activeIndex]?.map((partner, index) => (
                     <ServiceCard
