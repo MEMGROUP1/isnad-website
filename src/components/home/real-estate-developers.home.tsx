@@ -96,7 +96,7 @@ export default function HomeRealEstateDevelopers() {
                                 </div>
                             </div>
                         )}
-                        className="w-52.5 overflow-visible!"
+                        className="w-120 overflow-visible!"
                     />
                 </div>
             </Section.Inner>
