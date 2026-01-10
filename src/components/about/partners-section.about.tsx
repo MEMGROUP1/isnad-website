@@ -5,7 +5,8 @@ export default function AboutPartnersSection() {
     return (
         <Section className="relative overflow-hidden hidden lg:flex">
             {/* services cards */}
-            <div className="rotate-14 absolute end-0 top-0">
+            <div className="absolute start-1/3 top-1/2 -translate-y-1/2 flex items-center h-[120%]">
+                <ServiceCard />
                 <ServiceCard />
                 <ServiceCard />
                 <ServiceCard />
