@@ -1,15 +1,17 @@
 "use client";
 
+import { ArrowRight2Icon } from "@/assets/icons";
 import { ProjectDescription } from "@/components/projects/project-description";
+import { ProjectDeveloperInfo } from "@/components/projects/project-developer-info";
 import { ProjectFeatures } from "@/components/projects/project-features";
 import { ProjectGallery } from "@/components/projects/project-gallery";
+import { ProjectInstallment } from "@/components/projects/project-installment";
 import { ProjectMap } from "@/components/projects/project-map";
 import { ProjectSidebar } from "@/components/projects/project-sidebar";
 import { RelatedProjects } from "@/components/projects/related-projects";
 import { Complex } from "@/components/projects/types";
 import Section from "@/components/section";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 // Mock Data for demonstration
 const mockComplex: Complex = {
@@ -27,6 +29,49 @@ const mockComplex: Complex = {
         { id: 1, path: "/images/home/hero/home-hero.jpg", type: "image" },
         { id: 2, path: "/images/home/hero/home-hero.jpg", type: "image" },
     ],
+    features: [
+        {
+            key: "security",
+            title: { ar: "الأمان والمراقبة", en: "Security & Surveillance" },
+            items: [
+                { ar: "حراسة", en: "Security Guards" },
+                { ar: "كاميرات مراقبة", en: "Surveillance Cameras" },
+                { ar: "بوابة أمنية", en: "Security Gate" },
+            ],
+        },
+        {
+            key: "services",
+            title: { ar: "خدمات المعيشة والراحة", en: "Living & Comfort Services" },
+            items: [
+                { ar: "مساحات خضراء", en: "Green Spaces" },
+                { ar: "منظومة غاز", en: "Gas System" },
+                { ar: "منظومة صرف صحي", en: "Sewage System" },
+                { ar: "تبريد مركزي", en: "Central Cooling" },
+            ],
+        },
+        {
+            key: "gym",
+            title: { ar: "قاعة ألعاب رياضية - GYM", en: "Gym & Sports Hall" },
+            items: [
+                { ar: "المرافق والخدمات العامة", en: "Public Facilities & Services" },
+                { ar: "مطاعم", en: "Restaurants" },
+                { ar: "مركز صحي", en: "Health Center" },
+                { ar: "قاعة مناسبات", en: "Event Hall" },
+            ],
+        },
+    ],
+    installment: {
+        min_down_payment: 25,
+        max_years: 9,
+    },
+    starting_price: 150000000,
+    max_price: 290000000,
+    developer: {
+        name: { ar: "إسناد", en: "ISNAD" },
+        logo: "", // Empty to trigger CSS fallback
+        complexes_count: 3,
+        properties_count: 200,
+    },
 };
 
 export default function ProjectPage() {
@@ -37,6 +82,8 @@ export default function ProjectPage() {
     // Mock loading state
     const isLoading = false;
     const error = null;
+
+    const { back } = useRouter();
 
     if (isLoading) {
         return (
@@ -55,19 +102,18 @@ export default function ProjectPage() {
     }
 
     return (
-        <Section className="py-0 min-h-screen lg:h-auto bg-[#020B16] flex flex-col items-center">
+        <Section className="py-0 min-h-screen lg:h-auto bg-primary flex flex-col items-center">
             <Section.Inner className="flex flex-col xl:flex-row gap-8 px-4 md:px-8 w-full">
                 {/* Main Content Area */}
-                <div className="flex flex-col gap-6 flex-1 w-full min-w-0">
+                <div className="flex flex-col gap-4 flex-1 w-full min-w-0">
                     {/* Header with Back Button */}
-                    <div className="flex justify-between items-center mb-2">
-                        <Link
-                            href="/projects"
+                    <div className="flex justify-between items-center pt-4">
+                        <button
+                            onClick={() => back()}
                             className="bg-white/5 hover:bg-white/10 text-white p-3 rounded-2xl border border-white/10 backdrop-blur-md transition-all self-start"
                         >
-                            <ArrowRight className="w-5 h-5 rtl:hidden" />
-                            <ArrowLeft className="w-5 h-5 ltr:hidden" />
-                        </Link>
+                            <ArrowRight2Icon className="w-5 h-5" />
+                        </button>
                     </div>
 
                     {/* Gallery Section */}
@@ -75,6 +121,18 @@ export default function ProjectPage() {
 
                     {/* Description Section */}
                     <ProjectDescription description={mockComplex.description} />
+
+                    {/* Installment Section */}
+                    {mockComplex.installment && (
+                        <ProjectInstallment
+                            installment={mockComplex.installment}
+                            startingPrice={mockComplex.starting_price}
+                            maxPrice={mockComplex.max_price ?? 1000000000}
+                        />
+                    )}
+
+                    {/* Developer & Price Info */}
+                    {mockComplex.developer && <ProjectDeveloperInfo developer={mockComplex.developer} />}
 
                     {/* Features Card */}
                     <ProjectFeatures complex={mockComplex} />
@@ -87,7 +145,7 @@ export default function ProjectPage() {
                 </div>
 
                 {/* Right Sidebar (Sticky on Large Screens if needed, but per design usually distinct column) */}
-                <ProjectSidebar complex={mockComplex} className="h-fit xl:sticky xl:top-32" />
+                <ProjectSidebar complex={mockComplex} className="h-fit mt-4 mb-8 sticky top-4" />
             </Section.Inner>
         </Section>
     );

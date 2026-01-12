@@ -1,3 +1,5 @@
+'use client';
+
 import AboutHero from "@/components/about/hero.about";
 import AboutIsnadDistinguishes from "@/components/about/isnad-distinguishes.about";
 import AboutPartnersSection from "@/components/about/partners-section.about";

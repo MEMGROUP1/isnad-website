@@ -1,6 +1,7 @@
+import { MessageIcon } from "@/assets/icons";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 import { LocalizedString } from "./types";
-import { InfoIcon } from "lucide-react";
 
 interface ProjectDescriptionProps {
     description: LocalizedString;
@@ -9,21 +10,25 @@ interface ProjectDescriptionProps {
 }
 
 export function ProjectDescription({ description, className, locale = "ar" }: ProjectDescriptionProps) {
+    const [readMore, setReadMore] = useState(false);
+
     return (
-        <div
-            className={cn(
-                "flex flex-col gap-4 px-6 py-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md",
-                className
-            )}
-        >
-            <div className="flex items-center gap-2 text-white/80 border-b border-white/10 pb-3 mb-1">
-                <InfoIcon className="w-5 h-5 text-white" />
-                <h3 className="text-sm font-medium">الوصف</h3>
+        <div className={cn("flex flex-col gap-2 px-6 py-6 rounded-3xl border border-[#212F43] bg-white/5", className)}>
+            <div className="flex items-center gap-2 text-white/90">
+                <MessageIcon className="w-6 h-6 text-white" />
+                <h3 className="text-base font-medium">{locale === "ar" ? "الوصف" : "Description"}</h3>
             </div>
-            
-            <p className="text-gray-300 text-sm leading-relaxed overflow-hidden text-ellipsis">
+
+            <p className={cn("text-[#97A8BF] text-sm leading-7 text-justify transition-all duration-300", !readMore && "line-clamp-4")}>
                 {description[locale] || description.en || "No description available."}
             </p>
+
+            <button
+                onClick={() => setReadMore(!readMore)}
+                className="text-secondary hover:text-[#fcc27b] text-sm font-normal transition-colors self-center mt-2 cursor-pointer"
+            >
+                {readMore ? (locale === "ar" ? "عرض أقل" : "Show Less") : locale === "ar" ? "قراءة المزيد" : "Read More"}
+            </button>
         </div>
     );
 }

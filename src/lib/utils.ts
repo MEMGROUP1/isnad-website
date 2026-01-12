@@ -10,3 +10,7 @@ export function showNavbar(pathname: string) {
 
     return !hideOnPaths.some((path) => pathname.endsWith(path));
 }
+
+export function formatPrice(price: number) {
+    return new Intl.NumberFormat("en-US").format(price);
+}

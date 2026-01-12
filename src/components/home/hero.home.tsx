@@ -17,7 +17,7 @@ export function HomeHero() {
                     <Navbar />
 
                     <div className="flex flex-col md:flex-col-reverse lg:flex-row justify-between lg:items-end mt-42 lg:mt-auto">
-                        <div className="max-w-full lg:max-w-2xl p-8 text-white mb-16">
+                        <div className="max-w-full lg:max-w-2xl py-8 text-white mb-16">
                             <div className="flex flex-col gap-6 max-w-xl">
                                 <h1 className="text-[32px] md:text-5xl font-semibold">{t("title")}</h1>
                                 <p className="max-w-sm">{t("desc")}</p>

@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import { Location } from "./types";
-import { MapPinIcon } from "lucide-react";
 
 interface ProjectMapProps {
     location?: Location;
@@ -8,23 +7,19 @@ interface ProjectMapProps {
     className?: string;
 }
 
-export function ProjectMap({ location, title, className }: ProjectMapProps) {
+export function ProjectMap({ className }: ProjectMapProps) {
     return (
         <div className={cn("flex flex-col gap-4", className)}>
-             <div className="flex items-center gap-2 text-white/80">
-                <MapPinIcon className="w-5 h-5 text-white" />
-                <span className="text-sm font-medium text-white">الموقع على الخريطة</span>
-            </div>
-            
-            <div className="w-full h-64 rounded-3xl overflow-hidden relative bg-secondary-foreground/10 border border-white/10 group">
-                <div className="absolute inset-0 bg-secondary flex items-center justify-center">
-                     <div className="text-center p-6">
-                        <MapPinIcon className="w-8 h-8 text-primary mx-auto mb-2" />
-                        <h4 className="text-white font-medium">{title}</h4>
-                        <p className="text-white/50 text-xs mt-1">Map Component Placeholder</p>
-                     </div>
-                </div>
+            <div className="h-100 border border-white/10 rounded-2xl overflow-hidden w-full aspect-video">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1384.3216170856624!2d44.336367581143946!3d33.31655292527544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2siq!4v1768041235634!5m2!1sen!2siq"
+                    width="100%"
+                    height="100%"
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
             </div>
         </div>
-    )
+    );
 }
