@@ -8,7 +8,6 @@ import { ProjectGallery } from "@/components/projects/project-gallery";
 import { ProjectInstallment } from "@/components/projects/project-installment";
 import { ProjectMap } from "@/components/projects/project-map";
 import { ProjectSidebar } from "@/components/projects/project-sidebar";
-import { RelatedProjects } from "@/components/projects/related-projects";
 import { Complex } from "@/components/projects/types";
 import Section from "@/components/section";
 import { useRouter } from "next/navigation";
@@ -141,7 +140,7 @@ export default function ProjectPage() {
                     {mockComplex.location && <ProjectMap location={mockComplex.location} title={mockComplex.name.ar} />}
 
                     {/* Related Projects (Developer Row & Other prices logic can go here) */}
-                    <RelatedProjects currentProject={mockComplex} />
+                    {/* <RelatedProjects currentProject={mockComplex} /> */}
                 </div>
 
                 {/* Right Sidebar (Sticky on Large Screens if needed, but per design usually distinct column) */}

@@ -1,4 +1,7 @@
+"use client";
+
 import { LocationIcon } from "@/assets/icons";
+import { useRouter } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { CompaniesImageFallback, Logo } from "@/media";
 import { PlusIcon } from "lucide-react";
@@ -9,9 +12,12 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 }
 
 export default function ProjectCard({ className, disableHoverEffect = false, ...props }: Props) {
+    const { push } = useRouter();
+
     return (
         <article
             className={cn("relative rounded-3xl overflow-hidden h-80 cursor-pointer isolate w-full", !disableHoverEffect && "group", className)}
+            onClick={() => push("/projects/1")}
             {...props}
         >
             {/* Background Image */}
