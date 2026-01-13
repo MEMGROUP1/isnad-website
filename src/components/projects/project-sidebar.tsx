@@ -60,7 +60,7 @@ export function ProjectSidebar({ complex, className, ...props }: ProjectSidebarP
                     <div
                         className="absolute inset-0 z-10"
                         style={{
-                            background: `linear-gradient(180deg, rgba(8, 24, 47, 0.00) 0%, rgba(8, 24, 47, 0.40) 25%, #08182F 65%)`,
+                            background: `linear-gradient(180deg, rgba(0, 0, 0, 0.26) 30.77%, rgba(5, 15, 30, 0.9) 58.5%, #08182F 100%)`,
                         }}
                     />
                 </div>
