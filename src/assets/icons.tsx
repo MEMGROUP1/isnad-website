@@ -359,3 +359,36 @@ export const LinkedinIcon2 = (props: React.SVGProps<SVGSVGElement>) => (
         />
     </svg>
 );
+
+export const PlanetIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M12 21C7.02908 21 3 16.9709 3 12C3 7.02908 7.02908 3 12 3C16.9709 3 21 7.02908 21 12C21 16.9709 16.9709 21 12 21Z"
+            stroke="#B8C6E3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path d="M17.3854 19.0977C17.3854 19.0977 15.2078 13.0954 21.0019 11.9998" stroke="#B8C6E3" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+            d="M20.1128 8.08797C19.1768 8.02278 17.4722 8.303 14.9716 10.101C11.9943 12.2455 11.3103 7.71338 12.256 3.01294"
+            stroke="#B8C6E3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M11.5934 20.9999C11.5934 20.9999 12.2064 18.4634 10.4521 17.0915C8.69786 15.7205 7.38726 15.8208 7.16932 14.0772C6.95137 12.3336 9.10359 12.0408 7.52932 9.44585C6.49018 7.73244 5.31678 6.66022 5.36056 5.95093"
+            stroke="#B8C6E3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+);
+
+export const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path d="M4.92969 4.92896L19.0718 19.0711" stroke="white" strokeWidth="0.96" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M4.92969 19.071L19.0718 4.92891" stroke="white" strokeWidth="0.96" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);

@@ -10,7 +10,7 @@ export default function CompanyProfileInfo() {
     const t = useTranslations("common");
 
     return (
-        <div className="min-w-106 relative">
+        <div className="md:min-w-106 relative">
             <div className="flex flex-col border overflow-hidden border-[#212F43] rounded-2xl p-4 z-10 min-h-110 sticky top-4 left-0">
                 <Image
                     className="absolute inset-0 size-full pointer-events-none"
