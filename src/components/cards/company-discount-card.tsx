@@ -18,7 +18,7 @@ export default function CompanyDiscountCard({
 
     return (
         <article
-            className="rounded-2xl py-[0.5px] px-px overflow-hidden relative min-h-48 min-w-70 bg-linear-180 from-white/12 from-0% to-white/6 to-100%"
+            className="rounded-2xl p-px overflow-hidden relative min-h-48 min-w-70 bg-linear-180 from-white/12 from-0% to-white/6 to-100%"
             style={{
                 borderImageSource: "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(248, 248, 248, 0.06) 100%)",
             }}

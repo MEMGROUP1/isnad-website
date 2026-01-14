@@ -5,7 +5,10 @@
         "about": "About",
         "contact": "Contact Us",
         "services": "Our Services",
-        "valid_until": "Valid Until"
+        "valid_until": "Valid Until",
+        "social_media_accounts": "Social Media Accounts",
+        "call": "Call",
+        "show_branch": "Show Branch"
     },
 
     "nav": {

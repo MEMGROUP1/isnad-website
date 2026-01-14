@@ -5,7 +5,10 @@
         "about": "عن",
         "contact": "اتصل بنا",
         "services": "خدماتنا",
-        "valid_until": "صالح حتى"
+        "valid_until": "صالح حتى",
+        "social_media_accounts": "حسابات السوشيل الميديا",
+        "call": "اتصال",
+        "show_branch": "عرض الفروع"
     },
 
     "nav": {

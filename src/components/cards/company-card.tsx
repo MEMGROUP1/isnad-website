@@ -1,6 +1,7 @@
 "use client";
 
 import { DiscountIcon, LocationIcon } from "@/assets/icons";
+import { Avatar } from "@/components/ui/avatar";
 import { useRouter } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { CompaniesImageFallback, DevelopersAvatarFallback } from "@/media";
@@ -51,9 +52,8 @@ export default function CompanyCard({ className, disableHoverEffect = false, ...
             <div className="absolute bottom-0 start-0 p-4 w-full z-20">
                 <div className="relative z-10">
                     <div className="flex items-center gap-2">
-                        <div className="border-2 border-white/10 rounded-full overflow-hidden size-12 shrink-0">
-                            <Image src={DevelopersAvatarFallback} className="size-full object-cover" alt="" />
-                        </div>
+                        <Avatar url={DevelopersAvatarFallback} alt="" />
+                        
                         <div className="">
                             <h3 className="mb-1 text-lg text-white font-bold">لاوفن-laufen</h3>
                             <p className="text-[#AAB7CB] text-xs">سيراميك فاخر للمطابخ والحمامات.</p>

@@ -4,8 +4,8 @@ import Section from "@/components/section";
 
 export default function CompanyProfile() {
     return (
-        <Section className="bg-primary">
-            <Section.Inner className="flex items-stretch">
+        <Section className="bg-primary mt-8">
+            <Section.Inner className="flex items-stretch flex-col md:flex-row gap-8">
                 <CompanyProfileInfo />
 
                 <CompanyProfileDiscounts />
