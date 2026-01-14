@@ -8,7 +8,7 @@ interface OuterProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 export default function Section({ backgroundImageUrl, children, className, ...props }: OuterProps) {
     return (
-        <section {...props} className={cn("w-full h-auto lg:h-screen relative", className)}>
+        <section {...props} className={cn("w-full h-auto lg:h-screen relative px-4", className)}>
             {backgroundImageUrl && (
                 <Image
                     width={2186}

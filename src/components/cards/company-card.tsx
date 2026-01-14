@@ -1,4 +1,7 @@
+"use client";
+
 import { DiscountIcon, LocationIcon } from "@/assets/icons";
+import { useRouter } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { CompaniesImageFallback, DevelopersAvatarFallback } from "@/media";
 import Image from "next/image";
@@ -13,12 +16,20 @@ interface Props {
  * Displays company details card with hover reveal animation.
  */
 export default function CompanyCard({ className, disableHoverEffect = false, ...props }: Props) {
+    const { push } = useRouter();
+
     const tags = ["الوسم الأول", "الوسم الثاني", "الوسم الثالث"];
+
+    const onClick = () => {
+        // Handle card click event
+        push("/companies/1");
+    };
 
     return (
         <article
             className={cn("relative rounded-3xl overflow-hidden h-97.5 cursor-pointer isolate", !disableHoverEffect && "group", className)}
             {...props}
+            onClick={onClick}
         >
             <Image
                 src={CompaniesImageFallback}

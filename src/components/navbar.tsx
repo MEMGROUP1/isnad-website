@@ -21,7 +21,7 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="max-w-360 w-full flex justify-between items-stretch mx-auto py-4">
+        <nav className="max-w-360 w-full flex justify-between items-stretch mx-auto py-4 px-4 xl:px-0">
             <div className="flex items-center gap-8">
                 <BurgerMenu />
 
