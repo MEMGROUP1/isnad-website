@@ -1,12 +1,7 @@
 // Placeholder component until the real one is implemented
-import Section from "@/components/section";
-import { Complex } from "./types";
 import ProjectCard from "@/components/cards/project-card";
 
-interface RelatedProjectsProps {
-    currentProject?: Complex;
-}
-export function RelatedProjects({ currentProject }: RelatedProjectsProps) {
+export function RelatedProjects() {
     return (
         <div className="w-full flex-col flex gap-8 py-10 border-t border-white/10 mt-10">
             <h3 className="text-2xl text-white font-medium px-4">مشاريع مشابهة</h3>

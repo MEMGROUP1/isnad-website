@@ -100,7 +100,9 @@
     },
 
     "projects": {
-        "title": "Explore the Latest Featured <br/> Real Estate Projects"
+        "title": "Explore the Latest Featured <br/> Real Estate Projects",
+        "cities_section_title": "Cities and Integrated Residential Complexes",
+        "complexes_section_title": "Residential Complexes"
     },
 
     "about": {

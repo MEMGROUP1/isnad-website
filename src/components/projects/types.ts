@@ -9,12 +9,12 @@ export interface Location {
 }
 
 export interface Governorate {
-    id: number;
+    id: string | number;
     name: LocalizedString;
 }
 
 export interface ComplexFile {
-    id: number;
+    id: string | number;
     path: string;
     type: string;
 }
