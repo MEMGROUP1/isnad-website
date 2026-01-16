@@ -1,21 +1,18 @@
 import ProjectCard from "@/components/cards/project-card";
-import PrefetchBoundary from "@/components/prefetch-boundary";
 import Section from "@/components/section";
 import { websiteService } from "@/services/website.service";
 import { CityDto, ComplexDto } from "@/services/types/website.types";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-async function ProjectsPageContent() {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const t = useTranslations("projects");
+export default async function Page() {
+    const t = await getTranslations("projects");
 
-    const cities = await websiteService.getCities();
-    const complexes = await websiteService.getComplexes();
+    const [cities, complexes] = await Promise.all([websiteService.getCities(), websiteService.getComplexes()]);
 
     const cityCards = cities.map((city: CityDto) => ({
         id: city.id,
-        name: city.name,
-        type: city.type,
+        name: { ar: city.name?.ar ?? "", en: city.name?.en ?? "" },
+        type: { ar: city.type?.ar ?? "", en: city.type?.en ?? "" },
         backgroundImg: city.backgroundImg,
         logo: city.logo,
         minPrice: city.minPrice,
@@ -27,7 +24,7 @@ async function ProjectsPageContent() {
 
     const complexCards = complexes.map((complex: ComplexDto) => ({
         id: complex.id,
-        name: complex.name,
+        name: { ar: complex.name?.ar ?? "", en: complex.name?.en ?? "" },
         type: { ar: "مجمع سكني", en: "Residential Complex" },
         backgroundImg: complex.backgroundImg,
         logo: complex.logo,
@@ -67,24 +64,5 @@ async function ProjectsPageContent() {
                 )}
             </Section.Inner>
         </Section>
-    );
-}
-
-export default async function Page() {
-    return (
-        <PrefetchBoundary
-            queries={[
-                {
-                    queryKey: ["website-cities"],
-                    queryFn: () => websiteService.getCities(),
-                },
-                {
-                    queryKey: ["website-complexes"],
-                    queryFn: () => websiteService.getComplexes(),
-                },
-            ]}
-        >
-            <ProjectsPageContent />
-        </PrefetchBoundary>
     );
 }
