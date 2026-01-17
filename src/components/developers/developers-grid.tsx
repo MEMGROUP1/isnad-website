@@ -19,7 +19,7 @@ export default function DevelopersGrid() {
 
     if (isLoading) {
         return (
-            <div className="flex justify-center items-center min-h-[200px]">
+            <div className="flex justify-center items-center min-h-50">
                 <LoadingSpinner size="lg" className="text-white" />
             </div>
         );

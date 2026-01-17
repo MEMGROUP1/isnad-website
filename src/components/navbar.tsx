@@ -42,7 +42,7 @@ export default function Navbar() {
                 </Select>
             </div>
 
-            <div className="bg-[#08182F7A] rounded-full px-1 py-0.75 hidden lg:flex items-center gap-6 mx-auto border border-white/5 h-full backdrop-blur-md">
+            <div className="bg-[#08182F7A] rounded-full px-1 py-0.75 hidden lg:flex items-center gap-4 mx-auto border border-white/5 h-full backdrop-blur-md">
                 {links.map((link) => (
                     <Link
                         href={link.href}

@@ -33,16 +33,17 @@ export default function ProjectCard({ className, disableHoverEffect = false, dat
     const { push } = useRouter();
     const locale = useLocale() as "ar" | "en";
 
-    const projectPath = data?.projectType === "complex" 
-        ? `/complexes/${data.id}` 
-        : data?.projectType === "city" 
-            ? `/cities/${data.id}` 
-            : `/projects/${data?.id || "1"}`;
+    const projectPath =
+        data?.projectType === "complex"
+            ? `/complexes/${data.id}`
+            : data?.projectType === "city"
+              ? `/cities/${data.id}`
+              : `/projects/${data?.id || "1"}`;
 
     const statusLabel = {
         completed: locale === "ar" ? "مكتمل" : "Completed",
         ongoing: locale === "ar" ? "قيد الإنشاء" : "Ongoing",
-        planned: locale === "ar" ? "مخطط" : "Planned"
+        planned: locale === "ar" ? "مخطط" : "Planned",
     };
 
     return (
@@ -56,7 +57,7 @@ export default function ProjectCard({ className, disableHoverEffect = false, dat
                 src={data?.backgroundImg || CompaniesImageFallback}
                 className={cn(
                     "size-full object-cover transition-transform duration-700 ease-out",
-                    disableHoverEffect ? "scale-100" : "group-hover:scale-105"
+                    disableHoverEffect ? "scale-100" : "group-hover:scale-105",
                 )}
                 alt={data?.name?.[locale] || "Project Image"}
                 width={400}
@@ -87,9 +88,9 @@ export default function ProjectCard({ className, disableHoverEffect = false, dat
                     <div className="relative shrink-0">
                         <div className="size-14 rounded-full bg-primary flex items-center justify-center outline-2 outline-white/10 relative overflow-hidden">
                             {data?.logo ? (
-                                <Image src={data.logo} alt="" className="w-10 h-auto" width={40} height={40} />
+                                <Image src={data.logo} alt="" className="w-full h-auto rounded-full" width={40} height={40} />
                             ) : (
-                                <Image src={Logo} alt="" className="w-10 h-auto text-primary" />
+                                <Image src={Logo} alt="" className="w-full h-auto text-primary" />
                             )}
                         </div>
                         {/* Plus Button */}
@@ -100,9 +101,12 @@ export default function ProjectCard({ className, disableHoverEffect = false, dat
 
                     {/* Title & Type */}
                     <div>
-                        <h3 className="text-lg mb-1 text-[#FBF5EF]">{data?.name?.[locale] || (locale === "ar" ? "المجمع الذهبي للأبراج" : "Golden Tower Complex")}</h3>
+                        <h3 className="text-lg mb-1 text-[#FBF5EF]">
+                            {data?.name?.[locale] || (locale === "ar" ? "المجمع الذهبي للأبراج" : "Golden Tower Complex")}
+                        </h3>
                         <div className="text-[#EEF5FF] text-sm">
-                            {data?.type?.[locale] || (locale === "ar" ? "عقار سكني" : "Residential Property")} {data?.totalUnits ? `${(data.totalUnits / 1000).toFixed(1)}K` : ""}
+                            {data?.type?.[locale] || (locale === "ar" ? "عقار سكني" : "Residential Property")}{" "}
+                            {data?.totalUnits ? `${(data.totalUnits / 1000).toFixed(1)}K` : ""}
                         </div>
                     </div>
                 </div>
@@ -110,17 +114,19 @@ export default function ProjectCard({ className, disableHoverEffect = false, dat
                 {/* Price */}
                 {data?.minPrice && data?.maxPrice && (
                     <div className="text-sm text-[#EEF5FF] my-2" dir={locale === "ar" ? "rtl" : "ltr"}>
-                        {locale === "ar" 
+                        {locale === "ar"
                             ? `من ${(data.minPrice / 1000000).toFixed(0)} مليون - ${(data.maxPrice / 1000000).toFixed(0)} مليون IQD`
-                            : `From ${(data.minPrice / 1000000).toFixed(0)}M - ${(data.maxPrice / 1000000).toFixed(0)}M IQD`
-                        }
+                            : `From ${(data.minPrice / 1000000).toFixed(0)}M - ${(data.maxPrice / 1000000).toFixed(0)}M IQD`}
                     </div>
                 )}
 
                 {/* Location */}
                 <div className="flex items-center text-[#EEF5FF] text-sm gap-1">
                     <LocationIcon className="size-5 shrink-0" />
-                    <span>{data?.governorate?.name?.[locale] || (locale === "ar" ? "بغداد/اليرموك/شارع نادي الصيد" : "Baghdad/Yarmouk/Hunting Club Street")}</span>
+                    <span>
+                        {data?.governorate?.name?.[locale] ||
+                            (locale === "ar" ? "بغداد/اليرموك/شارع نادي الصيد" : "Baghdad/Yarmouk/Hunting Club Street")}
+                    </span>
                 </div>
             </div>
         </article>

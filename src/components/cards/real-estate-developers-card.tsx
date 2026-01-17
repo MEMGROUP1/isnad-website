@@ -40,11 +40,11 @@ export default function RealEstateDevelopersCard({ developer }: Props) {
                     <h4 className="text-white transition-colors duration-300 line-clamp-1">{getLocalized(developer.name, locale)}</h4>
                     <div className="flex items-center text-xs">
                         <span className="text-[#B8C6E3]">
-                            {t("complexes")}: {developer.totalComplexes || 0}
+                            {t("projects")}: {developer.totalProjects || 0}
                         </span>
                         <span className="mx-2 text-[#132032]">|</span>
                         <span className="text-[#B8C6E3]">
-                            {t("projects")}: {developer.totalProjects || 0}
+                            {t("complexes")}: {developer.totalComplexes || 0}
                         </span>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ export default function RealEstateDevelopersCard({ developer }: Props) {
                 </div>
             </div>
 
-            <div className="text-white text-sm opacity-80 group-hover:opacity-100 transition-opacity line-clamp-2 min-h-[40px]">
+            <div className="text-white text-sm opacity-80 group-hover:opacity-100 transition-opacity line-clamp-2 min-h-10">
                 {getLocalized(developer.description, locale)}
             </div>
         </article>
