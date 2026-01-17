@@ -4,21 +4,21 @@ import { useTranslations } from "next-intl";
 interface Props {
     title?: string;
     desc?: string;
-    expiredAt?: string;
+    expiredAt?: string | null;
     discountValue?: string;
 }
 
 export default function CompanyDiscountCard({
-    desc = "يسري الخصم على مجموعة مختارة من الأجهزة المنزلية.",
-    title = "خصم الأجهزة الكهربائية",
-    expiredAt = "2026/5/10",
-    discountValue = "20",
+    desc,
+    title,
+    expiredAt,
+    discountValue = "0",
 }: Props) {
     const t = useTranslations("common");
 
     return (
         <article
-            className="rounded-2xl p-px overflow-hidden relative min-h-48 min-w-70 bg-linear-180 from-white/12 from-0% to-white/6 to-100%"
+            className="rounded-2xl p-px overflow-hidden relative min-h-48 min-w-70 w-full bg-linear-180 from-white/12 from-0% to-white/6 to-100%"
             style={{
                 borderImageSource: "linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(248, 248, 248, 0.06) 100%)",
             }}
@@ -31,13 +31,15 @@ export default function CompanyDiscountCard({
 
                 <div className="mt-auto w-full">
                     <div className="flex flex-col">
-                        <h3 className="text-lg text-[#FBF5EF]">{title}</h3>
-                        <small className="text-xs text-[#AAB7CB]">
-                            {t("valid_until")}: {expiredAt}
-                        </small>
+                        {title && <h3 className="text-lg text-[#FBF5EF]">{title}</h3>}
+                        {expiredAt && (
+                            <small className="text-xs text-[#AAB7CB]">
+                                {t("valid_until")}: {expiredAt}
+                            </small>
+                        )}
                     </div>
 
-                    <small className="text-xs mt-2 text-[#AAB7CB]">{desc}</small>
+                    {desc && <small className="text-xs mt-2 text-[#AAB7CB]">{desc}</small>}
                 </div>
             </div>
         </article>

@@ -26,8 +26,14 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="w-full bg-primary px-4 md:px-8 lg:px-16 py-12 flex flex-col items-center justify-center overflow-hidden text-white relative">
-            <Image src="/images/footer-image.png" alt="" width={1430} height={370} className="absolute w-full h-full pointer-events-none opacity-30" />
+        <footer className="w-full bg-primary px-4 md:px-8 lg:px-16 py-12 flex flex-col items-center justify-center overflow-hidden text-white relative mt-16">
+            <Image
+                src="/images/footer-image.png"
+                alt=""
+                width={1430}
+                height={370}
+                className="absolute w-full h-full pointer-events-none opacity-30"
+            />
 
             <div className="max-w-360 mx-auto w-full">
                 <div className="flex flex-col md:flex-row justify-between gap-6">

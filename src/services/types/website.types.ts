@@ -48,10 +48,47 @@ export interface AdvantageReadDto {
 }
 
 // Placeholder types for missing schemas in Swagger
+export interface CompanyLink {
+    id: string;
+    url: string;
+    type: string;
+}
+
+export interface CompanyBranch {
+    id: string;
+    governorate: {
+        id: string;
+        name: LocalizedText;
+    };
+    location: string;
+    address: LocalizedText;
+}
+
+export interface CompanyDiscount {
+    id: string;
+    percentage: number;
+    description: LocalizedText;
+    maxUses: number;
+    isnadPercentage: number;
+}
+
 export interface CompanyDto {
     id: string;
-    name?: LocalizedText;
-    [key: string]: unknown;
+    name: LocalizedText;
+    logo?: string | null;
+    backgroundImageUrl?: string | null;
+    isVisible: boolean;
+    phone?: string | null;
+    discount?: string | null;
+    isnadPercentage?: number | null;
+    contractSigningDate?: string | null;
+    contractExpirationDate?: string | null;
+    createdAt: string;
+    updatedAt: string;
+    links: CompanyLink[];
+    branches: CompanyBranch[];
+    discounts: CompanyDiscount[];
+    types: LocalizedText[];
 }
 
 export interface ComplexDto {

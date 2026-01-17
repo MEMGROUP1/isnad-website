@@ -4,7 +4,6 @@ import { FeatureCheckIcon, FeaturesStarsIcon } from "@/assets/icons";
 import { cn } from "@/lib/utils";
 import { useParams } from "next/navigation";
 import { Complex } from "./types";
-import { useState } from "react";
 
 interface ProjectFeaturesProps {
     complex?: Complex;
@@ -12,8 +11,6 @@ interface ProjectFeaturesProps {
 }
 
 export function ProjectFeatures({ complex, className }: ProjectFeaturesProps) {
-    const [readMore, setReadMore] = useState(false);
-    
     const params = useParams();
     const locale = (params.locale as "ar" | "en") || "ar";
 
@@ -29,13 +26,13 @@ export function ProjectFeatures({ complex, className }: ProjectFeaturesProps) {
                 <h3 className="text-base font-medium">{locale === "ar" ? "مميزات والخدمات" : "Features & Services"}</h3>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
+            <div className="text-white">
                 {features.map((category, idx) => {
                     return (
-                        <div key={idx} className="flex flex-col gap-4">
-                            <ul className="flex flex-col gap-3">
+                        <div key={idx} className="flex flex-col gap-4 w-full">
+                            <ul className="flex flex-wrap gap-3 *:min-w-64 *:max-w-96 *:flex-1">
                                 {category.items.map((item, i) => (
-                                    <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                                    <li key={i} className="flex items-center gap-3 text-sm text-gray-300">
                                         <div className="shrink-0 mt-0.5">
                                             <FeatureCheckIcon className="w-5 h-5 text-[#B8C6E3]" />
                                         </div>
@@ -47,13 +44,6 @@ export function ProjectFeatures({ complex, className }: ProjectFeaturesProps) {
                     );
                 })}
             </div>
-
-            <button
-                onClick={() => setReadMore(!readMore)}
-                className="text-secondary hover:text-[#fcc27b] text-sm font-normal transition-colors self-center mt-2 cursor-pointer"
-            >
-                {readMore ? (locale === "ar" ? "عرض أقل" : "Show Less") : locale === "ar" ? "عرض كل الخدمات" : "View All Services"}
-            </button>
         </div>
     );
 }
