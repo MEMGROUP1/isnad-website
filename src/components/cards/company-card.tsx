@@ -61,9 +61,9 @@ export default function CompanyCard({ className, disableHoverEffect = false, com
 
                         <div className="">
                             <h3 className="mb-1 text-lg text-white font-bold">{getLocalized(company.name, locale)}</h3>
-                            <p className="text-[#AAB7CB] text-xs">
+                            {/* <p className="text-[#AAB7CB] text-xs">
                                 {company.types?.map(t => getLocalized(t, locale)).join(", ")}
-                            </p>
+                            </p> */}
                         </div>
                     </div>
 
