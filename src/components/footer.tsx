@@ -18,11 +18,11 @@ export default function Footer() {
     ];
 
     const socials = [
-        { label: "Instagram", href: "https://www.instagram.com", icon: InstagramIcon },
-        { label: "Facebook", href: "https://www.facebook.com", icon: FacebookIcon },
-        { label: "LinkedIn", href: "https://www.linkedin.com", icon: LinkedInIcon },
-        { label: "Whatsapp", href: "", icon: WhatsappIcon },
-        { label: "Email", href: "mailto:", icon: EmailIcon },
+        { label: "Instagram", href: "https://www.instagram.com/isnad.iq/", icon: InstagramIcon },
+        { label: "Facebook", href: "https://www.facebook.com/isnad.iq?mibextid=LQQJ4d", icon: FacebookIcon },
+        { label: "LinkedIn", href: "https://www.linkedin.com/company/isnad-real-estate/", icon: LinkedInIcon },
+        { label: "Whatsapp", href: "https://wa.me/07863036303", icon: WhatsappIcon },
+        { label: "Email", href: "mailto:info@isnad-iq.com", icon: EmailIcon },
     ];
 
     return (
