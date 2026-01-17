@@ -23,7 +23,6 @@ const mockComplex: Complex = {
     background_img: "/images/home/hero/home-hero.jpg",
     logo: "",
     governorate: { id: 1, name: { ar: "بغداد / اليرموك", en: "Baghdad / Yarmouk" } },
-    location: { lat: 33.3152, lng: 44.3661 },
     files: [
         { id: 1, path: "/images/home/hero/home-hero.jpg", type: "image" },
         { id: 2, path: "/images/home/hero/home-hero.jpg", type: "image" },
@@ -71,6 +70,7 @@ const mockComplex: Complex = {
         complexes_count: 3,
         properties_count: 200,
     },
+    location: "",
 };
 
 export default function ProjectPage() {
