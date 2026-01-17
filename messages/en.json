@@ -131,36 +131,49 @@
             "title": "About Isnad Real Estate",
             "system_count": "Companies in the System",
             "trust_count": "Real Estate Developers Trust Isnad",
-            "in_isnad": "At Isnad, we do not just sell a property, but we build an integrated investment vision. We believe that a successful real estate decision begins with accurate information and deep analysis.",
+            "in_isnad": "At Isnad, we don't just sell property, we build an integrated investment vision.",
             "subtitle": "About Isnad",
-            "paragraph": "Isnad for Real Estate Investment and Marketing is a leading Iraqi company established in 2017, aiming to be the premier reference in high-end real estate consultancy and marketing in Iraq, through professional solutions based on analysis, trust, and global standards."
+            "paragraph": "Isnad is an Iraqi real estate marketing and consulting company, specializing in providing reliable housing and investment solutions within Iraq. Isnad works to connect clients with suitable real estate projects through clear content, studied offers, and flexible payment plans, with a firm commitment to credibility and building long-term partnerships based on trust and sustainability."
         },
 
         "vision_and_our_values": {
             "vision": {
-                "title": "Our Vision Towards the Future of <br /> Real Estate Investment",
-                "desc": "To be the most trusted real estate reference in Iraq, and the first partner for every investor seeking safe decisions, sustainable value, and an investment future built on clarity and trust."
+                "title": "Vision",
+                "desc": "To become the primary support for individuals and investors in their real estate journey, by providing integrated solutions and multiple options inside and outside Iraq, to create a safe and comfortable experience for them that fulfills their dreams with confidence."
             },
             "our_values": {
-                "title": "Our Values That Drive Our Decisions <br /> and Partnerships",
-                "desc": "We believe at Isnad that true success starts with values: Efficiency in performance, Transparency in transactions, Integration in partnership, and Innovation in solutions... Firm values that guide every decision we take, and form the foundation upon which we build our relationship with our clients and transform investment into a reliable and sustainable experience."
+                "title": "Mission",
+                "desc": "At Isnad... we accompany our clients from the moment of choosing the property until after delivery. We provide them with various residential and investment options, turnkey services, asset management, and a wide network of partnerships that ensures the highest value and service. We are the real support that turns real estate into an opportunity, and a house into a life."
             }
         },
 
         "isnad_distinguishes": {
-            "title": "What Distinguishes Isnad <br/> From Competitors",
+            "title": "Why Isnad?",
+            "desc": "Because the decision of housing or real estate investment needs a trusted partner, Isnad is your support in every step. We provide integrated real estate solutions that put your comfort and trust first, accompanying you from the moment of selection to handover, with expertise, clarity, and flexible options that suit your needs.",
             "cards": {
-                "market_expertise": {
-                    "title": "Real Estate Market Expertise",
-                    "desc": "Accumulated expertise in the Iraqi real estate market backed by a precise understanding of challenges and opportunities."
+                "trusted_partner": {
+                    "title": "Your Trusted Partner",
+                    "desc": "Grants you the comfort of decision and confidence of choice, so you can enjoy a safe and comfortable residential experience."
                 },
-                "smart_analysis": {
-                    "title": "Smart Investment Analysis",
-                    "desc": "Decisions based on feasibility studies, opportunity analysis, and real assessment of risks and returns."
+                "suitable_home": {
+                    "title": "A Home That Suits You",
+                    "desc": "Multiple options for housing and investment inside and outside Iraq, to find the most suitable property for your needs."
                 },
-                "transparency": {
-                    "title": "Transparency in Transactions",
-                    "desc": "Full clarity in information, prices, and procedures, to ensure continuous trust with our clients."
+                "property_control": {
+                    "title": "Full Control of Your Properties",
+                    "desc": "Invest, rent, or resell your unit easily, with the help of our expert team, and make your residential decision with confidence and security."
+                },
+                "ready_style": {
+                    "title": "Ready in Your Style",
+                    "desc": "Design your apartment or home with furnishing and decor services that suit you, to receive your unit ready and in the style you want."
+                },
+                "financial_solutions": {
+                    "title": "Flexible Financial Solutions",
+                    "desc": "In cooperation with elite banks, we provide real estate loans and flexible payment plans that make owning your residential unit easier."
+                },
+                "support_every_step": {
+                    "title": "Your Support in Every Step",
+                    "desc": "Partnerships and services with more than 30 brands, with exclusive discounts for Isnad clients."
                 }
             }
         },
@@ -200,7 +213,7 @@
     "footer": {
         "social_media": "Social Media",
         "contact": "Contact",
-        "slogan": "We Are Your Support",
+        "slogan": "We support you",
         "page_links": "Page Links",
         "links": {
             "home": "Home",

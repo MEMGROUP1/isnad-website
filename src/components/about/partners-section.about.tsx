@@ -121,7 +121,14 @@ export default function AboutPartnersSection() {
                 ))}
             </div>
 
-            <div className="relative z-10" style={{ background: "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(8, 24, 47, 0.949579) 78.46%, #08182F 100%)" }}>
+            <div
+                className="relative z-10"
+                style={{
+                    background: isRtl
+                        ? "linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(8, 24, 47, 0.949579) 78.46%, #08182F 100%)"
+                        : "linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, rgba(8, 24, 47, 0.949579) 78.46%, #08182F 100%)",
+                }}
+            >
                 <Section.Inner className="z-10 relative flex max-w-150 mx-0 w-full">
                     <div className="my-auto px-8">
                         <h1 className="text-[48px] mb-6" dangerouslySetInnerHTML={{ __html: t("title") }}></h1>

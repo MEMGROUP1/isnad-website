@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { useRef, useState } from "react";
 import Section from "../section";
 
 export default function AboutIsnadDistinguishes() {
@@ -6,38 +7,101 @@ export default function AboutIsnadDistinguishes() {
 
     const cards = [
         {
-            title: t("cards.market_expertise.title"),
-            desc: t("cards.market_expertise.desc"),
+            title: t("cards.trusted_partner.title"),
+            desc: t("cards.trusted_partner.desc"),
         },
-
         {
-            title: t("cards.smart_analysis.title"),
-            desc: t("cards.smart_analysis.desc"),
+            title: t("cards.suitable_home.title"),
+            desc: t("cards.suitable_home.desc"),
         },
-
         {
-            title: t("cards.transparency.title"),
-            desc: t("cards.transparency.desc"),
+            title: t("cards.property_control.title"),
+            desc: t("cards.property_control.desc"),
+        },
+        {
+            title: t("cards.ready_style.title"),
+            desc: t("cards.ready_style.desc"),
+        },
+        {
+            title: t("cards.financial_solutions.title"),
+            desc: t("cards.financial_solutions.desc"),
+        },
+        {
+            title: t("cards.support_every_step.title"),
+            desc: t("cards.support_every_step.desc"),
         },
     ];
 
     return (
         <Section className="bg-primary lg:h-auto pb-16">
             <Section.Inner>
-                <h1 className="text-[40px] md:text-[56px] lg:text-[72px] mb-8.5" dangerouslySetInnerHTML={{ __html: t("title") }}></h1>
+                <div className="mb-8.5">
+                    <h1 className="text-[40px] md:text-[56px] lg:text-[72px] mb-4" dangerouslySetInnerHTML={{ __html: t("title") }}></h1>
+                    <p className="text-lg md:text-xl text-[#B8C6E3] max-w-4xl leading-relaxed">{t("desc")}</p>
+                </div>
 
-                <div className="flex flex-col md:flex-row flex-wrap gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                     {cards.map((card, index) => (
-                        <div
-                            key={index + "AboutIsnadDistinguishes"}
-                            className="bg-[#EBEFF5] p-8 flex flex-col justify-between min-h-97.5 md:min-w-90 text-[#08182F] flex-1"
-                        >
-                            <h2 className="text-[32px]">{card.title}</h2>
-                            <p>{card.desc}</p>
-                        </div>
+                        <Card key={index + "AboutIsnadDistinguishes"} title={card.title} desc={card.desc} />
                     ))}
                 </div>
             </Section.Inner>
         </Section>
+    );
+}
+
+function Card({ title, desc }: { title: string; desc: string }) {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [isExpanded, setIsExpanded] = useState(false);
+    const cardRef = useRef<HTMLDivElement>(null);
+    const timeoutRef = useRef<NodeJS.Timeout>(null);
+    const lastPos = useRef({ x: 0, y: 0 });
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!cardRef.current || isExpanded) return;
+
+        const rect = cardRef.current.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        lastPos.current = { x, y };
+
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+
+        timeoutRef.current = setTimeout(() => {
+            setMousePosition(lastPos.current);
+            setIsExpanded(true);
+        }, 100);
+    };
+
+    const handleMouseLeave = () => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        setIsExpanded(false);
+    };
+
+    return (
+        <div
+            ref={cardRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className="relative group overflow-hidden bg-[#EBEFF5] p-8 flex flex-col justify-between min-h-97.5 md:min-w-90 text-[#08182F] flex-1 outline outline-transparent hover:outline-white/20 transition-colors group"
+        >
+            {/* Hover Background Animation */}
+            <div
+                className={`absolute size-4 rounded-full bg-primary transition-transform duration-1000 -translate-x-1/2 -translate-y-1/2 pointer-events-none ${
+                    isExpanded ? "scale-[120]" : "scale-0"
+                }`}
+                style={{
+                    left: mousePosition.x,
+                    top: mousePosition.y,
+                }}
+            />
+
+            <h2 className={`relative z-10 text-[32px] transition-colors duration-700 ${isExpanded ? "text-white delay-150" : ""}`}>
+                {title}
+            </h2>
+            <p className={`relative z-10 transition-colors duration-700 ${isExpanded ? "text-white delay-150" : ""}`}>
+                {desc}
+            </p>
+        </div>
     );
 }
