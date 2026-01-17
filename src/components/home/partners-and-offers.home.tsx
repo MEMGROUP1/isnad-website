@@ -1,10 +1,15 @@
+import { GeneralStatisticsDto } from "@/services/types/website.types";
 import { useTranslations } from "next-intl";
-import Section from "../section";
-import { Button } from "../ui/button";
-import PartnerLogo from "../partner-logo";
 import Image from "next/image";
+import Section from "../section";
+import { AvatarGroup } from "../ui/avatar-group";
+import { Button } from "../ui/button";
 
-export default function HomePartnersAndOffers() {
+interface HomePartnersAndOffersProps {
+    stats: GeneralStatisticsDto;
+}
+
+export default function HomePartnersAndOffers({ stats }: HomePartnersAndOffersProps) {
     const t = useTranslations("home.partners_and_offers");
 
     return (
@@ -26,7 +31,11 @@ export default function HomePartnersAndOffers() {
                 </div>
 
                 <div className="h-fit max-w-47 relative z-10 space-y-6.25">
-                    <PartnerLogo size="lg" />
+                    <AvatarGroup
+                        images={stats.companyLogos || []}
+                        totalCount={stats.totalCompanies}
+                        className="*:size-10" // Override size if needed, though AvatarGroup default is size-9 md:size-10
+                    />
 
                     <p>{t("isnad_discount")}</p>
                 </div>

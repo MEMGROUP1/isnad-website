@@ -12,17 +12,17 @@ export default async function Home() {
 
     return (
         <>
-            <HomeHero />
+            <HomeHero stats={stats} />
 
             <HomeAbout />
 
             <HomeCompanyNumbers stats={stats} />
 
-            <HomeRealEstateCities totalCities={stats.totalCities} />
+            <HomeRealEstateCities stats={stats} />
 
-            <HomeRealEstateDevelopers />
+            <HomeRealEstateDevelopers stats={stats} />
 
-            <HomePartnersAndOffers />
+            <HomePartnersAndOffers stats={stats} />
 
             <HomeFeatureShowcase />
         </>

@@ -138,4 +138,10 @@ export interface GeneralStatisticsDto {
     totalProjects: number;
     totalCustomers: number;
     revenues: number;
+    developerLogos: string[];
+    developerBackgrounds: string[];
+    cityLogos: string[];
+    complexLogos: string[];
+    projectLogos: string[];
+    companyLogos: string[];
 }

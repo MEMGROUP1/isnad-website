@@ -1,10 +1,15 @@
+import { GeneralStatisticsDto } from "@/services/types/website.types";
 import { useTranslations } from "next-intl";
 import Navbar from "../navbar";
 import Section from "../section";
 import { Button } from "../ui/button";
 import HomeCard from "../cards/home-card";
 
-export function HomeHero() {
+interface HomeHeroProps {
+    stats: GeneralStatisticsDto;
+}
+
+export function HomeHero({ stats }: HomeHeroProps) {
     const t = useTranslations("home.hero");
 
     return (
@@ -34,9 +39,26 @@ export function HomeHero() {
                         </div>
 
                         <div className="flex flex-col md:flex-row gap-6 mb-16">
-                            <HomeCard className="w-auto lg:w-75" />
+                            <HomeCard
+                                className="w-auto lg:w-75"
+                                count={stats.totalDevelopers}
+                                label={t("cards.developers_label")}
+                                description={t("cards.developers_desc")}
+                                logos={stats.developerLogos || []}
+                                backgroundImageUrl="/images/home/hero/home-hero.jpg"
+                                actionLabel={t("cards.view_companies")}
+                            />
+                            
+                            <HomeCard
+                                className="w-auto lg:w-75"
+                                count={stats.totalCompanies}
+                                label={t("cards.companies_label")}
+                                description={t("cards.companies_desc")}
+                                logos={stats.companyLogos || []}
+                                backgroundImageUrl="/images/home/hero/home-hero.jpg"
+                                actionLabel={t("cards.view_companies")}
+                            />
 
-                            <HomeCard className="w-auto lg:w-75" />
                         </div>
                     </div>
                 </Section.Inner>

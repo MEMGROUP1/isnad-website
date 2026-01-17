@@ -44,7 +44,14 @@
             "desc": "Discover luxurious properties that combine elegant design, ideal location, and integrated facilities to suit your lifestyle.",
 
             "start_search_now": "Start Searching Now",
-            "contact_us": "Contact Us"
+            "contact_us": "Contact Us",
+            "cards": {
+                "developers_label": "Real Estate Developer",
+                "developers_desc": "Real estate developer specializing in the construction of residential complexes and modern investment projects",
+                "companies_label": "Companies",
+                "companies_desc": "(Furniture - Lighting - Doors - Kitchens - HVAC - Elevators - Ceramics...)",
+                "view_companies": "View Companies"
+            }
         },
         "about": {
             "title": "About Isnad Company",
@@ -82,12 +89,12 @@
                     "button": "View Residential Units"
                 },
                 "card_2": {
-                    "header": "+12 Cities",
+                    "header": "+{count} Cities",
                     "desc": "Residential and commercial projects under implementation and development",
                     "button": "View All Cities"
                 },
                 "card_3": {
-                    "header": "+48 Projects",
+                    "header": "+{count} Projects",
                     "desc": "Diverse real estate projects catering to various investment needs",
                     "button": "Explore All Projects"
                 }

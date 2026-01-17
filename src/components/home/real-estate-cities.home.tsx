@@ -1,13 +1,15 @@
+import { GeneralStatisticsDto } from "@/services/types/website.types";
 import { useTranslations } from "next-intl";
 import Section from "../section";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { AvatarGroup } from "../ui/avatar-group";
 
 interface HomeRealEstateCitiesProps {
-    totalCities: number;
+    stats: GeneralStatisticsDto;
 }
 
-export default function HomeRealEstateCities({ totalCities }: HomeRealEstateCitiesProps) {
+export default function HomeRealEstateCities({ stats }: HomeRealEstateCitiesProps) {
     const t = useTranslations("home.real_estate_cities");
 
     return (
@@ -20,10 +22,7 @@ export default function HomeRealEstateCities({ totalCities }: HomeRealEstateCiti
         >
             <Section.Inner className="flex flex-col-reverse lg:flex-row justify-end lg:items-center mt-auto gap-8 h-fit *:flex-1 py-8">
                 <div className="text-white max-w-lg lg:max-w-full">
-                    <h1 className="text-[32px] md:text-[38px] lg:text-[48px] mb-6 flex items-baseline gap-3">
-                        {t("title")}
-                        {totalCities > 0 && <span className="text-2xl md:text-3xl text-primary font-bold">{totalCities}</span>}
-                    </h1>
+                    <h1 className="text-[32px] md:text-[38px] lg:text-[48px] mb-6 flex items-baseline gap-3">{t("title")}</h1>
 
                     <p className="text-xs text-[#EEF5FF] max-w-113.75">{t("desc")}</p>
                 </div>
@@ -35,12 +34,12 @@ export default function HomeRealEstateCities({ totalCities }: HomeRealEstateCiti
                             <p className="text-sm mb-10">{t("cards.card_1.desc")}</p>
 
                             <Button variant={"blur"} className="w-full mt-auto">
-                                {t("cards.card_2.button")}
+                                {t("cards.card_1.button")}
                             </Button>
                         </article>
 
                         <article className="flex flex-col backdrop-blur-[32px] p-4 rounded-3xl border border-white/10">
-                            <h4 className="text-lg">{t("cards.card_2.header")}</h4>
+                            <h4 className="text-lg">{t("cards.card_2.header", { count: stats.totalCities })}</h4>
                             <p className="text-sm mb-10">{t("cards.card_2.desc")}</p>
                             <Button variant={"blur"} className="w-full mt-auto">
                                 {t("cards.card_2.button")}
@@ -56,22 +55,18 @@ export default function HomeRealEstateCities({ totalCities }: HomeRealEstateCiti
 
                             <div className="flex items-center gap-2 mb-10">
                                 <div className="flex-1">
-                                    <h4 className="text-lg">{t("cards.card_2.header")}</h4>
-                                    <p className="text-sm">{t("cards.card_2.desc")}</p>
+                                    <h4 className="text-lg">{t("cards.card_3.header", { count: stats.totalProjects })}</h4>
+                                    <p className="text-sm">{t("cards.card_3.desc")}</p>
                                 </div>
 
-                                <div className="flex">
-                                    {Array.from({ length: 5 }).map((_, index) => (
-                                        <span
-                                            key={index + "real-estate-cities-card"}
-                                            className="block size-9 rounded-full -me-4 last-of-type:me-0 bg-white border border-gray-200 ring ring-white/10"
-                                        ></span>
-                                    ))}
-                                </div>
+                                <AvatarGroup
+                                    images={stats.projectLogos || []}
+                                    totalCount={stats.totalProjects}
+                                />
                             </div>
 
                             <Button variant={"blur"} className="w-full">
-                                {t("cards.card_2.button")}
+                                {t("cards.card_3.button")}
                             </Button>
                         </article>
                     </div>

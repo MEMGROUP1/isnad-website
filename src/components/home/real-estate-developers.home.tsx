@@ -1,5 +1,6 @@
 "use client";
 
+import { GeneralStatisticsDto } from "@/services/types/website.types";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
@@ -7,48 +8,36 @@ import Section from "../section";
 import { Button } from "../ui/button";
 import VerticalSwiper from "../vertical-swiper";
 
-// Placeholder data
-const DEVELOPERS = [
-    {
-        id: 1,
-        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop",
-        bg: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop",
-    },
-    {
-        id: 3,
-        image: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=600&auto=format&fit=crop",
-        bg: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=600&auto=format&fit=crop",
-    },
-    {
-        id: 4,
-        image: "https://images.unsplash.com/photo-1512418490979-92798cec1380?q=80&w=600&auto=format&fit=crop",
-        bg: "https://images.unsplash.com/photo-1512418490979-92798cec1380?q=80&w=600&auto=format&fit=crop",
-    },
-    {
-        id: 5,
-        image: "https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?q=80&w=600&auto=format&fit=crop",
-        bg: "https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?q=80&w=600&auto=format&fit=crop",
-    },
-    {
-        id: 2,
-        image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1770&auto=format&fit=crop",
-        bg: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1770&auto=format&fit=crop",
-    },
+// Fallback images if API returns empty array
+const FALLBACK_IMAGES = [
+    "/images/fallback/vertical-slider/image-1.jpg",
+    "/images/fallback/vertical-slider/image-2.jpg",
+    "/images/fallback/vertical-slider/image-3.jpg",
+    "/images/fallback/vertical-slider/image-4.jpg",
+    "/images/fallback/vertical-slider/image-5.jpg",
+    "/images/fallback/vertical-slider/image-6.jpg",
 ];
 
-export default function HomeRealEstateDevelopers() {
+interface HomeRealEstateDevelopersProps {
+    stats: GeneralStatisticsDto;
+}
+
+export default function HomeRealEstateDevelopers({ stats }: HomeRealEstateDevelopersProps) {
     const t = useTranslations("home.real_estate_developers");
     const [activeIndex, setActiveIndex] = useState(0);
+
+    const developers =
+        stats.developerBackgrounds && stats.developerBackgrounds.length > 0 ? stats.developerBackgrounds : FALLBACK_IMAGES;
 
     return (
         <Section className="min-h-screen relative overflow-hidden bg-black text-white hidden lg:flex">
             {/* Background Layer */}
-            {DEVELOPERS.map((dev, idx) => (
+            {developers.map((bg, idx) => (
                 <div
-                    key={dev.id}
+                    key={idx}
                     className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === activeIndex ? "opacity-100" : "opacity-0"}`}
                 >
-                    <Image src={dev.bg} alt="Background" fill className="object-cover opacity-50" priority={idx === 0} />
+                    <Image src={bg} alt="Background" fill className="object-cover opacity-50" priority={idx === 0} />
                 </div>
             ))}
 
@@ -76,7 +65,7 @@ export default function HomeRealEstateDevelopers() {
                 <div className="w-full flex items-center justify-center md:justify-end">
                     <VerticalSwiper
                         gap={16}
-                        items={DEVELOPERS}
+                        items={developers}
                         itemHeight={210}
                         activeIndex={activeIndex}
                         autoplayInterval={5000}
@@ -88,7 +77,7 @@ export default function HomeRealEstateDevelopers() {
                             >
                                 <div className="">
                                     <Image
-                                        src={item.image}
+                                        src={item}
                                         alt="Developer"
                                         fill
                                         className={`size-full object-cover transition-transform duration-700  ${
