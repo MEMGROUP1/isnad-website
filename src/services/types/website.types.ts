@@ -124,3 +124,13 @@ export interface DeveloperDto {
     name?: LocalizedText;
     [key: string]: unknown;
 }
+
+export interface GeneralStatisticsDto {
+    totalCities: number;
+    totalComplexes: number;
+    totalCompanies: number;
+    totalDevelopers: number;
+    totalProjects: number;
+    totalCustomers: number;
+    revenues: number;
+}

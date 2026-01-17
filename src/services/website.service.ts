@@ -1,7 +1,11 @@
 import { api } from "@/hooks/useApiClient";
-import { CityDto, CompanyDto, ComplexDto, DeveloperDto } from "./types/website.types";
+import { CityDto, CompanyDto, ComplexDto, DeveloperDto, GeneralStatisticsDto } from "./types/website.types";
 
 export const websiteService = {
+  getGeneralStatistics: async (): Promise<GeneralStatisticsDto> => {
+    const { data } = await api.get("/Statistic/general");
+    return data;
+  },
   getCities: async (): Promise<CityDto[]> => {
     const { data } = await api.get("/WebsiteCities");
     return data;

@@ -1,28 +1,37 @@
+import { GeneralStatisticsDto } from "@/services/types/website.types";
 import { useTranslations } from "next-intl";
-import Section from "../section";
 import Image from "next/image";
+import Section from "../section";
 
-export default function HomeCompanyNumbers() {
+function formatNumber(num: number) {
+    return new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 }).format(num);
+}
+
+interface HomeCompanyNumbersProps {
+    stats: GeneralStatisticsDto;
+}
+
+export default function HomeCompanyNumbers({ stats }: HomeCompanyNumbersProps) {
     const t = useTranslations("home.company_numbers");
 
     const cards = [
         {
-            number: "M$128+",
+            number: formatNumber(stats.revenues),
             label: t("cards.realized_value"),
             className: "size-full flex border border-[#C573405C] text-black",
         },
         {
-            number: "18,950+",
+            number: formatNumber(stats.totalCustomers) + "+",
             label: t("cards.trusted_investors"),
             className: "size-full flex border border-[#C573405C] text-black",
         },
         {
-            number: "145+",
+            number: formatNumber(stats.totalProjects) + "+",
             label: t("cards.selected_developments"),
             className: "size-full flex border border-[#C573405C] text-black",
         },
         {
-            number: "7,320+",
+            number: "7,320+", // Placeholder as we don't have this data yet
             label: t("cards.available_units"),
             className: "size-full flex border-[#C57340] bg-[#C57340] text-white",
         },

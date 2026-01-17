@@ -3,7 +3,11 @@ import Section from "../section";
 import { Button } from "../ui/button";
 import Image from "next/image";
 
-export default function HomeRealEstateCities() {
+interface HomeRealEstateCitiesProps {
+    totalCities: number;
+}
+
+export default function HomeRealEstateCities({ totalCities }: HomeRealEstateCitiesProps) {
     const t = useTranslations("home.real_estate_cities");
 
     return (
@@ -16,7 +20,10 @@ export default function HomeRealEstateCities() {
         >
             <Section.Inner className="flex flex-col-reverse lg:flex-row justify-end lg:items-center mt-auto gap-8 h-fit *:flex-1 py-8">
                 <div className="text-white max-w-lg lg:max-w-full">
-                    <h1 className="text-[32px] md:text-[38px] lg:text-[48px] mb-6">{t("title")}</h1>
+                    <h1 className="text-[32px] md:text-[38px] lg:text-[48px] mb-6 flex items-baseline gap-3">
+                        {t("title")}
+                        {totalCities > 0 && <span className="text-2xl md:text-3xl text-primary font-bold">{totalCities}</span>}
+                    </h1>
 
                     <p className="text-xs text-[#EEF5FF] max-w-113.75">{t("desc")}</p>
                 </div>
