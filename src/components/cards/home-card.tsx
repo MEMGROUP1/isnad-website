@@ -43,9 +43,9 @@ export default function HomeCard({
                 className="w-full object-cover rounded-lg absolute inset-0 size-full -z-10"
             />
 
-            <div className="flex gap-2 items-center rounded-s-full bg-[#08182FBF] py-1.5 px-4 absolute top-4 left-0 cursor-pointer transition-colors hover:bg-[#08182F]">
+            <div className="flex gap-2 items-center rounded-s-full bg-[#08182FBF] py-1.5 px-4 absolute top-4 end-0 cursor-pointer transition-colors hover:bg-[#08182F]">
                 <span>{actionLabel}</span>
-                <ArrowLeft size={16} />
+                <ArrowLeft size={16} className="ltr:-scale-x-100" />
             </div>
 
             <div className="mt-auto p-4">

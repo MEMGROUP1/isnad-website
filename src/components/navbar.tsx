@@ -2,11 +2,11 @@
 
 import { Logo } from "@/media";
 import Image from "next/image";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { Link, usePathname } from "@/i18n/routing";
 import BurgerMenu from "./burger-menu";
+import LanguageSwitcher from "./language-switcher";
 
 export default function Navbar() {
     const t = useTranslations("nav");
@@ -27,19 +27,9 @@ export default function Navbar() {
 
                 <Image src={Logo} alt="Logo" />
 
-                <Select>
-                    <SelectTrigger
-                        size="auto"
-                        className="bg-white/5 backdrop-blur-2xl rounded-full data-placeholder:text-white border-white/10 px-6! py-2.5! hidden lg:flex"
-                    >
-                        <SelectValue placeholder="IQ" />
-                    </SelectTrigger>
-
-                    <SelectContent>
-                        <SelectItem value="IQ">IQ</SelectItem>
-                        <SelectItem value="USD">USD</SelectItem>
-                    </SelectContent>
-                </Select>
+                <div className="hidden lg:block">
+                    <LanguageSwitcher />
+                </div>
             </div>
 
             <div className="bg-[#08182F7A] rounded-full px-1 py-0.75 hidden lg:flex items-center gap-4 mx-auto border border-white/5 h-full backdrop-blur-md">

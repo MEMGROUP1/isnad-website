@@ -1,10 +1,10 @@
 "use client";
 
 import { BurgerMenuIcon, ChevronIcon, EmailIcon, FacebookIcon, InstagramIcon, LinkedInIcon, PlanetIcon, WhatsappIcon, XIcon } from "@/assets/icons";
-import { Link, usePathname } from "@/i18n/routing";
+import { Link, usePathname, useRouter } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/media";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState, useTransition } from "react";
 import { Button } from "./ui/button";
@@ -13,6 +13,8 @@ export default function BurgerMenu() {
     const [open, setOpen] = useState(false);
     const t = useTranslations();
     const pathname = usePathname();
+    const router = useRouter();
+    const locale = useLocale();
     const [, startTransition] = useTransition();
 
     // Prevent body scroll when menu is open
@@ -51,9 +53,8 @@ export default function BurgerMenu() {
     ];
 
     const toggleLanguage = () => {
-        // Implement language toggle logic here if needed
-        // For now, it just reloads or redirects to the other locale
-        // Assuming current is 'ar' based on the image text
+        const nextLocale = locale === "ar" ? "en" : "ar";
+        router.replace(pathname, { locale: nextLocale });
     };
 
     return (
@@ -99,21 +100,22 @@ export default function BurgerMenu() {
                         ))}
                     </div>
 
-                    {/* Language Switcher (Inside list or separate) */}
-                    <div className="flex px-6 my-14">
-                        <button
-                            className="group flex items-center justify-between gap-4 text-lg md:text-xl font-normal transition-all w-full"
-                            onClick={toggleLanguage}
-                        >
-                            <div className="flex items-center gap-3">
-                                <PlanetIcon className="size-6" />
-                                <div className="text-[#B8C6E3]">
-                                    العربية <span className="text-secondary">AR</span>
+                        {/* Language Switcher (Inside list or separate) */}
+                        <div className="flex px-6 my-14">
+                            <button
+                                className="group flex items-center justify-between gap-4 text-lg md:text-xl font-normal transition-all w-full"
+                                onClick={toggleLanguage}
+                            >
+                                <div className="flex items-center gap-3">
+                                    <PlanetIcon className="size-6 text-[#9FABBF]" />
+                                    <div className="text-[#B8C6E3] font-aeonik">
+                                        {locale === "ar" ? "English" : "العربية"}
+                                        <span className="text-secondary ms-2 uppercase">{locale === "ar" ? "EN" : "AR"}</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <ChevronIcon className="" />
-                        </button>
-                    </div>
+                                <ChevronIcon className="" />
+                            </button>
+                        </div>
 
                     {/* Footer */}
                     <div className="p-8 space-y-4">

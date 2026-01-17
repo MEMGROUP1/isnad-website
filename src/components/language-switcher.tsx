@@ -16,12 +16,15 @@ export default function LanguageSwitcher() {
 
     return (
         <Select value={locale} onValueChange={handleLanguageChange}>
-            <SelectTrigger className="w-30">
-                <SelectValue placeholder={t("language")} />
+            <SelectTrigger
+                size="auto"
+                className="bg-white/5 backdrop-blur-2xl rounded-full data-placeholder:text-white border-white/10 px-6! py-2.5! uppercase"
+            >
+                <SelectValue placeholder={locale} />
             </SelectTrigger>
             <SelectContent>
-                <SelectItem value="ar">العربية</SelectItem>
-                <SelectItem value="en">English</SelectItem>
+                <SelectItem value="ar">AR</SelectItem>
+                <SelectItem value="en">EN</SelectItem>
             </SelectContent>
         </Select>
     );

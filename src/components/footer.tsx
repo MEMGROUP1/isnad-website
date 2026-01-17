@@ -85,7 +85,7 @@ export default function Footer() {
                         <div className="space-y-4">
                             <FooterSectionTitle text={t("contact")} />
 
-                            <div className="text-end" dir="ltr">
+                            <div className="text-start w-full" dir="ltr">
                                 <h1 className="text-[#97A8BF] w-full">07863036303</h1>
                                 <h1 className="text-[#97A8BF] w-full">info@isnad-iq.com</h1>
                             </div>

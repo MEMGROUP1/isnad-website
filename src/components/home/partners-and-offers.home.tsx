@@ -42,7 +42,7 @@ export default function HomePartnersAndOffers({ stats }: HomePartnersAndOffersPr
             </Section.Inner>
 
             <Image
-                className="absolute end-0 bottom-0 object-contain pointer-events-none w-auto h-full translate-y-1/6"
+                className="absolute end-0 bottom-0 object-contain pointer-events-none w-auto h-full translate-y-1/6 ltr:-scale-x-100"
                 src="/images/home/partners-and-offers/image.png"
                 alt="Description"
                 width={500}
