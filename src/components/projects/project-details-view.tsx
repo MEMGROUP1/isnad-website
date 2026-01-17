@@ -21,9 +21,6 @@ export default function ProjectDetailsView({ data }: Props) {
     const locale = useLocale() as "ar" | "en";
     const { back } = useRouter();
 
-    console.log(data);
-    
-
     return (
         <Section className="lg:h-auto bg-primary">
             <Section.Inner className="flex gap-8 w-full overflow-hidden">
