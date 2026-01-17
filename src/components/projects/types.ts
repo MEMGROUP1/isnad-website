@@ -3,10 +3,7 @@ export interface LocalizedString {
     en: string;
 }
 
-export interface Location {
-    lat: number;
-    lng: number;
-}
+export type Location = string;
 
 export interface Governorate {
     id: string | number;
@@ -23,8 +20,8 @@ export interface Complex {
     id: string;
     name: LocalizedString;
     description: LocalizedString;
-    background_img: string; // URL
-    logo: string; // URL
+    background_img: string;
+    logo: string;
     governorate: Governorate;
     location: Location;
     files: ComplexFile[];
@@ -33,14 +30,20 @@ export interface Complex {
         min_down_payment?: number;
         max_years?: number;
     };
-    starting_price?: number; // In IQD usually
-    max_price?: number; // In IQD usually
+    starting_price?: number;
+    max_price?: number;
     developer?: {
         name: LocalizedString;
         logo: string;
         complexes_count: number;
         properties_count: number;
     };
+    // Added fields from API
+    total_units?: number;
+    unit_type?: LocalizedString;
+    delivery_year?: number;
+    built_status?: LocalizedString;
+    is_exclusive?: LocalizedString;
 }
 
 export interface FeatureCategory {

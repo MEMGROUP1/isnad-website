@@ -21,31 +21,32 @@ export default function ProjectDetailsView({ data }: Props) {
     const locale = useLocale() as "ar" | "en";
     const { back } = useRouter();
 
+    console.log(data);
+    
+
     return (
         <Section className="lg:h-auto bg-primary">
-            <Section.Inner className="flex gap-8">
+            <Section.Inner className="flex gap-8 w-full overflow-hidden">
                 {/* Sidebar */}
                 <ProjectSidebar complex={data} />
 
                 {/* Main Content */}
-                <div className="lg:col-span-8 xl:col-span-9 order-1 lg:order-2 space-y-6">
-                    <button onClick={back} className="flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-8 group">
+                <div className="lg:col-span-8 xl:col-span-9 order-1 lg:order-2 space-y-6 w-full overflow-hidden">
+                    <button onClick={back} className="flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-4 group p-4 bg-black/20 rounded-2xl border border-white/10">
                         <ArrowLeftIcon
                             className={`w-5 h-5 ${
                                 locale === "ar" ? "rotate-180" : ""
                             } group-hover:-translate-x-1 transition-transform rtl:group-hover:translate-x-1`}
                         />
-                        <span>{locale === "ar" ? "العودة" : "Back"}</span>
                     </button>
 
                     <ProjectGallery files={data.files} />
 
                     {data.developer && <ProjectDeveloperInfo developer={data.developer} />}
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {data.installment && <ProjectInstallment installment={data.installment} />}
-                        {data.location && <ProjectMap location={data.location} title={data.name[locale]} />}
-                    </div>
+                    {data.installment && <ProjectInstallment installment={data.installment} startingPrice={data.starting_price} maxPrice={data.max_price} />}
+
+                    {data.location && <ProjectMap location={data.location} title={data.name[locale]} />}
 
                     {data.features && data.features.length > 0 && <ProjectFeatures complex={data} />}
 

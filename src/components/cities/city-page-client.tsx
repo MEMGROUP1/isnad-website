@@ -1,5 +1,7 @@
 "use client";
 
+import { ErrorMessage } from "@/components/feedback/error-message";
+import { LoadingSpinner } from "@/components/feedback/loading-spinner";
 import ProjectDetailsView from "@/components/projects/project-details-view";
 import { mapCityToComplex } from "@/lib/mappers";
 import { websiteService } from "@/services/website.service";
@@ -11,7 +13,7 @@ export default function CityPageClient() {
     const params = useParams();
     const id = params.id as string;
 
-    const { data, isLoading, error } = useQuery({
+    const { data, isLoading, error, refetch } = useQuery({
         queryKey: ["website-city", id],
         queryFn: () => websiteService.getCityById(id),
         enabled: !!id,
@@ -20,7 +22,7 @@ export default function CityPageClient() {
     if (isLoading) {
         return (
             <Section className="py-32 flex justify-center items-center h-screen">
-                <div className="text-white">Loading...</div>
+                <LoadingSpinner size="lg" />
             </Section>
         );
     }
@@ -28,7 +30,15 @@ export default function CityPageClient() {
     if (error || !data) {
         return (
             <Section className="py-32 flex justify-center items-center h-screen">
-                <div className="text-red-500">Error loading city</div>
+                <ErrorMessage
+                    title="Error loading city"
+                    message={
+                        error instanceof Error
+                            ? error.message
+                            : "Could not load city details. Please try again."
+                    }
+                    onRetry={() => refetch()}
+                />
             </Section>
         );
     }

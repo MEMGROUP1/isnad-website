@@ -19,7 +19,7 @@ export function ProjectGallery({ files = [], className }: ProjectGalleryProps) {
     const [activeImage, setActiveImage] = useState(images[0]);
 
     return (
-        <div className={cn("w-full flex flex-col gap-4", className)}>
+        <div className={cn("w-full flex flex-col gap-4 overflow-hidden", className)}>
             {/* Main Active Image */}
             <div className="relative w-full h-75 md:h-100 lg:h-125 rounded-3xl overflow-hidden border border-white/10 bg-gray-900 shadow-2xl group">
                  <Image 
@@ -34,15 +34,15 @@ export function ProjectGallery({ files = [], className }: ProjectGalleryProps) {
             </div>
 
             {/* Thumbnail Selection Slider */}
-            <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory scrollbar-hide">
+            <div className="flex gap-3 overflow-x-auto overflow-visible pb-2 w-full snap-x snap-mandatory hide-scrollbar">
                 {images.map((file) => (
                     <div 
                         key={file.id} 
                         className={cn(
                             "relative h-24 w-36 shrink-0 rounded-xl overflow-hidden cursor-pointer border transition-all duration-300 snap-start",
                             activeImage.id === file.id 
-                                ? "border-[#E7A356] ring-2 ring-[#E7A356]/20 opacity-100 scale-105" 
-                                : "border-white/10 opacity-60 hover:opacity-100 hover:border-white/30"
+                                ? "border-[#E7A356] ring-2 ring-[#E7A356]/20 opacity-100 scale-100" 
+                                : "border-white/10 opacity-60 hover:opacity-100 hover:border-white/30 scale-95"
                         )}
                         onClick={() => setActiveImage(file)}
                     >

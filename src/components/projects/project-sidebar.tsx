@@ -71,7 +71,7 @@ export function ProjectSidebar({ complex, className, ...props }: ProjectSidebarP
                     <div className="flex items-center justify-between w-full mb-2">
                         {/* Right Side Stat */}
                         <div className="flex flex-col items-center flex-1">
-                            <span className="text-lg tracking-wide">{formatCompactNumber(unitCount)}</span>
+                            <span className="text-lg tracking-wide">{formatCompactNumber(complex.total_units || unitCount)}</span>
                             <span className="text-xs text-[#AAB7CB] font-light mt-1">عقار سكني</span>
                         </div>
 
@@ -108,7 +108,7 @@ export function ProjectSidebar({ complex, className, ...props }: ProjectSidebarP
                         <div className="flex items-center gap-2">
                             <LocationIcon className="w-6 h-6 text-white shrink-0" strokeWidth={1.5} />
                             <span className="text-base font-normal text-white">
-                                {complex.governorate.name[locale]} / {complex.location?.lat ? "شارع نادي الصيد" : ""}
+                                {complex.governorate.name[locale]}
                             </span>
                         </div>
 

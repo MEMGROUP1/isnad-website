@@ -75,6 +75,11 @@ export interface ComplexDto {
     };
     media?: CityMediaDto[] | null;
     advantages?: AdvantageReadDto[] | null;
+    totalUnits?: number;
+    unitType?: LocalizedText;
+    deliveryYear?: number;
+    builtStatus?: LocalizedText;
+    isExclusive?: LocalizedText;
 }
 
 export interface DeveloperDto {

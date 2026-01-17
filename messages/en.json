@@ -11,6 +11,18 @@
         "call": "Call",
         "show_branch": "Show Branch"
     },
+    "feedback": {
+        "error": {
+            "title": "Error",
+            "default_message": "Something went wrong. Please try again.",
+            "retry": "Try Again"
+        },
+        "loading": "Loading...",
+        "no_data": {
+            "title": "No data available",
+            "description": "There are no items to display at this time."
+        }
+    },
 
     "nav": {
         "language": "Language",

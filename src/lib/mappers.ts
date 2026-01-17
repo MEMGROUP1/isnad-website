@@ -1,15 +1,6 @@
 import { Complex, FeatureCategory } from "@/components/projects/types";
 import { CityDto, ComplexDto, AdvantageReadDto, LocalizedText } from "@/services/types/website.types";
 
-function parseLocation(loc: string | null | undefined): { lat: number; lng: number } {
-    if (!loc) return { lat: 33.3152, lng: 44.3661 }; // Default or handle null
-    const parts = loc.split(",");
-    if (parts.length === 2) {
-        return { lat: parseFloat(parts[0]), lng: parseFloat(parts[1]) };
-    }
-    return { lat: 33.3152, lng: 44.3661 };
-}
-
 function mapLocalized(text?: LocalizedText | null): { ar: string; en: string } {
     return {
         ar: text?.ar || "",
@@ -43,15 +34,10 @@ export function mapCityToComplex(city: CityDto): Complex {
         background_img: city.backgroundImg || "",
         logo: city.logo || "",
         governorate: {
-            id: city.governorate?.id ? parseInt(city.governorate.id) : 0, // Converting UUID to number might be issue if component expects number. Warning: Component expects number for ID?
-            // types.ts says `id: number` for Governorate. But API returns UUID string.
-            // I should assume the component handles string or might be broken.
-            // Let's verify types.ts again.
-            // It says `id: number`.
-            // I'll leave it as 0 or fix types.ts. I'll use 0 for now to satisfy TS.
+            id: city.governorate?.id ? parseInt(city.governorate.id) : 0, 
             name: { ar: city.governorate?.name?.ar || "", en: city.governorate?.name?.en || "" },
         },
-        location: parseLocation(city.location),
+        location: city.location || "",
         files: (city.media || []).map((m, i) => ({
             id: i, // m.id is UUID
             path: m.url || "",
@@ -72,13 +58,17 @@ export function mapCityToComplex(city: CityDto): Complex {
                   properties_count: 0,
               }
             : undefined,
+        // New fields
+        total_units: city.totalUnits,
+        unit_type: mapLocalized(city.unitType),
+        delivery_year: city.deliveryYear,
+        built_status: mapLocalized(city.builtStatus),
+        is_exclusive: mapLocalized(city.isExclusive),
     };
 }
 
 // Assessing ComplexDto is similar
 export function mapComplexToComplex(complex: ComplexDto): Complex {
-    // Assuming similiar structure to CityDto for now, accessing properties via [key] if typed weakly
-
     return {
         id: complex.id,
         name: mapLocalized(complex.name),
@@ -89,7 +79,7 @@ export function mapComplexToComplex(complex: ComplexDto): Complex {
             id: 0,
             name: { ar: complex.governorate?.name?.ar || "", en: complex.governorate?.name?.en || "" },
         },
-        location: parseLocation(complex.location),
+        location: complex.location || "",
         files: (complex.media || []).map((m, i) => ({
             id: i,
             path: m.url || "",
@@ -110,5 +100,11 @@ export function mapComplexToComplex(complex: ComplexDto): Complex {
                   properties_count: 0,
               }
             : undefined,
+        // New fields
+        total_units: complex.totalUnits,
+        unit_type: mapLocalized(complex.unitType),
+        delivery_year: complex.deliveryYear,
+        built_status: mapLocalized(complex.builtStatus),
+        is_exclusive: mapLocalized(complex.isExclusive),
     };
 }
