@@ -63,17 +63,17 @@ export default function CompanyProfileInfo({ company }: CompanyProfileInfoProps)
 
                             <div className="my-2 border-t border-b border-white/6 flex items-center gap-1 text-[#B8C6E3] *:transition-all *:h-10">
                                 {instagram && (
-                                    <Link target="_blank" href={instagram} className="flex-1 grid place-items-center border-e border-white/10 hover:bg-white/5">
+                                    <Link target="_blank" href={instagram} className="flex-1 grid place-items-center border-e border-white/10 hover:bg-white/5 last:border-e-0">
                                         <InstagramIcon />
                                     </Link>
                                 )}
                                 {facebook && (
-                                    <Link target="_blank" href={facebook} className="flex-1 grid place-items-center border-e border-white/10 hover:bg-white/5">
+                                    <Link target="_blank" href={facebook} className="flex-1 grid place-items-center border-e border-white/10 hover:bg-white/5 last:border-e-0">
                                         <FacebookIcon />
                                     </Link>
                                 )}
                                 {website && (
-                                    <Link target="_blank" href={website} className="flex-1 grid place-items-center border-white/10 hover:bg-white/5">
+                                    <Link target="_blank" href={website} className="flex-1 grid place-items-center border-e border-white/10 hover:bg-white/5 last:border-e-0">
                                         <LinkIcon className="size-5.5" />
                                     </Link>
                                 )}

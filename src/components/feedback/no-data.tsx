@@ -14,12 +14,7 @@ export interface NoDataProps {
 /**
  * NoData component to display empty states.
  */
-export function NoData({
-    title,
-    description,
-    action,
-    className,
-}: NoDataProps) {
+export function NoData({ title, description, action, className }: NoDataProps) {
     const t = useTranslations("feedback.no_data");
 
     const displayTitle = title || t("title");
@@ -29,20 +24,16 @@ export function NoData({
         <div
             className={cn(
                 "flex flex-col items-center justify-center p-8 text-center rounded-lg border border-dashed text-muted-foreground",
-                className
+                className,
             )}
         >
             <div className="rounded-full bg-muted p-4 mb-4">
                 <FolderOpen className="h-8 w-8 text-muted-foreground/50" />
             </div>
-            <h3 className="text-lg font-medium text-foreground mb-1">
-                {displayTitle}
-            </h3>
-            <p className="text-sm max-w-sm mb-6 text-muted-foreground/80">
-                {displayDescription}
-            </p>
+            
+            <h3 className="text-lg font-medium mb-1">{displayTitle}</h3>
+            <p className="text-sm max-w-sm mb-6 text-muted-foreground/80">{displayDescription}</p>
             {action && <div>{action}</div>}
         </div>
     );
 }
-
