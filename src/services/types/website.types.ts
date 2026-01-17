@@ -122,6 +122,11 @@ export interface ComplexDto {
 export interface DeveloperDto {
     id: string;
     name?: LocalizedText;
+    description?: LocalizedText;
+    logo?: string | null;
+    backgroundImageUrl?: string | null;
+    totalComplexes?: number;
+    totalProjects?: number;
     [key: string]: unknown;
 }
 

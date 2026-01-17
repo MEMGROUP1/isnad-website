@@ -1,17 +1,20 @@
 "use client";
-/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { ArrowRightIcon } from "@/assets/icons";
+import { getLocalized } from "@/lib/utils";
 import { DevelopersAvatarFallback, DevelopersImageFallback } from "@/media";
+import { DeveloperDto } from "@/services/types/website.types";
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 
-
-// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface Props {
-    // TODO: Define props here
+    developer: DeveloperDto;
 }
 
-export default function RealEstateDevelopersCard() {
+export default function RealEstateDevelopersCard({ developer }: Props) {
+    const locale = useLocale();
+    const t = useTranslations("developers");
+
     return (
         <article className="flex flex-col gap-3 px-2 py-3 rounded-3xl border border-white/8 group cursor-pointer transition-colors duration-300 hover:border-white/20 hover:bg-white/5">
             <div className="flex items-center gap-2">
@@ -23,27 +26,36 @@ export default function RealEstateDevelopersCard() {
                     }}
                 >
                     <div className="p-px rounded-full bg-primary size-full">
-                        <Image src={DevelopersAvatarFallback} alt="" className="rounded-full size-full object-cover" />
+                        <Image
+                            src={developer.logo || DevelopersAvatarFallback}
+                            alt={getLocalized(developer.name, locale)}
+                            className="rounded-full size-full object-cover"
+                            width={33}
+                            height={33}
+                        />
                     </div>
                 </div>
 
                 <div className="">
-                    <h4 className="text-white transition-colors duration-300">
-                        FINآفلق جديدة للتطوير
-                    </h4>
+                    <h4 className="text-white transition-colors duration-300 line-clamp-1">{getLocalized(developer.name, locale)}</h4>
                     <div className="flex items-center text-xs">
-                        <span className="text-[#B8C6E3]">المجمعات: 6</span>
+                        <span className="text-[#B8C6E3]">
+                            {t("complexes")}: {developer.totalComplexes || 0}
+                        </span>
                         <span className="mx-2 text-[#132032]">|</span>
-                        <span className="text-[#B8C6E3]">المشاريع: 12</span>
+                        <span className="text-[#B8C6E3]">
+                            {t("projects")}: {developer.totalProjects || 0}
+                        </span>
                     </div>
                 </div>
             </div>
 
             <div className="h-58.75 rounded-xl overflow-hidden relative isolate">
                 <Image
-                    src={DevelopersImageFallback}
+                    src={developer.backgroundImageUrl || DevelopersImageFallback}
                     className="size-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
-                    alt=""
+                    alt={getLocalized(developer.name, locale)}
+                    fill
                 />
 
                 <div className="size-10 bg-white/90 backdrop-blur-sm rounded-full absolute top-4 end-4 flex items-center justify-center transition-all duration-300 group-hover:bg-primary shadow-sm hover:scale-110">
@@ -51,8 +63,8 @@ export default function RealEstateDevelopersCard() {
                 </div>
             </div>
 
-            <div className="text-white text-sm opacity-80 group-hover:opacity-100 transition-opacity">
-                تطمح لتقديم مشاريع تحقق الاستدامة البيئية وتلبي توقعات السكان.
+            <div className="text-white text-sm opacity-80 group-hover:opacity-100 transition-opacity line-clamp-2 min-h-[40px]">
+                {getLocalized(developer.description, locale)}
             </div>
         </article>
     );

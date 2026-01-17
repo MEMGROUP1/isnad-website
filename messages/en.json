@@ -104,7 +104,9 @@
     },
 
     "developers": {
-        "title": "Famous Real Estate Developers We Have Worked With"
+        "title": "Famous Real Estate Developers We Have Worked With",
+        "complexes": "Complexes",
+        "projects": "Projects"
     },
 
     "companies": {

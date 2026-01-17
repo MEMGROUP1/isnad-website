@@ -20,7 +20,7 @@ export default async function Home() {
 
             <HomeRealEstateCities totalCities={stats.totalCities} />
 
-            <HomeRealEstateDevelopers totalDevelopers={stats.totalDevelopers} />
+            <HomeRealEstateDevelopers />
 
             <HomePartnersAndOffers />
 

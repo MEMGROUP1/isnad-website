@@ -36,11 +36,7 @@ const DEVELOPERS = [
     },
 ];
 
-interface HomeRealEstateDevelopersProps {
-    totalDevelopers: number;
-}
-
-export default function HomeRealEstateDevelopers({ totalDevelopers }: HomeRealEstateDevelopersProps) {
+export default function HomeRealEstateDevelopers() {
     const t = useTranslations("home.real_estate_developers");
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -62,7 +58,6 @@ export default function HomeRealEstateDevelopers({ totalDevelopers }: HomeRealEs
                     <div className="mt-auto w-full flex flex-col items-start text-start mb-10 md:mb-0">
                         <div className="flex items-baseline gap-3 mb-6">
                             <h1 className="text-4xl md:text-5xl font-bold leading-tight">{t("title")}</h1>
-                            {totalDevelopers > 0 && <span className="text-3xl font-bold text-secondary">{totalDevelopers}</span>}
                         </div>
                         <p className="text-lg text-gray-200 max-w-lg leading-relaxed">{t("desc")}</p>
 
