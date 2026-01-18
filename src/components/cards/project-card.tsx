@@ -74,7 +74,7 @@ export default function ProjectCard({ className, disableHoverEffect = false, dat
             )}
 
             {data?.builtStatus && (
-                <div className="rounded-full px-3 py-1.5 border border-white/10 absolute end-4 top-4 bg-secondary/25 backdrop-blur-[28px]">{data.builtStatus[locale]}</div>
+                <div className="rounded-full px-3 py-1.5 border border-white/10 absolute end-4 top-4 bg-secondary/25 backdrop-blur-[28px] text-sm">{data.builtStatus[locale]}</div>
             )}
 
             {/* Content */}
