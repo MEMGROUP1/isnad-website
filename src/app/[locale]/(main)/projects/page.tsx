@@ -20,6 +20,7 @@ export default async function Page() {
         governorate: city.governorate,
         totalUnits: city.totalUnits,
         projectType: "city" as const,
+        builtStatus: city.builtStatus,
     }));
 
     const complexCards = complexes.map((complex: ComplexDto) => ({

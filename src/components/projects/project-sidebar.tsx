@@ -107,19 +107,6 @@ export function ProjectSidebar({ complex, className, ...props }: ProjectSidebarP
 
                     {/* Info Block (Location & Price) */}
                     <div className="flex flex-col gap-4 mb-6 mx-6">
-                        {/* Status Badge */}
-                        {complex.built_status && (
-                            <div
-                                className={`inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-sm font-semibold tracking-wide w-fit border ${
-                                    complex.built_status[locale as Locale]?.toLowerCase().includes("مبني") ||
-                                    complex.built_status[locale as Locale]?.toLowerCase().includes("built")
-                                        ? "bg-linear-to-r from-emerald-900/40 to-emerald-800/40 text-emerald-300 border-emerald-500/50 shadow-lg shadow-emerald-500/20"
-                                        : "bg-linear-to-r from-amber-900/40 to-amber-800/40 text-amber-300 border-amber-500/50 shadow-lg shadow-amber-500/20"
-                                }`}
-                            >
-                                {complex.built_status[locale as Locale]}
-                            </div>
-                        )}
                         {/* Location */}
                         <div className="flex items-center gap-2">
                             <LocationIcon className="w-6 h-6 text-white shrink-0" strokeWidth={1.5} />
