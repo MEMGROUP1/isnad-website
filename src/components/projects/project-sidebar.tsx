@@ -128,14 +128,14 @@ export function ProjectSidebar({ complex, className, ...props }: ProjectSidebarP
                     {/* Action Buttons */}
                     <div className="flex gap-4 w-full px-6 mb-4">
                         <button
-                            onClick={() => window.open(`tel:6303`, "_self")}
+                            onClick={() => window.open(`tel:07863036303`, "_self")}
                             className="flex-1 h-14 rounded-[2rem] border border-white/10 bg-[#16263D] hover:bg-[#1f304d] transition-colors flex items-center justify-center group"
                         >
                             <PhoneIcon className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
                         </button>
 
                         <button
-                            onClick={() => window.open(`https://wa.me/9647863036303`, "_blank")}
+                            onClick={() => window.open(`https://wa.me/07863036303`, "_blank")}
                             className="flex-1 h-14 rounded-[2rem] border border-white/10 bg-[#16263D] hover:bg-[#1f304d] transition-colors flex items-center justify-center group"
                         >
                             {/* Whatsapp SVG */}
