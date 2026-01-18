@@ -29,25 +29,24 @@ export default function ProjectDetailsView({ data }: Props) {
 
                 {/* Main Content */}
                 <div className="lg:col-span-8 xl:col-span-9 order-1 lg:order-2 space-y-6 w-full overflow-hidden">
-                    <button onClick={back} className="flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-4 group p-4 bg-black/20 rounded-2xl border border-white/10">
-                        <ArrowLeftIcon
-                            className={`w-5 h-5 ${
-                                locale === "ar" ? "rotate-180" : ""
-                            } group-hover:-translate-x-1 transition-transform rtl:group-hover:translate-x-1`}
-                        />
+                    <button
+                        onClick={back}
+                        className="flex items-center gap-2 text-white/60 hover:text-white transition-colors mb-4 group p-4 bg-black/20 rounded-2xl border border-white/10"
+                    >
+                        <ArrowLeftIcon className={`w-5 h-5 ${locale === "ar" ? "rotate-180" : ""} group-hover:-translate-x-1 transition-transform rtl:group-hover:translate-x-1`} />
                     </button>
 
                     <ProjectGallery files={data.files} />
 
-                    {data.developer && <ProjectDeveloperInfo developer={data.developer} />}
+                    <ProjectDescription description={data.description} />
 
                     {data.installment && <ProjectInstallment installment={data.installment} startingPrice={data.starting_price} maxPrice={data.max_price} />}
 
-                    {data.location && <ProjectMap location={data.location} title={data.name[locale]} />}
+                    {data.developer && <ProjectDeveloperInfo developer={data.developer} />}
 
                     {data.features && data.features.length > 0 && <ProjectFeatures complex={data} />}
 
-                    <ProjectDescription description={data.description} />
+                    {data.location && <ProjectMap location={data.location} title={data.name[locale]} />}
                 </div>
             </Section.Inner>
         </Section>

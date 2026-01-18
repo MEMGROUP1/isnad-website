@@ -322,12 +322,7 @@ export const PhoneCallIcon = (props: React.SVGProps<SVGSVGElement>) => (
             strokeLinecap="round"
             strokeLinejoin="round"
         />
-        <path
-            d="M13.8613 5.03981V3M17.5105 6.48926L18.9528 5.04694M18.9597 10.1383H20.9996"
-            stroke="#EEF5FF"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
+        <path d="M13.8613 5.03981V3M17.5105 6.48926L18.9528 5.04694M18.9597 10.1383H20.9996" stroke="#EEF5FF" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
 
@@ -390,5 +385,25 @@ export const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
         <path d="M4.92969 4.92896L19.0718 19.0711" stroke="white" strokeWidth="0.96" strokeLinecap="round" strokeLinejoin="round" />
         <path d="M4.92969 19.071L19.0718 4.92891" stroke="white" strokeWidth="0.96" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
+export const NavigationIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+        <path
+            opacity="0.4"
+            d="M21.5 12C21.5 7.02908 17.4709 3 12.5 3C7.52908 3 3.5 7.02908 3.5 12C3.5 16.9709 7.52908 21 12.5 21C17.4709 21 21.5 16.9709 21.5 12Z"
+            stroke="#C57340"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M13.6109 15.557L15.5724 9.69974C15.7436 9.18699 15.2533 8.7005 14.7425 8.87661L8.93575 10.8751C8.36559 11.0716 8.34516 11.8695 8.90267 12.0952L11.0987 12.9835C11.2602 13.0497 11.3886 13.1771 11.4558 13.3387L12.3908 15.5989C12.6214 16.1564 13.4192 16.1282 13.6109 15.557Z"
+            stroke="#C57340"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
     </svg>
 );

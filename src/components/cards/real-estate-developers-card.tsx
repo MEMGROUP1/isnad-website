@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRightIcon } from "@/assets/icons";
+import { useRouter } from "@/i18n/routing";
 import { getLocalized } from "@/lib/utils";
 import { DevelopersAvatarFallback, DevelopersImageFallback } from "@/media";
 import { DeveloperDto } from "@/services/types/website.types";
@@ -14,9 +15,13 @@ interface Props {
 export default function RealEstateDevelopersCard({ developer }: Props) {
     const locale = useLocale();
     const t = useTranslations("developers");
+    const router = useRouter();
 
     return (
-        <article className="flex flex-col gap-3 px-2 py-3 rounded-3xl border border-white/8 group cursor-pointer transition-colors duration-300 hover:border-white/20 hover:bg-white/5">
+        <article
+            onClick={() => router.push(`/developers/${developer.id}/projects`)}
+            className="flex flex-col gap-3 px-2 py-3 rounded-3xl border border-white/8 group cursor-pointer transition-colors duration-300 hover:border-white/20 hover:bg-white/5"
+        >
             <div className="flex items-center gap-2">
                 {/* avatar */}
                 <div

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Section from "../section";
 import { AvatarGroup } from "../ui/avatar-group";
 import { Button } from "../ui/button";
+import { Link } from "@/i18n/routing";
 
 interface HomePartnersAndOffersProps {
     stats: GeneralStatisticsDto;
@@ -21,12 +22,12 @@ export default function HomePartnersAndOffers({ stats }: HomePartnersAndOffersPr
 
                     <div className="flex gap-4">
                         <Button className="py-4 flex-1 lg:max-w-50" variant={"white"}>
-                            {t("show_partners")}
+                            <Link href={"/companies"}>{t("show_partners")}</Link>
                         </Button>
 
-                        <Button className="py-4 flex-1 lg:max-w-50" variant={"blur"}>
+                        {/* <Button className="py-4 flex-1 lg:max-w-50" variant={"blur"}>
                             {t("join_as_partner")}
-                        </Button>
+                        </Button> */}
                     </div>
                 </div>
 
@@ -37,7 +38,7 @@ export default function HomePartnersAndOffers({ stats }: HomePartnersAndOffersPr
                         className="*:size-10" // Override size if needed, though AvatarGroup default is size-9 md:size-10
                     />
 
-                    <p>{t("isnad_discount")}</p>
+                    <p>{t("isnad_discount", { companiesCount: stats.totalCompanies - 4 })}</p>
                 </div>
             </Section.Inner>
 

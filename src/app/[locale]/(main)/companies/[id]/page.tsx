@@ -40,7 +40,7 @@ export default async function CompanyProfile({ params }: CompanyProfileProps) {
     const company = await websiteService.getCompanyById(id);
 
     return (
-        <Section className="bg-primary mt-8">
+        <Section className="bg-primary mt-8 lg:h-auto min-h-screen">
             <Section.Inner className="flex items-stretch flex-col md:flex-row gap-8">
                 <CompanyProfileInfo company={company} />
 

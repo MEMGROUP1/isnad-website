@@ -1,30 +1,35 @@
 import { useTranslations } from "next-intl";
 import Navbar from "../navbar";
 import Section from "../section";
+import { GeneralStatisticsDto } from "@/services/types/website.types";
 
-export default function AboutHero() {
+interface AboutHeroProps {
+    stats: GeneralStatisticsDto;
+}
+
+export default function AboutHero({ stats }: AboutHeroProps) {
     const t = useTranslations("about.hero");
 
     return (
-        <Section backgroundImageUrl="/images/about/hero/bg.png">
+        <Section className="lg:h-auto min-h-screen flex flex-col" backgroundImageUrl="/images/about/hero/bg.png">
             <div
-                className="h-full flex flex-col"
+                className="flex flex-col flex-1"
                 style={{
                     background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(8, 24, 47, 0.949579) 92.58%, #08182F 100%)",
                 }}
             >
-                <Section.Inner className="flex-1 flex flex-col justify-end">
+                <Section.Inner className="flex-1 flex flex-col justify-between">
                     <Navbar />
 
-                    <div className="flex gap-4 lg:justify-end mb-10 mt-48 lg:mt-auto">
+                    <div className="flex gap-4 lg:justify-end mb-10 mt-48 md:mt-32">
                         <div className="min-w-max">
-                            <h2 className="text-[32px] md:text-[38px] lg:text-[48px]">25+</h2>
+                            <h2 className="text-[32px] md:text-[38px] lg:text-[48px]">{stats.totalCompanies - 4}+</h2>
                             <small>{t("system_count")}</small>
                         </div>
 
                         <div className="min-w-max">
-                            <h2 className="text-[32px] md:text-[38px] lg:text-[48px]">12+</h2>
-                            <small>{t("system_count")}</small>
+                            <h2 className="text-[32px] md:text-[38px] lg:text-[48px]">{stats.totalDevelopers - 4}+</h2>
+                            <small>{t("trust_count")}</small>
                         </div>
                     </div>
 

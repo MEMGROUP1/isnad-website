@@ -1,12 +1,12 @@
-import { FacebookIcon, InstagramIcon, LinkIcon, LocationIcon, MapIcon, PhoneCallIcon } from "@/assets/icons";
+import { PhoneCallIcon } from "@/assets/icons";
 import { getLocalized } from "@/lib/utils";
 import { CompaniesImageFallback, DevelopersAvatarFallback } from "@/media";
 import { CompanyDto } from "@/services/types/website.types";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
 import { Avatar } from "../ui/avatar";
 import { Button } from "../ui/button";
+import { BranchesDialog } from "./branches-dialog";
 
 interface CompanyProfileInfoProps {
     company: CompanyDto;
@@ -16,13 +16,13 @@ export default function CompanyProfileInfo({ company }: CompanyProfileInfoProps)
     const t = useTranslations("common");
     const locale = useLocale();
 
-    const getSocialLink = (type: string) => company.links?.find((l) => l.type?.toLowerCase() === type.toLowerCase())?.url;
+    // const getSocialLink = (type: string) => company.links?.find((l) => l.type?.toLowerCase() === type.toLowerCase())?.url;
 
-    const instagram = getSocialLink("instagram");
-    const facebook = getSocialLink("facebook");
-    const website = getSocialLink("website");
+    // const instagram = getSocialLink("instagram");
+    // const facebook = getSocialLink("facebook");
+    // const website = getSocialLink("website");
 
-    const branch = company.branches?.[0];
+    // const branch = company.branches?.[0];
 
     return (
         <div className="md:min-w-106 relative">
@@ -42,22 +42,27 @@ export default function CompanyProfileInfo({ company }: CompanyProfileInfoProps)
 
                         <div className="">
                             <h3 className="mb-1 text-lg text-white font-bold">{getLocalized(company.name, locale)}</h3>
-                            <p className="text-[#AAB7CB] text-xs">
-                                {company.types?.map((type) => getLocalized(type, locale)).join(", ")}
-                            </p>
+                            <div className="flex items-center gap-2 flex-wrap max-w-sm">
+                                {company.types?.map((type, index) => (
+                                    <div key={index} className="flex items-center text-xs text-[#AAB7CB]">
+                                        <span className="text-secondary me-0.5">#</span>
+                                        <span>{getLocalized(type, locale)}</span>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
-                    {branch && (
+                    {/* {branch && (
                         <div className={"flex items-center delay-300 my-2"}>
                             <LocationIcon className="text-[#B8C6E3]" />
                             <span className="text-white text-sm ms-1">
                                 {getLocalized(branch.governorate?.name, locale)} / {getLocalized(branch.address, locale)}
                             </span>
                         </div>
-                    )}
+                    )} */}
 
-                    {(instagram || facebook || website) && (
+                    {/* {(instagram || facebook || website) && (
                         <div className="">
                             <h4 className="text-xs mb-2">{t("social_media_accounts")}</h4>
 
@@ -79,7 +84,7 @@ export default function CompanyProfileInfo({ company }: CompanyProfileInfoProps)
                                 )}
                             </div>
                         </div>
-                    )}
+                    )} */}
 
                     <div className="flex gap-4 mt-4">
                         {company.phone && (
@@ -90,14 +95,7 @@ export default function CompanyProfileInfo({ company }: CompanyProfileInfoProps)
                                 </a>
                             </Button>
                         )}
-                        {branch?.location && (
-                            <Button className="min-w-max rounded-2xl px-4! py-3" variant={"blur"} asChild>
-                                <a href={branch.location} target="_blank">
-                                    <MapIcon className="size-6" />
-                                    <span>{t("show_branch")}</span>
-                                </a>
-                            </Button>
-                        )}
+                        <BranchesDialog branches={company.branches || []} />
                     </div>
                 </div>
             </div>

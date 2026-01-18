@@ -4,6 +4,7 @@ import Section from "../section";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { AvatarGroup } from "../ui/avatar-group";
+import { Link } from "@/i18n/routing";
 
 interface HomeRealEstateCitiesProps {
     stats: GeneralStatisticsDto;
@@ -33,16 +34,16 @@ export default function HomeRealEstateCities({ stats }: HomeRealEstateCitiesProp
                             <h4 className="text-lg">{t("cards.card_1.header")}</h4>
                             <p className="text-sm mb-10">{t("cards.card_1.desc")}</p>
 
-                            <Button variant={"blur"} className="w-full mt-auto">
-                                {t("cards.card_1.button")}
+                            <Button asChild variant={"blur"} className="w-full mt-auto">
+                                <Link href={"/projects"}>{t("cards.card_1.button")}</Link>
                             </Button>
                         </article>
 
                         <article className="flex flex-col backdrop-blur-[32px] p-4 rounded-3xl border border-white/10">
                             <h4 className="text-lg">{t("cards.card_2.header", { count: stats.totalCities })}</h4>
                             <p className="text-sm mb-10">{t("cards.card_2.desc")}</p>
-                            <Button variant={"blur"} className="w-full mt-auto">
-                                {t("cards.card_2.button")}
+                            <Button asChild variant={"blur"} className="w-full mt-auto">
+                                <Link href={"/projects"}>{t("cards.card_2.button")}</Link>
                             </Button>
                         </article>
                     </div>
@@ -59,14 +60,11 @@ export default function HomeRealEstateCities({ stats }: HomeRealEstateCitiesProp
                                     <p className="text-sm">{t("cards.card_3.desc")}</p>
                                 </div>
 
-                                <AvatarGroup
-                                    images={stats.projectLogos || []}
-                                    totalCount={stats.totalProjects}
-                                />
+                                <AvatarGroup images={stats.projectLogos || []} totalCount={stats.totalProjects} />
                             </div>
 
-                            <Button variant={"blur"} className="w-full">
-                                {t("cards.card_3.button")}
+                            <Button asChild variant={"blur"} className="w-full mt-auto">
+                                <Link href={"/projects"}>{t("cards.card_3.button")}</Link>
                             </Button>
                         </article>
                     </div>

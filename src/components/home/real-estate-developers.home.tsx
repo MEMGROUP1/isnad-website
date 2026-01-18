@@ -7,6 +7,7 @@ import { useState } from "react";
 import Section from "../section";
 import { Button } from "../ui/button";
 import VerticalSwiper from "../vertical-swiper";
+import { Link } from "@/i18n/routing";
 
 // Fallback images if API returns empty array
 const FALLBACK_IMAGES = [
@@ -26,8 +27,7 @@ export default function HomeRealEstateDevelopers({ stats }: HomeRealEstateDevelo
     const t = useTranslations("home.real_estate_developers");
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const developers =
-        stats.developerBackgrounds && stats.developerBackgrounds.length > 0 ? stats.developerBackgrounds : FALLBACK_IMAGES;
+    const developers = stats.developerBackgrounds && stats.developerBackgrounds.length > 0 ? stats.developerBackgrounds : FALLBACK_IMAGES;
 
     return (
         <Section className="min-h-screen relative overflow-hidden bg-black text-white hidden lg:flex">
@@ -51,12 +51,12 @@ export default function HomeRealEstateDevelopers({ stats }: HomeRealEstateDevelo
                         <p className="text-lg text-gray-200 max-w-lg leading-relaxed">{t("desc")}</p>
 
                         <div className="mt-10 flex gap-4 w-full">
-                            <Button className="py-3.5 flex-1 lg:max-w-50" variant={"white"}>
-                                {t("show_all")}
+                            <Button asChild className="py-3.5 flex-1 lg:max-w-50" variant={"white"}>
+                                <Link href={"/developers"}>{t("show_all")}</Link>
                             </Button>
-                            <Button className="py-3.5 flex-1 lg:max-w-50" variant={"blur"}>
+                            {/* <Button className="py-3.5 flex-1 lg:max-w-50" variant={"blur"}>
                                 {t("join_us")}
-                            </Button>
+                            </Button> */}
                         </div>
                     </div>
                 </div>

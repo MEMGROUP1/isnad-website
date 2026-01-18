@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "@/i18n/routing";
 import { AvatarGroup } from "../ui/avatar-group";
 import { cn } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
@@ -13,6 +14,7 @@ interface Props {
     logos: string[];
     backgroundImageUrl: string;
     actionLabel?: string;
+    viewButtonPath?: string;
 }
 
 export default function HomeCard({
@@ -23,16 +25,13 @@ export default function HomeCard({
     logos,
     backgroundImageUrl,
     actionLabel = "عرض الشركات",
+    viewButtonPath,
 }: Props) {
     return (
         <article
-            className={cn(
-                "text-white relative w-75 h-100 rounded-md overflow-hidden flex flex-col",
-                className
-            )}
+            className={cn("text-white relative w-75 h-100 rounded-md overflow-hidden flex flex-col", className)}
             style={{
-                background:
-                    "linear-gradient(180deg, rgba(25, 25, 25, 0) 41.78%, rgba(8, 24, 47, 0.9) 84.1%)",
+                background: "linear-gradient(180deg, rgba(25, 25, 25, 0) 41.78%, rgba(8, 24, 47, 0.9) 84.1%)",
             }}
         >
             <Image
@@ -43,24 +42,27 @@ export default function HomeCard({
                 className="w-full object-cover rounded-lg absolute inset-0 size-full -z-10"
             />
 
-            <div className="flex gap-2 items-center rounded-s-full bg-[#08182FBF] py-1.5 px-4 absolute top-4 end-0 cursor-pointer transition-colors hover:bg-[#08182F]">
+            <Link
+                href={viewButtonPath || "#"}
+                className="flex gap-2 items-center rounded-s-full bg-[#08182FBF] py-1.5 px-4 absolute top-4 end-0 cursor-pointer transition-colors hover:bg-[#08182F]"
+            >
                 <span>{actionLabel}</span>
                 <ArrowLeft size={16} className="ltr:-scale-x-100" />
-            </div>
+            </Link>
 
             <div className="mt-auto p-4">
                 <div className="flex items-center gap-2 mb-3.5">
                     <AvatarGroup images={logos} totalCount={count} />
 
                     <div className="">
-                        <div className="text-[32px] leading-8" dir="ltr">{count}+</div>
+                        <div className="text-[32px] leading-8" dir="ltr">
+                            {count}+
+                        </div>
                         <div className="text-sm">{label}</div>
                     </div>
                 </div>
 
-                <div className="text-sm line-clamp-2">
-                    {description}
-                </div>
+                <div className="text-sm line-clamp-2">{description}</div>
             </div>
         </article>
     );

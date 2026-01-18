@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import Section from "../section";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import { Link } from "@/i18n/routing";
 
 export function AboutServices() {
     const t = useTranslations("about.services");
@@ -39,11 +40,13 @@ export function AboutServices() {
                         </div>
 
                         <div className="flex gap-3 *:flex-1 md:*:max-w-50">
-                            <Button className="py-4">{t("view_all")}</Button>
-
-                            <Button variant={"white"} className="border border-[#212F43] py-4">
-                                {t("join_partner")}
+                            <Button className="py-4" asChild>
+                                <Link href={"/companies"}>{t("view_all")}</Link>
                             </Button>
+
+                            {/* <Button variant={"white"} className="border border-[#212F43] py-4">
+                                {t("join_partner")}
+                            </Button> */}
                         </div>
                     </div>
                 </div>

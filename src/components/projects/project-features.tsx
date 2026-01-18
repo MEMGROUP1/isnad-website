@@ -30,7 +30,7 @@ export function ProjectFeatures({ complex, className }: ProjectFeaturesProps) {
                 {features.map((category, idx) => {
                     return (
                         <div key={idx} className="flex flex-col gap-4 w-full">
-                            <ul className="flex flex-wrap gap-3 *:min-w-64 *:max-w-96 *:flex-1">
+                            <ul className="flex flex-wrap gap-3 *:min-w-64 *:flex-1">
                                 {category.items.map((item, i) => (
                                     <li key={i} className="flex items-center gap-3 text-sm text-gray-300">
                                         <div className="shrink-0 mt-0.5">

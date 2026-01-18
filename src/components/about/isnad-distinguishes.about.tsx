@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import Section from "../section";
@@ -96,12 +98,8 @@ function Card({ title, desc }: { title: string; desc: string }) {
                 }}
             />
 
-            <h2 className={`relative z-10 text-[32px] transition-colors duration-700 ${isExpanded ? "text-white delay-150" : ""}`}>
-                {title}
-            </h2>
-            <p className={`relative z-10 transition-colors duration-700 ${isExpanded ? "text-white delay-150" : ""}`}>
-                {desc}
-            </p>
+            <h2 className={`relative z-10 text-[32px] transition-colors duration-700 ${isExpanded ? "text-white delay-150" : ""}`}>{title}</h2>
+            <p className={`relative z-10 transition-colors duration-700 ${isExpanded ? "text-white delay-150" : ""}`}>{desc}</p>
         </div>
     );
 }

@@ -1,6 +1,6 @@
 export interface LocalizedText {
-    ar?: string | null;
-    en?: string | null;
+    ar?: string;
+    en?: string;
 }
 
 export interface CityDto {
