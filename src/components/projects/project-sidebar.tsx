@@ -34,7 +34,7 @@ export function ProjectSidebar({ complex, className, ...props }: ProjectSidebarP
 
     const developer = complex.developer;
     // Fallbacks if data is missing
-    const unitCount = developer?.properties_count || 0;
+    const unitCount = 0;
     // const towerCount = developer?.complexes_count || 0;
 
     // Price formatting logic - memoized

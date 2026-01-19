@@ -22,22 +22,32 @@ export default function AboutPartnersSection() {
         queryFn: () => websiteService.getCompanies(),
     });
 
-    const categories = useMemo(() => {
-        return COMPANY_TYPE.filter((cat) => {
+    const availableCategories = useMemo(() => {
+        const available = new Set<string>();
+        COMPANY_TYPE.forEach((cat) => {
             const labelEn = COMPANY_TYPE_LABELS_EN[cat.value as keyof typeof COMPANY_TYPE_LABELS_EN];
             const labelAr = COMPANY_TYPE_LABELS_AR[cat.value as keyof typeof COMPANY_TYPE_LABELS_AR];
 
-            return companies.some((company) => company.types.some((t) => t.en === labelEn || t.en === cat.value || t.ar === labelAr || t.ar === cat.value));
+            const hasCompany = companies.some((company) =>
+                company.types.some((t) => t.en === labelEn || t.en === cat.value || t.ar === labelAr || t.ar === cat.value),
+            );
+            if (hasCompany) {
+                available.add(cat.value);
+            }
         });
+        return available;
     }, [companies]);
 
     const [activeCategoryValue, setActiveCategoryValue] = useState<string | null>(null);
 
     useEffect(() => {
-        if (!activeCategoryValue && categories.length > 0) {
-            setActiveCategoryValue(categories[0].value);
+        if (!activeCategoryValue && availableCategories.size > 0) {
+            const firstAvailable = COMPANY_TYPE.find((cat) => availableCategories.has(cat.value));
+            if (firstAvailable) {
+                setActiveCategoryValue(firstAvailable.value);
+            }
         }
-    }, [categories, activeCategoryValue]);
+    }, [availableCategories, activeCategoryValue]);
 
     const filteredCompanies = useMemo(() => {
         if (!activeCategoryValue) return [];
@@ -101,9 +111,7 @@ export default function AboutPartnersSection() {
             </Section>
         );
     }
-
-    if (categories.length === 0) return null;
-
+    
     return (
         <Section className="relative overflow-hidden hidden lg:flex" onMouseMove={handleMouseMove}>
             {/* services cards */}
@@ -142,22 +150,28 @@ export default function AboutPartnersSection() {
                     <div className="my-auto px-8">
                         <h1 className="text-[48px] mb-6" dangerouslySetInnerHTML={{ __html: t("title") }}></h1>
                         <p className="text-lg text-[#B8C6E3] max-w-110">{t("desc")}</p>
-                        <div className="flex flex-col gap-2 mt-8 overflow-y-auto scrollbar-hide">
-                            {categories.map((cat) => {
+                        <div className="flex flex-col gap-2 mt-8 overflow-y-auto max-h-96 hide-scrollbar">
+                            {COMPANY_TYPE.map((cat) => {
                                 const isSelected = cat.value === activeCategoryValue;
+                                const isDisabled = !availableCategories.has(cat.value);
 
                                 return (
                                     <button
                                         key={cat.value}
-                                        onClick={() => setActiveCategoryValue(cat.value)}
+                                        onClick={() => !isDisabled && setActiveCategoryValue(cat.value)}
+                                        disabled={isDisabled}
                                         className={cn(
                                             "w-54.5 h-11.75 shrink-0 flex items-center text-start px-4 transition-all duration-300 border-b",
-                                            isSelected ? "text-[#C57340]" : "text-[#BCC6D8] border-[#FFFFFF0D]",
+                                            isSelected
+                                                ? "text-[#C57340]"
+                                                : isDisabled
+                                                ? "text-gray-500/50 border-transparent cursor-not-allowed"
+                                                : "text-[#BCC6D8] border-[#FFFFFF0D]",
                                         )}
                                         style={
                                             isSelected
                                                 ? {
-                                                      borderImageSource: "linear-gradient(90deg, rgba(197, 115, 64, 0) 19.94%, #C57340 64.68%, rgba(197, 115, 64, 0) 101.15%)",
+                                                      borderImageSource: `linear-gradient(${isRtl ? "90deg" : "270deg"}, rgba(197, 115, 64, 0) 19.94%, #C57340 64.68%, rgba(197, 115, 64, 0) 101.15%)`,
                                                       borderImageSlice: 1,
                                                       borderBottomWidth: "1px",
                                                       borderStyle: "solid",

@@ -57,8 +57,6 @@ export function mapCityToComplex(city: CityDto): Complex {
                   logo: city.developer.logo || "",
                   total_cities: city.developer.totalCities || 0,
                   total_complexes: city.developer.totalComplexes || 0,
-                  complexes_count: 0, // Deprecated
-                  properties_count: 0, // Deprecated
               }
             : undefined,
         // New fields
@@ -102,8 +100,6 @@ export function mapComplexToComplex(complex: ComplexDto): Complex {
                   logo: complex.developer.logo || "",
                   total_cities: complex.developer.totalCities || 0,
                   total_complexes: complex.developer.totalComplexes || 0,
-                  complexes_count: 0, // Deprecated
-                  properties_count: 0, // Deprecated
               }
             : undefined,
         // New fields
