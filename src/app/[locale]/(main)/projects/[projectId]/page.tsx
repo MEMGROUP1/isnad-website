@@ -67,8 +67,9 @@ const mockComplex: Complex = {
     developer: {
         name: { ar: "إسناد", en: "ISNAD" },
         logo: "", // Empty to trigger CSS fallback
-        complexes_count: 3,
-        properties_count: 200,
+        total_cities: 3,
+        total_complexes: 200,
+        id: "",
     },
     location: "",
 };
@@ -123,11 +124,7 @@ export default function ProjectPage() {
 
                     {/* Installment Section */}
                     {mockComplex.installment && (
-                        <ProjectInstallment
-                            installment={mockComplex.installment}
-                            startingPrice={mockComplex.starting_price}
-                            maxPrice={mockComplex.max_price ?? 1000000000}
-                        />
+                        <ProjectInstallment installment={mockComplex.installment} startingPrice={mockComplex.starting_price} maxPrice={mockComplex.max_price ?? 1000000000} />
                     )}
 
                     {/* Developer & Price Info */}

@@ -36,7 +36,6 @@ export interface Complex {
         id: string;
         name: LocalizedString;
         logo: string;
-        complexes_count: number; // totalComplexes + totalCities (or just pass them both?)
         // Let's keep these counts as generic as possible or map them specifically 
         // Logic might be: one count for complexes, one for projects
         total_cities?: number;
