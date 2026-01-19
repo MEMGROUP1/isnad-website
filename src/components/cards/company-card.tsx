@@ -83,7 +83,7 @@ export default function CompanyCard({ className, disableHoverEffect = false, com
                                         </div>
                                     ))}
                                 </div>
-                                
+
                                 {/* <div
                                     className={cn(
                                         "h-0.5 mb-2 transition-all duration-700 delay-300 origin-right",
@@ -114,7 +114,7 @@ export default function CompanyCard({ className, disableHoverEffect = false, com
 
                 <div
                     className={cn(
-                        "absolute start-0 bottom-0 w-104.5 h-66.5 blur-2xl -scale-100 z-0 rounded-full translate-1/6 transition-all duration-700",
+                        "absolute start-0 bottom-0 w-104.5 h-66.5 blur-2xl -scale-100 z-0 rounded-full ltr:translate-y-1/6 ltr:-translate-x-1/6 rtl:translate-1/6 transition-all duration-700",
                         disableHoverEffect ? "opacity-100" : "group-hover:opacity-100 opacity-90",
                     )}
                     style={{

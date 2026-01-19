@@ -2,8 +2,8 @@ import { Logo, MemLogo } from "@/media";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import FooterSectionTitle from "./footer-section-title";
-import Link from "next/link";
-import { InstagramIcon, FacebookIcon, LinkedInIcon, WhatsappIcon, EmailIcon } from "@/assets/icons";
+import { InstagramIcon, FacebookIcon, LinkedInIcon, WhatsappIcon, EmailIcon, LocationIcon } from "@/assets/icons";
+import { Link } from "@/i18n/routing";
 
 export default function Footer() {
     const t = useTranslations("footer");
@@ -21,19 +21,14 @@ export default function Footer() {
         { label: "Instagram", href: "https://www.instagram.com/isnad.iq/", icon: InstagramIcon },
         { label: "Facebook", href: "https://www.facebook.com/isnad.iq?mibextid=LQQJ4d", icon: FacebookIcon },
         { label: "LinkedIn", href: "https://www.linkedin.com/company/isnad-real-estate/", icon: LinkedInIcon },
-        { label: "Whatsapp", href: "https://wa.me/07863036303", icon: WhatsappIcon },
+        { label: "Whatsapp", href: "https://wa.me/+9647863036303", icon: WhatsappIcon },
         { label: "Email", href: "mailto:info@isnad-iq.com", icon: EmailIcon },
+        { label: "Location", href: "https://maps.apple/p/yHDKFAJ55V6UHJ", icon: LocationIcon },
     ];
 
     return (
         <footer className="w-full bg-primary px-4 md:px-8 lg:px-16 py-12 flex flex-col items-center justify-center overflow-hidden text-white relative mt-16">
-            <Image
-                src="/images/footer-image.png"
-                alt=""
-                width={1430}
-                height={370}
-                className="absolute w-full h-full pointer-events-none opacity-30"
-            />
+            <Image src="/images/footer-image.png" alt="" width={1430} height={370} className="absolute w-full h-full pointer-events-none opacity-30" />
 
             <div className="max-w-360 mx-auto w-full">
                 <div className="flex flex-col md:flex-row justify-between gap-6">
@@ -66,6 +61,7 @@ export default function Footer() {
                             <div className="flex gap-2 mt-3">
                                 {socials.map((social) => {
                                     const Icon = social.icon;
+
                                     return (
                                         <Link
                                             key={social.label}
@@ -97,8 +93,7 @@ export default function Footer() {
                     <div
                         className="h-0.5 mb-6"
                         style={{
-                            background:
-                                "linear-gradient(90deg, rgba(255, 255, 255, 0) 0.01%, rgba(255, 255, 255, 0.2) 48.09%, rgba(255, 255, 255, 0) 100.01%)",
+                            background: "linear-gradient(90deg, rgba(255, 255, 255, 0) 0.01%, rgba(255, 255, 255, 0.2) 48.09%, rgba(255, 255, 255, 0) 100.01%)",
                         }}
                     ></div>
 

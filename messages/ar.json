@@ -11,7 +11,8 @@
         "valid_until": "صالح حتى",
         "social_media_accounts": "حسابات السوشيل الميديا",
         "call": "اتصال",
-        "show_branch": "عرض الفروع"
+        "show_branch": "عرض الفروع",
+        "choose_branch": "اختر الفرع"
     },
 
     "feedback": {

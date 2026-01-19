@@ -33,10 +33,14 @@ export interface Complex {
     starting_price?: number;
     max_price?: number;
     developer?: {
+        id: string;
         name: LocalizedString;
         logo: string;
-        complexes_count: number;
-        properties_count: number;
+        complexes_count: number; // totalComplexes + totalCities (or just pass them both?)
+        // Let's keep these counts as generic as possible or map them specifically 
+        // Logic might be: one count for complexes, one for projects
+        total_cities?: number;
+        total_complexes?: number;
     };
     // Added fields from API
     total_units?: number;

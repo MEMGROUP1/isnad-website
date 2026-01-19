@@ -27,9 +27,7 @@ export default function AboutPartnersSection() {
             const labelEn = COMPANY_TYPE_LABELS_EN[cat.value as keyof typeof COMPANY_TYPE_LABELS_EN];
             const labelAr = COMPANY_TYPE_LABELS_AR[cat.value as keyof typeof COMPANY_TYPE_LABELS_AR];
 
-            return companies.some((company) =>
-                company.types.some((t) => t.en === labelEn || t.en === cat.value || t.ar === labelAr || t.ar === cat.value),
-            );
+            return companies.some((company) => company.types.some((t) => t.en === labelEn || t.en === cat.value || t.ar === labelAr || t.ar === cat.value));
         });
     }, [companies]);
 
@@ -50,9 +48,7 @@ export default function AboutPartnersSection() {
         const labelEn = COMPANY_TYPE_LABELS_EN[cat.value as keyof typeof COMPANY_TYPE_LABELS_EN];
         const labelAr = COMPANY_TYPE_LABELS_AR[cat.value as keyof typeof COMPANY_TYPE_LABELS_AR];
 
-        return companies.filter((company) =>
-            company.types.some((t) => t.en === labelEn || t.en === cat.value || t.ar === labelAr || t.ar === cat.value),
-        );
+        return companies.filter((company) => company.types.some((t) => t.en === labelEn || t.en === cat.value || t.ar === labelAr || t.ar === cat.value));
     }, [companies, activeCategoryValue]);
 
     const handleMouseMove = (e: React.MouseEvent) => {
@@ -161,8 +157,7 @@ export default function AboutPartnersSection() {
                                         style={
                                             isSelected
                                                 ? {
-                                                      borderImageSource:
-                                                          "linear-gradient(90deg, rgba(197, 115, 64, 0) 19.94%, #C57340 64.68%, rgba(197, 115, 64, 0) 101.15%)",
+                                                      borderImageSource: "linear-gradient(90deg, rgba(197, 115, 64, 0) 19.94%, #C57340 64.68%, rgba(197, 115, 64, 0) 101.15%)",
                                                       borderImageSlice: 1,
                                                       borderBottomWidth: "1px",
                                                       borderStyle: "solid",

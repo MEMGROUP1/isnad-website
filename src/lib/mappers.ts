@@ -52,10 +52,13 @@ export function mapCityToComplex(city: CityDto): Complex {
         max_price: city.maxPrice,
         developer: city.developer
             ? {
-                  name: { ar: city.developer.name?.ar || "", en: city.developer.name?.en || "" },
-                  logo: "",
-                  complexes_count: 0,
-                  properties_count: 0,
+                  id: city.developer.id,
+                  name: mapLocalized(city.developer.name),
+                  logo: city.developer.logo || "",
+                  total_cities: city.developer.totalCities || 0,
+                  total_complexes: city.developer.totalComplexes || 0,
+                  complexes_count: 0, // Deprecated
+                  properties_count: 0, // Deprecated
               }
             : undefined,
         // New fields
@@ -94,10 +97,13 @@ export function mapComplexToComplex(complex: ComplexDto): Complex {
         max_price: complex.maxPrice,
         developer: complex.developer
             ? {
-                  name: { ar: complex.developer.name?.ar || "", en: complex.developer.name?.en || "" },
-                  logo: "",
-                  complexes_count: 0,
-                  properties_count: 0,
+                  id: complex.developer.id,
+                  name: mapLocalized(complex.developer.name),
+                  logo: complex.developer.logo || "",
+                  total_cities: complex.developer.totalCities || 0,
+                  total_complexes: complex.developer.totalComplexes || 0,
+                  complexes_count: 0, // Deprecated
+                  properties_count: 0, // Deprecated
               }
             : undefined,
         // New fields

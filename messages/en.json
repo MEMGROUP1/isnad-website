@@ -11,7 +11,8 @@
         "valid_until": "Valid Until",
         "social_media_accounts": "Social Media Accounts",
         "call": "Call",
-        "show_branch": "Show Branch"
+        "show_branch": "Show Branch",
+        "choose_branch": "Choose Branch"
     },
 
     "feedback": {
@@ -147,7 +148,7 @@
             },
             "our_values": {
                 "title": "Mission",
-                "desc": "At Isnad... we accompany our clients from the moment of choosing the property until after delivery. We provide them with various residential and investment options, turnkey services, asset management, and a wide network of partnerships that ensures the highest value and service. We are the real support that turns real estate into an opportunity, and a house into a life."
+                "desc": "At Isnad... we accompany our clients from the moment of choosing the property until after delivery. We provide them with various residential and investment options, turnkey services, asset management, and a wide network of partnerships that ensures the highest value and service. <br/> <br/> We are the real support that turns real estate into an opportunity, and a house into a life."
             }
         },
 

@@ -3,6 +3,14 @@ export interface LocalizedText {
     en?: string;
 }
 
+export interface EmbeddedDeveloperDto {
+    id: string;
+    name?: LocalizedText;
+    totalCities?: number;
+    totalComplexes?: number;
+    logo?: string | null;
+}
+
 export interface CityDto {
     id: string;
     name?: LocalizedText;
@@ -25,10 +33,7 @@ export interface CityDto {
     isVisible?: LocalizedText;
     logo?: string | null;
     addedBy?: string | null;
-    developer?: {
-        id: string;
-        name?: { [key: string]: string };
-    };
+    developer?: EmbeddedDeveloperDto;
     unitType?: LocalizedText;
     deliveryYear?: number;
     media?: CityMediaDto[] | null;
@@ -106,10 +111,7 @@ export interface ComplexDto {
     minPrice?: number;
     location?: string | null;
     logo?: string | null;
-    developer?: {
-        id: string;
-        name?: { [key: string]: string };
-    };
+    developer?: EmbeddedDeveloperDto;
     media?: CityMediaDto[] | null;
     advantages?: AdvantageReadDto[] | null;
     totalUnits?: number;

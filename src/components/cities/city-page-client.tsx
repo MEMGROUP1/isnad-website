@@ -32,11 +32,7 @@ export default function CityPageClient() {
             <Section className="py-32 flex justify-center items-center h-screen">
                 <ErrorMessage
                     title="Error loading city"
-                    message={
-                        error instanceof Error
-                            ? error.message
-                            : "Could not load city details. Please try again."
-                    }
+                    message={error instanceof Error ? error.message : "Could not load city details. Please try again."}
                     onRetry={() => refetch()}
                 />
             </Section>
