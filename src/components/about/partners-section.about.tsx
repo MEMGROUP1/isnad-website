@@ -3,19 +3,20 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState, useMemo } from "react";
-import { cn } from "@/lib/utils";
 import ServiceCard from "../cards/service-card";
 import Section from "../section";
 import { useQuery } from "@tanstack/react-query";
 import { websiteService } from "@/services/website.service";
 import { COMPANY_TYPE, COMPANY_TYPE_LABELS_AR, COMPANY_TYPE_LABELS_EN } from "@/data/company.data";
 import { LoadingSpinner } from "../feedback/loading-spinner";
+import { CategoryList } from "./partners/category-list";
 
 export default function AboutPartnersSection() {
     const t = useTranslations("about.partners_section");
     const locale = useLocale();
     const isRtl = locale === "ar";
     const containerRef = useRef<HTMLDivElement>(null);
+    // listRef and scroll state logic removed directly here as it is moved to CategoryList
 
     const { data: companies = [], isLoading } = useQuery({
         queryKey: ["website-companies"],
@@ -28,9 +29,7 @@ export default function AboutPartnersSection() {
             const labelEn = COMPANY_TYPE_LABELS_EN[cat.value as keyof typeof COMPANY_TYPE_LABELS_EN];
             const labelAr = COMPANY_TYPE_LABELS_AR[cat.value as keyof typeof COMPANY_TYPE_LABELS_AR];
 
-            const hasCompany = companies.some((company) =>
-                company.types.some((t) => t.en === labelEn || t.en === cat.value || t.ar === labelAr || t.ar === cat.value),
-            );
+            const hasCompany = companies.some((company) => company.types.some((t) => t.en === labelEn || t.en === cat.value || t.ar === labelAr || t.ar === cat.value));
             if (hasCompany) {
                 available.add(cat.value);
             }
@@ -111,7 +110,7 @@ export default function AboutPartnersSection() {
             </Section>
         );
     }
-    
+
     return (
         <Section className="relative overflow-hidden hidden lg:flex" onMouseMove={handleMouseMove}>
             {/* services cards */}
@@ -150,42 +149,8 @@ export default function AboutPartnersSection() {
                     <div className="my-auto px-8">
                         <h1 className="text-[48px] mb-6" dangerouslySetInnerHTML={{ __html: t("title") }}></h1>
                         <p className="text-lg text-[#B8C6E3] max-w-110">{t("desc")}</p>
-                        <div className="flex flex-col gap-2 mt-8 overflow-y-auto max-h-96 hide-scrollbar">
-                            {COMPANY_TYPE.map((cat) => {
-                                const isSelected = cat.value === activeCategoryValue;
-                                const isDisabled = !availableCategories.has(cat.value);
 
-                                return (
-                                    <button
-                                        key={cat.value}
-                                        onClick={() => !isDisabled && setActiveCategoryValue(cat.value)}
-                                        disabled={isDisabled}
-                                        className={cn(
-                                            "w-54.5 h-11.75 shrink-0 flex items-center text-start px-4 transition-all duration-300 border-b",
-                                            isSelected
-                                                ? "text-[#C57340]"
-                                                : isDisabled
-                                                ? "text-gray-500/50 border-transparent cursor-not-allowed"
-                                                : "text-[#BCC6D8] border-[#FFFFFF0D]",
-                                        )}
-                                        style={
-                                            isSelected
-                                                ? {
-                                                      borderImageSource: `linear-gradient(${isRtl ? "90deg" : "270deg"}, rgba(197, 115, 64, 0) 19.94%, #C57340 64.68%, rgba(197, 115, 64, 0) 101.15%)`,
-                                                      borderImageSlice: 1,
-                                                      borderBottomWidth: "1px",
-                                                      borderStyle: "solid",
-                                                  }
-                                                : undefined
-                                        }
-                                    >
-                                        {isRtl
-                                            ? COMPANY_TYPE_LABELS_AR[cat.value as keyof typeof COMPANY_TYPE_LABELS_AR]
-                                            : COMPANY_TYPE_LABELS_EN[cat.value as keyof typeof COMPANY_TYPE_LABELS_EN]}
-                                    </button>
-                                );
-                            })}
-                        </div>
+                        <CategoryList activeCategoryValue={activeCategoryValue} availableCategories={availableCategories} onCategoryChange={setActiveCategoryValue} isRtl={isRtl} />
                     </div>
                 </Section.Inner>
             </div>
