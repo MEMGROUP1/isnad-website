@@ -74,7 +74,7 @@ export default function ProjectCard({ className, disableHoverEffect = false, dat
             )}
 
             {data?.builtStatus && (
-                <div className="rounded-full px-3 py-1.5 border border-white/10 absolute end-4 top-4 bg-secondary/25 backdrop-blur-[28px] text-sm">{data.builtStatus[locale]}</div>
+                <div className="rounded-full px-3 py-1.5 border border-white/10 absolute end-4 top-4 bg-secondary/25 backdrop-blur-[28px] text-smd">{data.builtStatus[locale]}</div>
             )}
 
             {/* Content */}
@@ -114,10 +114,10 @@ export default function ProjectCard({ className, disableHoverEffect = false, dat
                 )}
 
                 {/* Location */}
-                {/* <div className="flex items-center text-[#EEF5FF] text-sm gap-1">
-                    <LocationIcon className="size-5 shrink-0" />
+                <div className="flex items-center text-[#EEF5FF] text-sm gap-1">
+                    {/* <LocationIcon className="size-5 shrink-0" /> */}
                     <span>{data?.governorate?.name?.[locale] || (locale === "ar" ? "بغداد/اليرموك/شارع نادي الصيد" : "Baghdad/Yarmouk/Hunting Club Street")}</span>
-                </div> */}
+                </div>
             </div>
         </article>
     );

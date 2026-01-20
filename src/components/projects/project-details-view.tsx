@@ -36,7 +36,7 @@ export default function ProjectDetailsView({ data }: Props) {
                         <ArrowLeftIcon className={`w-5 h-5 ${locale === "ar" ? "rotate-180" : ""} group-hover:-translate-x-1 transition-transform rtl:group-hover:translate-x-1`} />
                     </button>
 
-                    <ProjectGallery files={data.files} />
+                    {data.files.length > 0 && <ProjectGallery files={data.files} />}
 
                     <ProjectDescription description={data.description} />
 

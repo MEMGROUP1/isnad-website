@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
+import { LocationIcon, PhoneIcon, WhatsappIcon } from "@/assets/icons";
+import { Locale } from "@/i18n/request";
 import { cn } from "@/lib/utils";
-import { CompaniesImageFallback, Logo } from "@/media"; // Using Logo from media as fallback
+import { CompaniesImageFallback } from "@/media"; // Using Logo from media as fallback
 import Image from "next/image";
+import { useParams } from "next/navigation";
 import { useMemo } from "react";
 import { Complex } from "./types";
-import { LocationIcon, PhoneIcon, WhatsappIcon } from "@/assets/icons";
-import { useParams } from "next/navigation";
-import { Locale } from "@/i18n/request";
 
 interface ProjectSidebarProps extends React.HTMLAttributes<HTMLDivElement> {
     complex: Complex;
@@ -32,7 +32,6 @@ export function ProjectSidebar({ complex, className, ...props }: ProjectSidebarP
         }).format(num);
     };
 
-    const developer = complex.developer;
     // Fallbacks if data is missing
     const unitCount = 0;
     // const towerCount = developer?.complexes_count || 0;
@@ -84,11 +83,11 @@ export function ProjectSidebar({ complex, className, ...props }: ProjectSidebarP
                             {/* Lift it up slightly into image */}
                             <div className="size-20 rounded-full outline-[3px] outline-white/10 bg-[#08182F] overflow-hidden flex items-center justify-center shadow-xl flex-2">
                                 <Image
-                                    src={developer?.logo || Logo} // Use developer logo or fallback
+                                    src={complex.logo} // Use developer logo or fallback
                                     alt="logo"
                                     width={90}
                                     height={90}
-                                    className="object-contain w-16 h-16"
+                                    className="object-contain rounded-full"
                                 />
                             </div>
                         </div>
