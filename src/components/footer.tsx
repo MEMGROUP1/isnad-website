@@ -66,7 +66,7 @@ export default function Footer() {
                     }}
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                     <div className="space-y-4">
                         <div className="flex justify-center md:block">
                             <FooterSectionTitle text={t("page_links")} />
@@ -85,11 +85,11 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div className="space-y-4 flex flex-col items-center lg:col-span-2 order-last lg:order-0 md:col-span-2 md:mt-4 lg:mt-0">
+                    <div className="space-y-4 flex flex-col lg:items-center lg:col-span-2 order-last lg:order-0 md:mt-4 lg:mt-0">
                         <FooterSectionTitle text={t("contact")} />
 
-                        <div className="text-center w-full space-y-2">
-                            <h1 className="text-[#97A8BF] w-full rtl:text-center ltr:text-center text-lg lg:text-xl" dir="ltr">
+                        <div className="lg:text-center w-full space-y-2">
+                            <h1 className="text-[#97A8BF] w-full rtl:text-right text-lg lg:text-xl" dir="ltr">
                                 +9647863036303
                             </h1>
                             <h1 className="text-[#97A8BF] w-full text-lg lg:text-xl">info@isnad-iq.com</h1>
