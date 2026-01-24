@@ -1,12 +1,12 @@
 import Footer from "@/components/footer";
 import { Locale } from "@/i18n/request";
 import { routing } from "@/i18n/routing";
+import Providers from "@/providers/index.providers";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
-import QueryProvider from "@/providers/query-provider";
 import "../globals.css";
 
 const expoArabic = localFont({
@@ -70,12 +70,12 @@ export default async function LocaleLayout({
     return (
         <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
             <body className={`${expoArabic.variable} font-sans antialiased bg-primary`}>
-                <QueryProvider>
+                <Providers>
                     <NextIntlClientProvider messages={messages}>
                         {children}
                         <Footer />
                     </NextIntlClientProvider>
-                </QueryProvider>
+                </Providers>
             </body>
         </html>
     );

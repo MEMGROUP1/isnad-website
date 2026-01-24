@@ -19,7 +19,7 @@ export default function LanguageSwitcher() {
                 <SelectValue placeholder={locale} />
             </SelectTrigger>
             
-            <SelectContent className="min-h-max">
+            <SelectContent className="min-h-max mt-10 z-9999">
                 <SelectItem value="ar">AR</SelectItem>
                 <SelectItem value="en">EN</SelectItem>
             </SelectContent>

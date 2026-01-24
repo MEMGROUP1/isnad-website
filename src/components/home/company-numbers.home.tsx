@@ -38,7 +38,7 @@ export default function HomeCompanyNumbers({ stats }: HomeCompanyNumbersProps) {
     ];
 
     return (
-        <Section className="lg:h-auto bg-white">
+        <Section className="lg:h-auto bg-[#D9E2EC]">
             <Section.Inner className="flex flex-col lg:flex-row items-stretch *:flex-1 gap-10 py-16 h-auto">
                 <div className="flex flex-col text-black">
                     <h3 className="mb-10 font-sans">{t("title")}</h3>
