@@ -97,11 +97,11 @@ export default function Footer() {
                     </div>
 
                     <div className="space-y-4">
-                        <div className="flex justify-center md:block">
+                        <div className="">
                             <FooterSectionTitle text={t("isnad_branches")} />
                         </div>
 
-                        <div className="space-y-3 flex flex-col items-center md:items-start text-center md:text-start">
+                        <div className="space-y-3 flex flex-col items-start">
                             <div className="flex flex-col space-y-1">
                                 <span className="text-xs text-white">{t("branches.iraqi")}</span>
                                 <span className="text-xs text-[#B8C6E3]">{t("branches.iraqi_address_1")}</span>
