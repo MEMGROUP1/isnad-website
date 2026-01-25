@@ -33,6 +33,9 @@ export default function DevelopersGrid() {
         return <NoData className="bg-white/5 border-white/10 text-white" />;
     }
 
+    console.log(developers);
+    
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {developers.map((developer) => (

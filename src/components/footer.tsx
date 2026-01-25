@@ -77,7 +77,7 @@ export default function Footer() {
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className="text-sm text-center rounded-[48px] py-2.75 px-4 opacity-100 text-white bg-white/5 hover:bg-white/10 w-full cursor-pointer transition-colors duration-300 flex items-center justify-center"
+                                    className="text-sm text-center rounded-[48px] py-2.75 opacity-100 text-white bg-white/5 hover:bg-white/10 w-full cursor-pointer transition-colors duration-300 flex items-center justify-center"
                                 >
                                     {link.label}
                                 </Link>
@@ -85,14 +85,16 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div className="space-y-4 flex flex-col lg:items-center lg:col-span-2 order-last lg:order-0 md:mt-4 lg:mt-0">
-                        <FooterSectionTitle text={t("contact")} />
+                    <div className="flex flex-col lg:items-center lg:col-span-2 order-last lg:order-0 md:mt-4 lg:mt-0">
+                        <div className="max-w-75 space-y-4">
+                            <FooterSectionTitle text={t("contact")} />
 
-                        <div className="lg:text-center w-full space-y-2">
-                            <h1 className="text-[#97A8BF] w-full rtl:text-right text-lg lg:text-xl" dir="ltr">
-                                +9647863036303
-                            </h1>
-                            <h1 className="text-[#97A8BF] w-full text-lg lg:text-xl">info@isnad-iq.com</h1>
+                            <div className="space-y-2 mx-auto">
+                                <h1 className="text-[#97A8BF] w-full rtl:text-right text-lg lg:text-xl" dir="ltr">
+                                    6303
+                                </h1>
+                                <h1 className="text-[#97A8BF] w-full text-lg lg:text-xl">info@isnad-iq.com</h1>
+                            </div>
                         </div>
                     </div>
 

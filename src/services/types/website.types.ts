@@ -128,7 +128,7 @@ export interface DeveloperDto {
     logo?: string | null;
     backgroundImageUrl?: string | null;
     totalComplexes?: number;
-    totalProjects?: number;
+    totalCities?: number;
     [key: string]: unknown;
 }
 
