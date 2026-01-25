@@ -1,4 +1,4 @@
-import { EmailIcon, FacebookIcon, InstagramIcon, LinkedInIcon, WhatsappIcon } from "@/assets/icons";
+import { EmailIcon, FacebookIcon, InstagramIcon, LinkedInIcon, LocationIcon, WhatsappIcon } from "@/assets/icons";
 import { Link } from "@/i18n/routing";
 import { Logo, MemLogo } from "@/media";
 import { useTranslations } from "next-intl";
@@ -23,7 +23,7 @@ export default function Footer() {
         { label: "LinkedIn", href: "https://www.linkedin.com/company/isnad-real-estate/", icon: LinkedInIcon },
         { label: "Whatsapp", href: "https://wa.me/+9647863036303", icon: WhatsappIcon },
         { label: "Email", href: "mailto:info@isnad-iq.com", icon: EmailIcon },
-        // { label: "Location", href: "https://maps.apple/p/yHDKFAJ55V6UHJ", icon: LocationIcon },
+        { label: "Location", href: "https://maps.app.goo.gl/bWfXMkseRircKVzZA", icon: LocationIcon },
     ];
 
     return (
