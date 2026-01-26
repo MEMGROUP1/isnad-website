@@ -231,10 +231,11 @@
         },
         "site_by": "Website By",
         "copyright": "© ISNAD Global 2025 / Privacy Policy",
-        "isnad_branches": "Isnad Branches",
+        "isnad_branches": "Isnad Locations",
         "branches": {
             "iraqi": "Inside Iraq",
             "iraqi_address_1": "Baghdad, Al-Dawoodi, Al-Tanki Street",
+            "iraqi_address_2": "Basra - Al-Jumhuriya Street - Opposite Basra Oil Hospital",
 
             "new_york": "Outside Iraq",
             "new_york_address_1": "ONE TRADE CENTER , 85TH FLOOR , NEW YORK , NY 10007, United State"

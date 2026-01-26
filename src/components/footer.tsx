@@ -1,4 +1,4 @@
-import { EmailIcon, FacebookIcon, InstagramIcon, LinkedInIcon, LocationIcon, WhatsappIcon } from "@/assets/icons";
+import { EmailIcon, FacebookIcon, InstagramIcon, LinkedInIcon, WhatsappIcon } from "@/assets/icons";
 import { Link } from "@/i18n/routing";
 import { Logo, MemLogo } from "@/media";
 import { useTranslations } from "next-intl";
@@ -23,7 +23,6 @@ export default function Footer() {
         { label: "LinkedIn", href: "https://www.linkedin.com/company/isnad-real-estate/", icon: LinkedInIcon },
         { label: "Whatsapp", href: "https://wa.me/+9647863036303", icon: WhatsappIcon },
         { label: "Email", href: "mailto:info@isnad-iq.com", icon: EmailIcon },
-        { label: "Location", href: "https://maps.app.goo.gl/bWfXMkseRircKVzZA", icon: LocationIcon },
     ];
 
     return (
@@ -106,12 +105,19 @@ export default function Footer() {
                         <div className="space-y-3 flex flex-col items-start">
                             <div className="flex flex-col space-y-1">
                                 <span className="text-xs text-white">{t("branches.iraqi")}</span>
-                                <span className="text-xs text-[#B8C6E3]">{t("branches.iraqi_address_1")}</span>
+                                <Link target="_blank" href={"https://maps.app.goo.gl/mJjGVEuoZhNUyr4L8"} className="text-xs text-[#B8C6E3] hover:underline">
+                                    {t("branches.iraqi_address_1")}
+                                </Link>
+                                <Link target="_blank" href={"https://maps.google.com/?q=30.524437,47.808998"} className="text-xs text-[#B8C6E3] hover:underline">
+                                    {t("branches.iraqi_address_2")}
+                                </Link>
                             </div>
 
                             <div className="flex flex-col space-y-1">
                                 <span className="text-xs text-white">{t("branches.new_york")}</span>
-                                <span className="text-xs text-[#B8C6E3]">{t("branches.new_york_address_1")}</span>
+                                <Link target="_blank" href={"https://maps.app.goo.gl/mbjZC2RMfFmq3NnQ6?g_st=awb"} className="text-xs text-[#B8C6E3] hover:underline">
+                                    {t("branches.new_york_address_1")}
+                                </Link>
                             </div>
                         </div>
                     </div>
