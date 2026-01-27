@@ -11,7 +11,7 @@ export default function Footer() {
     const links = [
         { label: t("links.home"), href: "/" },
         { label: t("links.about_isnad"), href: "/about" },
-        { label: t("links.contact_us"), href: "/contact" },
+        { label: t("links.contact_us"), href: "#footer" },
         { label: t("links.developers"), href: "/developers" },
         { label: t("links.projects"), href: "/projects" },
         { label: t("links.companies"), href: "/companies" },
