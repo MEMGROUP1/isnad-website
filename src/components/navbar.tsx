@@ -44,13 +44,7 @@ export default function Navbar() {
     ];
 
     return (
-        <nav
-            className={cn(
-                "w-full bg-black/10",
-                "fixed left-0 right-0 top-0 z-99 transition-all duration-300 transform",
-                navbarVisible ? "translate-y-0" : "-translate-y-full",
-            )}
-        >
+        <nav className={cn("w-full bg-black/10", "fixed left-0 right-0 top-0 z-99 transition-all duration-300 transform", navbarVisible ? "translate-y-0" : "-translate-y-full")}>
             <div className="max-w-360 flex justify-between items-stretch mx-auto py-4 px-4 xl:px-0">
                 <div className="flex items-center gap-8 w-full lg:w-fit justify-between lg:justify-start">
                     <BurgerMenu />
@@ -72,8 +66,8 @@ export default function Navbar() {
                     ))}
                 </div>
                 <div className="hidden lg:block">
-                    <Button variant={"white"} className="rounded-full h-full px-6 py-2.5">
-                        {t("contact")}
+                    <Button asChild variant={"white"} className="rounded-full h-full px-6 py-2.5">
+                        <Link href={"#footer"}>{t("contact")}</Link>
                     </Button>
                 </div>
             </div>

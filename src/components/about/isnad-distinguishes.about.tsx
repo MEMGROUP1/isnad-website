@@ -1,5 +1,6 @@
 "use client";
 
+import { ToolsIcon } from "@/assets/icons";
 import { useTranslations } from "next-intl";
 import { useRef, useState } from "react";
 import Section from "../section";
@@ -35,19 +36,26 @@ export default function AboutIsnadDistinguishes() {
     ];
 
     return (
-        <Section className="bg-primary lg:h-auto pb-16">
-            <Section.Inner>
-                <div className="mb-8.5">
-                    <h1 className="text-[40px] md:text-[56px] lg:text-[72px] mb-4" dangerouslySetInnerHTML={{ __html: t("title") }}></h1>
-                    <p className="text-lg md:text-xl text-[#B8C6E3] max-w-4xl leading-relaxed">{t("desc")}</p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {cards.map((card, index) => (
-                        <Card key={index + "AboutIsnadDistinguishes"} title={card.title} desc={card.desc} />
-                    ))}
-                </div>
-            </Section.Inner>
+        <Section className="lg:h-auto" backgroundImageUrl="/images/home/about/about-bg.png">
+            <div
+                className="pb-16 pt-41"
+                style={{
+                    background:
+                        "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(8, 24, 47, 0.949579) 92.58%, #08182F 100%),linear-gradient(0deg, rgba(7, 20, 39, 0.2), rgba(7, 20, 39, 0.2))",
+                }}
+            >
+                <Section.Inner className="">
+                    <div className="mb-8.5">
+                        <h1 className="text-[40px] md:text-[56px] lg:text-[72px] mb-4" dangerouslySetInnerHTML={{ __html: t.raw("title") }}></h1>
+                        {/* <p className="text-lg md:text-xl text-[#B8C6E3] max-w-4xl leading-relaxed">{t("desc")}</p> */}
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {cards.map((card, index) => (
+                            <Card key={index + "AboutIsnadDistinguishes"} title={card.title} desc={card.desc} />
+                        ))}
+                    </div>
+                </Section.Inner>
+            </div>
         </Section>
     );
 }
@@ -85,7 +93,7 @@ function Card({ title, desc }: { title: string; desc: string }) {
             ref={cardRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="relative group overflow-hidden bg-[#EBEFF5] p-8 flex flex-col justify-between min-h-97.5 md:min-w-90 text-[#08182F] flex-1 outline outline-transparent hover:outline-white/20 transition-colors group"
+            className="relative group overflow-hidden bg-[#FBF5EF] p-8 flex flex-col justify-between min-h-73.5 md:min-w-90 text-[#08182F] flex-1 transition-colors group rounded-[24px]"
         >
             {/* Hover Background Animation */}
             <div
@@ -97,9 +105,14 @@ function Card({ title, desc }: { title: string; desc: string }) {
                     top: mousePosition.y,
                 }}
             />
+            <div className="mb-auto border border-[#08182F1A] group-hover:border-white size-12 rounded-full flex items-center justify-center z-10 transition-colors duration-700 mt-2">
+                <ToolsIcon className="text-primary group-hover:text-white transition-colors duration-700" />
+            </div>
 
-            <h2 className={`relative z-10 text-[32px] transition-colors duration-700 ${isExpanded ? "text-white delay-150" : ""}`}>{title}</h2>
-            <p className={`relative z-10 transition-colors duration-700 ${isExpanded ? "text-white delay-150" : ""}`}>{desc}</p>
+            <div className="flex flex-col justify-between gap-8 min-h-33.5">
+                <h2 className={`relative z-10 text-[32px] transition-colors duration-700 font-bold ${isExpanded ? "text-white delay-150" : ""}`}>{title}</h2>
+                <p className={`relative z-10 transition-colors duration-700 text-lg ${isExpanded ? "text-white delay-150" : ""}`}>{desc}</p>
+            </div>
         </div>
     );
 }
