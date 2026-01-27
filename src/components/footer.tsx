@@ -105,7 +105,7 @@ export default function Footer() {
                         <div className="space-y-3 flex flex-col items-start">
                             <div className="flex flex-col space-y-1">
                                 <span className="text-xs text-white">{t("branches.iraqi")}</span>
-                                <Link target="_blank" href={"https://maps.app.goo.gl/mJjGVEuoZhNUyr4L8"} className="text-xs text-[#B8C6E3] hover:underline">
+                                <Link target="_blank" href={"https://maps.app.goo.gl/Sn9qbpv4Q1DLTNVXA"} className="text-xs text-[#B8C6E3] hover:underline">
                                     {t("branches.iraqi_address_1")}
                                 </Link>
                                 <Link target="_blank" href={"https://maps.google.com/?q=30.524437,47.808998"} className="text-xs text-[#B8C6E3] hover:underline">
