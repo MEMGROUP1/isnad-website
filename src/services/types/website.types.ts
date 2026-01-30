@@ -81,6 +81,7 @@ export interface CompanyDto {
     id: string;
     name: LocalizedText;
     logo?: string | null;
+    description?: LocalizedText;
     backgroundImageUrl?: string | null;
     isVisible: boolean;
     phone?: string | null;

@@ -84,44 +84,40 @@ export default function CompanyCard({ className, disableHoverEffect = false, com
                                     ))}
                                 </div>
 
-                                {/* <div
-                                    className={cn(
-                                        "h-0.5 mb-2 transition-all duration-700 delay-300 origin-right",
-                                        disableHoverEffect ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
-                                    )}
-                                    style={{
-                                        background: "linear-gradient(90deg, rgba(255, 255, 255, 0) 0.01%, rgba(255, 255, 255, 0.2) 48.09%, rgba(255, 255, 255, 0) 100.01%)",
-                                    }}
-                                ></div> */}
+                                {getLocalized(company.description, locale) && (
+                                    <>
+                                        <div
+                                            className={cn(
+                                                "h-0.5 mb-2 transition-all duration-700 delay-300 origin-right",
+                                                disableHoverEffect ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
+                                            )}
+                                            style={{
+                                                background: "linear-gradient(90deg, rgba(255, 255, 255, 0) 0.01%, rgba(255, 255, 255, 0.2) 48.09%, rgba(255, 255, 255, 0) 100.01%)",
+                                            }}
+                                        />
 
-                                {/* {branch && (
-                                    <div
-                                        className={cn(
-                                            "flex items-center transition-all duration-500 delay-300",
-                                            disableHoverEffect ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100",
-                                        )}
-                                    >
-                                        <LocationIcon />
-                                        <span className="text-[#B8C6E3] ms-1">
-                                            {getLocalized(branch.governorate?.name, locale)} / {getLocalized(branch.address, locale)}
-                                        </span>
-                                    </div>
-                                )} */}
+                                        <div
+                                            className={cn(
+                                                "flex items-center transition-all duration-500 delay-300",
+                                                disableHoverEffect ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100",
+                                            )}
+                                        >
+                                            {company.description && <p className="text-sm text-white/90 line-clamp-3">{getLocalized(company.description, locale)}</p>}
+                                        </div>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div
-                    className={cn(
-                        "absolute start-0 bottom-0 w-104.5 h-66.5 blur-2xl -scale-100 z-0 rounded-full ltr:translate-y-1/6 ltr:-translate-x-1/6 rtl:translate-1/6 transition-all duration-700",
-                        disableHoverEffect ? "opacity-100" : "group-hover:opacity-100 opacity-90",
-                    )}
-                    style={{
-                        background: "linear-gradient(135.54deg, #08182F 17.38%, #38404C 44.97%, #525760 83.02%)",
-                    }}
-                ></div>
             </div>
+            <div
+                className={cn("absolute inset-0 size-full z-0 transition-all duration-700", disableHoverEffect ? "opacity-100" : "group-hover:opacity-100 opacity-90")}
+                style={{
+                    background:
+                        "conic-gradient(from 20.89deg at 69.45% 67.43%, rgba(0, 0, 0, 0) -40.99deg, rgba(8, 24, 47, 0.34) 2.28deg, rgba(8, 24, 47, 0.91) 35.63deg, rgba(8, 24, 47, 0.98) 209.92deg, rgba(8, 24, 47, 0.19) 247.72deg, rgba(0, 0, 0, 0) 319.01deg, rgba(8, 24, 47, 0.34) 362.28deg)",
+                }}
+            ></div>
         </article>
     );
 }
