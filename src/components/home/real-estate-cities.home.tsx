@@ -15,15 +15,15 @@ export default function HomeRealEstateCities({ stats }: HomeRealEstateCitiesProp
 
     return (
         <Section
-            className="flex lg:max-h-154.5"
-            backgroundImageUrl="/images/home/real-estate-cities/bg.png"
+            className="flex lg:max-h-180"
+            backgroundImageUrl="/images/home/real-estate-cities/bg-v2.jpg"
             style={{
                 background: "linear-gradient(180deg, rgba(7, 20, 39, 0) 0%, rgba(8, 24, 47, 0.86) 68.03%, #08182F 100%)",
             }}
         >
             <Section.Inner className="flex flex-col-reverse lg:flex-row justify-end lg:items-center mt-auto gap-8 h-fit *:flex-1 py-8">
                 <div className="text-white max-w-lg lg:max-w-full">
-                    <h1 className="text-[32px] md:text-[38px] lg:text-[48px] mb-6 flex items-baseline gap-3">{t("title")}</h1>
+                    <h1 className="text-[24px] md:text-[28px] lg:text-[32px] mb-6 flex items-baseline gap-3 leading-[110%]">{t("title")}</h1>
 
                     <p className="text-xs text-[#EEF5FF] max-w-113.75">{t("desc")}</p>
                 </div>
@@ -40,7 +40,7 @@ export default function HomeRealEstateCities({ stats }: HomeRealEstateCitiesProp
                         </article>
 
                         <article className="flex flex-col backdrop-blur-[32px] p-4 rounded-3xl border border-white/10">
-                            <h4 className="text-lg">{t("cards.card_2.header", { count: stats.totalCities })}</h4>
+                            <h4 className="text-lg">{t("cards.card_2.header")}</h4>
                             <p className="text-sm mb-10">{t("cards.card_2.desc")}</p>
                             <Button asChild variant={"blur"} className="w-full mt-auto">
                                 <Link href={"/projects"}>{t("cards.card_2.button")}</Link>
@@ -51,12 +51,12 @@ export default function HomeRealEstateCities({ stats }: HomeRealEstateCitiesProp
                     <div className="flex-1">
                         <article className="backdrop-blur-[32px] p-2 rounded-3xl border border-white/10">
                             <div className="mb-2">
-                                <Image src="/images/home/real-estate-cities/bg.png" width={372} height={202} alt="" className="w-full rounded-2xl" />
+                                <Image src="/images/home/real-estate-cities/card-image.png" width={372} height={202} alt="" className="w-full rounded-2xl" />
                             </div>
 
                             <div className="flex items-center gap-2 mb-10">
                                 <div className="flex-1">
-                                    <h4 className="text-lg">{t("cards.card_3.header", { count: stats.totalProjects })}</h4>
+                                    <h4 className="text-lg">{t("cards.card_3.header")}</h4>
                                     <p className="text-sm">{t("cards.card_3.desc")}</p>
                                 </div>
 

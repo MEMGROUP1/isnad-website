@@ -433,6 +433,6 @@ export const ToolsIcon = (props: React.SVGProps<SVGSVGElement>) => (
             strokeLinecap="round"
             strokeLinejoin="round"
         />
-        <path opacity="0.4" d="M17.1211 19.1583L20.2911 15.9883" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path opacity="0.4" d="M17.1211 19.1583L20.2911 15.9883" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );

@@ -44,7 +44,7 @@
 
     "home": {
         "hero": {
-            "title": "Iraqi Company Specialized in Real Estate Marketing",
+            "title": "Iraqi Company Specialized in Real Estate Development and Marketing",
             "desc": "Discover luxurious properties that combine elegant design, ideal location, and integrated facilities to suit your lifestyle.",
 
             "start_search_now": "Start Searching Now",
@@ -53,7 +53,7 @@
                 "developers_label": "Real Estate Developer",
                 "developers_desc": "Real estate developer specializing in the construction of residential complexes and modern investment projects",
                 "companies_label": "Companies",
-                "companies_desc": "(Furniture - Lighting - Doors - Kitchens - HVAC - Elevators - Ceramics...)",
+                "companies_desc": "Leading Companies in Furnishing and Home Services Solutions",
                 "view_companies": "View Companies",
                 "view_developers": "View Developers"
             }
@@ -61,18 +61,23 @@
         "about": {
             "title": "About Isnad Company",
             "subtitle": "Isnad... The Foundation <br/> of Success and Excellence",
-            "lunch": "Isnad for Real Estate Investment and Marketing, affiliated with MIM Holding Group, was launched in 2017.",
+            "lunch": "Isnad for Real Estate Development and Marketing, affiliated with Meem Holding Group, was launched in 2020.",
             "paragraph": "To be the reference in the real estate consulting sector, in addition to the exceptional and comprehensive skills of a work team that transfers work to distinguished spaces. <br/> <br/>   Isnad for Real Estate Investment and Marketing seeks, through its vision, management, and work team, to build a strong and transparent relationship between it and investment opportunities, based on a comprehensive vision of real estate, its features, and what it will offer to the client."
         },
         "company_numbers": {
-            "title": "Isnad Company Numbers",
+            "title": "Isnad Achievements IN NUMBERS",
             "subtitle": "Isnad... Numbers that Prove <br/> Excellence and Continuity",
-            "lunch": "Isnad for Real Estate Investment and Marketing, affiliated with MIM Holding Group, was launched in 2017.",
+            "lunch": "Through years of continuous work, Isnad has achieved significant sales and built a wide customer base through smart and effective real estate marketing strategies.",
+            "iqd_suffix": " Billion IQD",
             "cards": {
-                "available_units": "Available Residential and Commercial Units.",
-                "selected_developments": "Carefully Selected Development Projects.",
-                "trusted_investors": "Investors Who Trust Isnad.",
-                "realized_value": "Realized Value Through Trusted Real Estate Deals."
+                "realized_value_number": "+ 85 Billion IQD",
+                "realized_value": "Realized Value Through Trusted Real Estate Deals",
+                "available_units_number": "+550",
+                "available_units": "Residential and Commercial Units Sold",
+                "selected_developments_number": "+25",
+                "selected_developments": "Carefully Selected Development Projects",
+                "trusted_investors_number": "+35",
+                "trusted_investors": "Partners Who Complete the Living Experience with Precision"
             }
         },
 
@@ -84,23 +89,23 @@
         },
 
         "real_estate_cities": {
-            "title": "Isnad Real Estate | Cities and Integrated Residential Complexes",
+            "title": "We Market and Sell the Largest Real Estate Projects in Baghdad, Exclusive Partners for Developers / Sales – Marketing – Sales Management",
             "desc": "A growing portfolio of cities and residential complexes developed by Isnad Real Estate according to the highest standards of urban planning and modern living.",
 
             "cards": {
                 "card_1": {
-                    "header": "+5,200 Residential Units",
+                    "header": "+3 Cities",
                     "desc": "Integrated cities planned according to modern urban standards",
                     "button": "View All Cities"
                 },
                 "card_2": {
-                    "header": "+{count} Cities",
-                    "desc": "Residential and commercial projects under implementation and development",
+                    "header": "+15 Complexes",
+                    "desc": "Residential complexes developed according to the highest standards of urban planning and modern living",
                     "button": "Explore All Complexes"
                 },
                 "card_3": {
-                    "header": "+{count} Projects",
-                    "desc": "Diverse real estate projects catering to various investment needs",
+                    "header": "+25 Projects",
+                    "desc": "Residential and commercial projects under implementation and development",
                     "button": "View All Projects"
                 }
             }
@@ -111,7 +116,17 @@
             "desc": "The Cross-Marketing Program connects you with the best companies to provide you with approved discounts and reliable services through a smart electronic system and instant QR Code.",
             "show_partners": "View Companies",
             "join_as_partner": "Join as a Partner",
-            "isnad_discount": "More than {companiesCount} companies offer Isnad discounts of up to 20%"
+            "isnad_discount": "More than {companiesCount} companies offer Isnad discounts of up to 20%",
+            "categories": {
+                "furniture": "Furniture",
+                "kitchens": "Kitchens",
+                "home_supplies": "Home Supplies",
+                "electrical_appliances": "Electrical Appliances",
+                "ceramics": "Porcelain, Ceramics & Sanitary ware",
+                "insurance": "Insurance",
+                "wood_work": "Wood work furnishing",
+                "curtains_bedding": "Curtains & Bedding"
+            }
         }
     },
 

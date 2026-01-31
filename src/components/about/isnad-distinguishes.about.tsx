@@ -93,7 +93,7 @@ function Card({ title, desc }: { title: string; desc: string }) {
             ref={cardRef}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="relative group overflow-hidden bg-[#FBF5EF] p-8 flex flex-col justify-between min-h-73.5 md:min-w-90 text-[#08182F] flex-1 transition-colors group rounded-[24px]"
+            className="relative group overflow-hidden bg-[#D9E2EC] p-8 flex flex-col justify-between min-h-73.5 md:min-w-90 text-[#08182F] flex-1 transition-colors group rounded-[24px]"
         >
             {/* Hover Background Animation */}
             <div

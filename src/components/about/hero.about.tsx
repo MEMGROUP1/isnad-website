@@ -22,7 +22,7 @@ export default function AboutHero({ stats }: AboutHeroProps) {
                     <Navbar />
 
                     <div className="flex gap-4 lg:justify-end mb-10 mt-48 md:mt-32">
-                        <div className="min-w-max">
+                        {/* <div className="min-w-max">
                             <h2 className="text-[32px] md:text-[38px] lg:text-[48px]">{stats.totalCompanies - 4}+</h2>
                             <small>{t("system_count")}</small>
                         </div>
@@ -30,7 +30,7 @@ export default function AboutHero({ stats }: AboutHeroProps) {
                         <div className="min-w-max">
                             <h2 className="text-[32px] md:text-[38px] lg:text-[48px]">{stats.totalDevelopers - 4}+</h2>
                             <small>{t("trust_count")}</small>
-                        </div>
+                        </div> */}
                     </div>
 
                     <div className="flex flex-col lg:flex-row *:flex-1 mb-8 gap-4">

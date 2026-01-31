@@ -1,38 +1,33 @@
-import { GeneralStatisticsDto } from "@/services/types/website.types";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Section from "../section";
 
-function formatNumber(num: number) {
-    return new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 }).format(num);
-}
+// interface HomeCompanyNumbersProps {
+//     stats: GeneralStatisticsDto;
+// }
 
-interface HomeCompanyNumbersProps {
-    stats: GeneralStatisticsDto;
-}
-
-export default function HomeCompanyNumbers({ stats }: HomeCompanyNumbersProps) {
+export default function HomeCompanyNumbers() {
     const t = useTranslations("home.company_numbers");
 
     const cards = [
         {
-            number: formatNumber(stats.revenues),
+            number: t("cards.realized_value_number"),
             label: t("cards.realized_value"),
             className: "size-full flex border border-[#C573405C] text-black",
         },
         {
-            number: formatNumber(stats.totalCustomers) + "+",
-            label: t("cards.trusted_investors"),
+            number: t("cards.available_units_number"),
+            label: t("cards.available_units"),
             className: "size-full flex border border-[#C573405C] text-black",
         },
         {
-            number: formatNumber(stats.totalProjects) + "+",
+            number: t("cards.selected_developments_number"),
             label: t("cards.selected_developments"),
             className: "size-full flex border border-[#C573405C] text-black",
         },
         {
-            number: "7,320+", // Placeholder as we don't have this data yet
-            label: t("cards.available_units"),
+            number: t("cards.trusted_investors_number"),
+            label: t("cards.trusted_investors"),
             className: "size-full flex border-[#C57340] bg-[#C57340] text-white",
         },
     ];
@@ -47,13 +42,7 @@ export default function HomeCompanyNumbers({ stats }: HomeCompanyNumbersProps) {
 
                     <h2 className="text-2xl max-w-xl">{t("lunch")}</h2>
 
-                    <Image
-                        width={636}
-                        height={355}
-                        src={"/images/home/about/about-bg.png"}
-                        alt={""}
-                        className="object-cover mt-12 h-88.75 w-full flex-1"
-                    />
+                    <Image width={636} height={355} src={"/images/home/company-numbers/image.png"} alt={""} className="object-cover mt-12 h-88.75 w-full flex-1" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 *:border border-[#C573405C]">

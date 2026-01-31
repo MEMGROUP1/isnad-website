@@ -13,10 +13,10 @@ export function AboutServices() {
                 <h1 className="mb-10 text-[32px] md:text-[38px] lg:text-[48px] text-[#08182F]" dangerouslySetInnerHTML={{ __html: t("title") }}></h1>
 
                 <div className="flex flex-col-reverse lg:flex-row gap-10 *:flex-1">
-                    <div className="">
+                    <div className="max-w-125">
                         <Image
                             src={"/images/home/about/about-bg.png"}
-                            width={636}
+                            width={500}
                             height={459}
                             className="w-full object-cover object-center h-full"
                             alt={""}

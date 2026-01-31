@@ -16,7 +16,7 @@ export default async function Home() {
 
             <HomeAbout />
 
-            <HomeCompanyNumbers stats={stats} />
+            <HomeCompanyNumbers />
 
             <HomeRealEstateCities stats={stats} />
 

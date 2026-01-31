@@ -6,7 +6,7 @@ export default function HomeAbout() {
 
     return (
         <Section
-            backgroundImageUrl="/images/home/about/about-bg.png"
+            backgroundImageUrl="/images/home/about/about-bg-v2.png"
             className="pb-16"
             style={{
                 background: "linear-gradient(180deg, rgba(7, 20, 39, 0) 0%, rgba(8, 24, 47, 0.86) 68.03%, #08182F 100%)",
