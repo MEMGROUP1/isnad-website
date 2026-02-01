@@ -17,29 +17,16 @@ interface Props {
     viewButtonPath?: string;
 }
 
-export default function HomeCard({
-    className,
-    count,
-    label,
-    description,
-    logos,
-    backgroundImageUrl,
-    actionLabel = "عرض الشركات",
-    viewButtonPath,
-}: Props) {
+export default function HomeCard({ className, count, label, description, logos, backgroundImageUrl, actionLabel = "عرض الشركات", viewButtonPath }: Props) {
     return (
-        <article
-            className={cn("text-white relative w-full min-h-100 rounded-md overflow-hidden flex flex-col", className)}
-            style={{
-                background: "linear-gradient(180deg, rgba(25, 25, 25, 0) 41.78%, rgba(8, 24, 47, 0.9) 84.1%)",
-            }}
-        >
+        <article className={cn("text-white relative w-full min-h-100 rounded-md overflow-hidden flex flex-col", className)}>
             <Image
                 src={backgroundImageUrl}
                 width={1093}
                 height={720}
                 alt=""
                 className="w-full object-cover rounded-lg absolute inset-0 size-full -z-10"
+                sizes="(max-width: 1024px) 100vw, 300px"
             />
 
             <Link

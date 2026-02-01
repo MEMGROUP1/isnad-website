@@ -19,6 +19,7 @@ export function HomeHero({ stats }: HomeHeroProps) {
 
     return (
         <Section
+            priority
             backgroundImageUrl="/images/home/hero/hero-bg.png"
             style={{ background: "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(8, 24, 47, 0.5) 80.27%, #08182F 100%)" }}
         >

@@ -130,7 +130,6 @@ export interface DeveloperDto {
     backgroundImageUrl?: string | null;
     totalComplexes?: number;
     totalCities?: number;
-    [key: string]: unknown;
 }
 
 export interface GeneralStatisticsDto {

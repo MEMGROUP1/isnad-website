@@ -5,12 +5,22 @@ interface OuterProps extends React.HTMLAttributes<HTMLDivElement> {
     backgroundImageUrl?: string;
     children: React.ReactNode;
     className?: string;
+    priority?: boolean;
+    sizes?: string;
 }
-export default function Section({ backgroundImageUrl, children, className, ...props }: OuterProps) {
+export default function Section({ backgroundImageUrl, children, className, priority, sizes = "100vw", ...props }: OuterProps) {
     return (
         <section {...props} className={cn("w-full h-auto lg:h-screen relative", className)}>
             {backgroundImageUrl && (
-                <Image width={2186} height={1440} src={backgroundImageUrl ?? ""} alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none -z-10" />
+                <Image
+                    width={2186}
+                    height={1440}
+                    src={backgroundImageUrl ?? ""}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover pointer-events-none -z-10"
+                    priority={priority}
+                    sizes={sizes}
+                />
             )}
             {children}
         </section>

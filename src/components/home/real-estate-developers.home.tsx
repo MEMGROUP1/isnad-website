@@ -35,7 +35,7 @@ export default function HomeRealEstateDevelopers({ stats }: HomeRealEstateDevelo
             {/* Background Layer */}
             {developers.map((bg, idx) => (
                 <div key={idx} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === activeIndex ? "opacity-100" : "opacity-0"}`}>
-                    <Image src={bg} alt="Background" fill className="object-cover opacity-50" priority={idx === 0} />
+                    <Image src={bg} alt="Background" fill className="object-cover opacity-50" priority={idx === 0} sizes="100vw" />
                 </div>
             ))}
 
@@ -100,14 +100,13 @@ export default function HomeRealEstateDevelopers({ stats }: HomeRealEstateDevelo
                                 className="relative w-51.5 h-full overflow-hidden bg-gray-900 transition-all duration-300"
                                 style={{ boxShadow: isActive ? "0px 4px 60px 0px #C5734080" : "" }}
                             >
-                                <div className="">
-                                    <Image
-                                        src={item}
-                                        alt="Developer"
-                                        fill
-                                        className={`size-full object-cover transition-transform duration-700  ${isActive ? "border-2 border-secondary" : "grayscale"}`}
-                                    />
-                                </div>
+                                <Image
+                                    src={item}
+                                    alt="Developer"
+                                    fill
+                                    className={`size-full object-cover transition-transform duration-700  ${isActive ? "border-2 border-secondary" : "grayscale"}`}
+                                    sizes="206px"
+                                />
                             </div>
                         )}
                         className="w-120 overflow-visible!"

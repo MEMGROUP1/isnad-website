@@ -20,7 +20,7 @@ export function AvatarGroup({ images, totalCount = 0, max = 5, className }: Avat
                     key={index}
                     className="relative block size-9 md:size-10 rounded-full -me-4 last-of-type:me-0 bg-white border border-gray-200 ring ring-white/10 overflow-hidden"
                 >
-                    <Image src={src} alt="" fill className="object-cover" />
+                    <Image src={src} alt="" fill className="object-cover" sizes="(max-width: 768px) 36px, 40px" />
                 </div>
             ))}
             {remainingCount > 0 && (
