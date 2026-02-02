@@ -43,37 +43,10 @@ export default function HomeRealEstateDevelopers({ stats }: HomeRealEstateDevelo
                 {/* Content Side */}
                 <div className="flex py-20 flex-1">
                     <div className="mt-auto w-full flex flex-col items-start text-start mb-10 md:mb-0 min-w-187.5">
-                        {/* Active Developer Logo */}
-                        {/* <div className="mb-8 w-40 h-24 relative transition-all duration-500">
-                            {logos[activeIndex] ? (
-                                <Image
-                                    src={logos[activeIndex]}
-                                    alt="Developer Logo"
-                                    fill
-                                    className="object-contain rtl:object-right" 
-                                    // Arabic RTL, 'right' is start? No, 'object-right' in LTR is right. 'object-left' is left. Use 'object-contain' and alignment. In RTL context, 'start' is right.
-                                    // But Image layout... let's just use object-contain and positioning.
-                                    // "Logo on the left" -> In Arabic UI (Right To Left), "Left" is the *end* of the line? Or physically Left?
-                                    // Usually "Left" means physical left in English, but "End" in Arabic.
-                                    // User said "Left" in Arabic context ("اليسار"). In Arabic "اليسار" is Left.
-                                    // The design usually puts content on Right (Start). If user says "Left", maybe they mean the opposite side of the text?
-                                    // Or maybe they mean "Next to the text (which is on the Right)".
-                                    // Wait, the Component `Section.Inner` has `flex`. Swiper is on the Right/Left?
-                                    // In `HomeRealEstateDevelopers`:
-                                    // `justify-end` for Swiper.
-                                    // `Content Side` is `flex py-20`.
-                                    // If `dir="rtl"`, Content is Right, Swiper is Left.
-                                    // "Logo on Left" -> Maybe they want the logo on the Left of the screen (where swiper is?) or Left of the text?
-                                    // If text is Right, Left of Text is ... Left.
-                                    // I'll place it above the title for now as it's a safe bet for "Associated Logo".
-                                />
-                            ) : null}
-                        </div> */}
-
                         <div className="flex items-baseline gap-3 mb-6">
                             <h1 className="text-4xl md:text-5xl font-bold leading-tight">{t("title")}</h1>
                         </div>
-                        <p className="text-lg text-gray-200 max-w-lg leading-relaxed">{t("desc")}</p>
+                        {/* <p className="text-lg text-gray-200 max-w-lg leading-relaxed">{t("desc")}</p> */}
 
                         <div className="mt-10 flex gap-4 w-full">
                             <Button asChild className="py-3.5 flex-1 lg:max-w-50" variant={"white"}>

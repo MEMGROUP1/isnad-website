@@ -7,7 +7,7 @@ interface AboutHeroProps {
     stats: GeneralStatisticsDto;
 }
 
-export default function AboutHero({ stats }: AboutHeroProps) {
+export default function AboutHero({}: AboutHeroProps) {
     const t = useTranslations("about.hero");
 
     return (
@@ -33,12 +33,12 @@ export default function AboutHero({ stats }: AboutHeroProps) {
                         </div> */}
                     </div>
 
-                    <div className="flex flex-col lg:flex-row *:flex-1 mb-8 gap-4">
+                    <div className="flex flex-col *:flex-1 mb-8 gap-4">
                         <div className="">
                             <h1 className="text-[40px] md:text-[56px] lg:text-[72px]">{t("title")}</h1>
                         </div>
 
-                        <div className="flex items-end space-y-4 max-w-120 lg:min-h-45">
+                        <div className="flex space-y-4 max-w-120 lg:min-h-45">
                             <h2 className="text-lg">{t("in_isnad")}</h2>
                         </div>
                     </div>

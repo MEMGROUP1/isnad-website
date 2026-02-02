@@ -18,9 +18,9 @@ export default async function Home() {
 
             <HomeCompanyNumbers />
 
-            <HomeRealEstateCities stats={stats} />
-
             <HomeRealEstateDevelopers stats={stats} />
+
+            <HomeRealEstateCities stats={stats} />
 
             <HomePartnersAndOffers stats={stats} />
 

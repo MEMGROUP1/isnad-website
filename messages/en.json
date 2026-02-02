@@ -113,7 +113,7 @@
 
         "partners_and_offers": {
             "title": "A Smart Partnership Network Offering You <br /> Exclusive Discounts After Purchase",
-            "desc": "The Cross-Marketing Program connects you with the best companies to provide you with approved discounts and reliable services through a smart electronic system and instant QR Code.",
+            "desc": "The Cross-Marketing Program connects you with the best companies to provide you with approved discounts and reliable services through a smart electronic system.",
             "show_partners": "View Companies",
             "join_as_partner": "Join as a Partner",
             "isnad_discount": "More than {companiesCount} companies offer Isnad discounts of up to 25%",
@@ -245,7 +245,7 @@
             "companies": "Companies"
         },
         "site_by": "Website By",
-        "copyright": "© ISNAD Global 2025 / Privacy Policy",
+        "copyright": "© ISNAD Global 2026 / Privacy Policy",
         "isnad_branches": "Isnad Locations",
         "branches": {
             "iraqi": "Inside Iraq",

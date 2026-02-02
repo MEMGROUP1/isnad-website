@@ -29,7 +29,7 @@ export default function HomePartnersAndOffers({ stats }: HomePartnersAndOffersPr
             <Section.Inner className="flex flex-col-reverse md:flex-row md:items-center justify-end mt-auto gap-8 h-fit py-24">
                 <div className="flex-1 relative z-10">
                     <h1 dangerouslySetInnerHTML={{ __html: t("title") }} className="text-5xl"></h1>
-                    {/* <p className="mt-4 mb-4 text-lg max-w-142.5 text-white/70">{t("desc")}</p> */}
+                    <p className="mt-4 mb-4 text-lg max-w-142.5 text-white/70">{t("desc")}</p>
 
                     {/* <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
                         {categoriesKeys.map((key) => (
@@ -50,7 +50,7 @@ export default function HomePartnersAndOffers({ stats }: HomePartnersAndOffersPr
                     </div>
                 </div>
 
-                <div className="h-fit max-w-47 relative z-10 space-y-6.25">
+                <div className="h-fit max-w-55 relative z-10 space-y-6.25">
                     <AvatarGroup
                         images={stats.companyLogos || []}
                         totalCount={stats.totalCompanies}

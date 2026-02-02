@@ -11,7 +11,7 @@ export default function HomeCompanyNumbers() {
 
     const cards = [
         {
-            number: t("cards.realized_value_number"),
+            number: t.raw("cards.realized_value_number"),
             label: t("cards.realized_value"),
             className: "size-full flex border border-[#C573405C] text-black",
         },
@@ -38,7 +38,7 @@ export default function HomeCompanyNumbers() {
                 <div className="flex flex-col text-black">
                     <h3 className="mb-10 font-sans">{t("title")}</h3>
 
-                    <h1 dangerouslySetInnerHTML={{ __html: t("subtitle") }} className="text-[40px] md:text-[42px] mb-16 leading-[100%]"></h1>
+                    <h1 dangerouslySetInnerHTML={{ __html: t("subtitle") }} className="text-[40px] md:text-[42px] mb-16 leading-[100%]" />
 
                     <h2 className="text-2xl max-w-xl">{t("lunch")}</h2>
 
@@ -48,8 +48,8 @@ export default function HomeCompanyNumbers() {
                 <div className="grid grid-cols-1 md:grid-cols-2 *:border border-[#C573405C]">
                     {cards.map((card, index) => (
                         <article key={card.label + index} className={card.className + " p-8 flex flex-col justify-end min-h-93.75"}>
-                            <h1 className="text-5xl mb-2">{card.number}</h1>
-                            <p className="text-xs">{card.label}</p>
+                            <h1 className="text-5xl mb-2" dangerouslySetInnerHTML={{ __html: card.number }} />
+                            <p className="text-xs min-h-8">{card.label}</p>
                         </article>
                     ))}
                 </div>

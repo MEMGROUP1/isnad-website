@@ -18,7 +18,7 @@ export default function HomeRealEstateCities({ stats }: HomeRealEstateCitiesProp
             className="flex lg:max-h-180"
             backgroundImageUrl="/images/home/real-estate-cities/bg-v2.jpg"
             style={{
-                background: "linear-gradient(180deg, rgba(7, 20, 39, 0) 0%, rgba(8, 24, 47, 0.86) 68.03%, #08182F 100%)",
+                background: "linear-gradient(180deg, rgba(7, 20, 39, 0) 0%, rgba(8, 24, 47, 0.4) 68.03%, #08182F 100%)",
             }}
         >
             <Section.Inner className="flex flex-col-reverse lg:flex-row justify-end lg:items-center mt-auto gap-8 h-fit *:flex-1 py-8">
