@@ -12,7 +12,7 @@ export default function FeatureCard({ image, features, tags, className }: Props)
         <article className={cn("relative h-112.25 min-w-70 overflow-hidden group", className)}>
             <div
                 className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
-                style={{ backgroundImage: `url(${image})` }}
+                style={{ backgroundImage: `url('${image}')` }}
             />
             <div className="absolute inset-0 flex flex-col justify-end bg-black/85 text-white p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out">
                 <h2 className="text-lg mb-2 leading-tight">{features.join(", ")}</h2>

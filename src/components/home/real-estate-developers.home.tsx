@@ -35,7 +35,7 @@ export default function HomeRealEstateDevelopers({ stats }: HomeRealEstateDevelo
             {/* Background Layer */}
             {developers.map((bg, idx) => (
                 <div key={idx} className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === activeIndex ? "opacity-100" : "opacity-0"}`}>
-                    <Image src={bg} alt="Background" fill className="object-cover opacity-50" priority={idx === 0} sizes="100vw" />
+                    <Image src={bg} alt="Background" fill className="object-cover opacity-50" priority={idx === 0} sizes="100vw" unoptimized loading="eager" />
                 </div>
             ))}
 
@@ -79,6 +79,8 @@ export default function HomeRealEstateDevelopers({ stats }: HomeRealEstateDevelo
                                     fill
                                     className={`size-full object-cover transition-transform duration-700  ${isActive ? "border-2 border-secondary" : "grayscale"}`}
                                     sizes="206px"
+                                    unoptimized
+                                    loading="eager"
                                 />
                             </div>
                         )}

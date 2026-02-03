@@ -36,7 +36,7 @@ export default function AboutIsnadDistinguishes() {
     ];
 
     return (
-        <Section className="lg:h-auto" backgroundImageUrl="/images/home/about/about-bg.png">
+        <Section className="lg:h-auto" backgroundImageUrl="/images/about/6 (ISNAD Features).jpeg">
             <div
                 className="pb-16 pt-41"
                 style={{

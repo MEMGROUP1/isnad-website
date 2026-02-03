@@ -11,7 +11,7 @@ export default function AboutHero({}: AboutHeroProps) {
     const t = useTranslations("about.hero");
 
     return (
-        <Section className="lg:h-auto min-h-screen flex flex-col" backgroundImageUrl="/images/about/hero/bg.png">
+        <Section className="lg:h-auto min-h-screen flex flex-col" backgroundImageUrl="/images/about/3 (1st Section).png">
             <div
                 className="flex flex-col flex-1"
                 style={{

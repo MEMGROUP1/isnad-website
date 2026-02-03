@@ -14,13 +14,7 @@ export function AboutServices() {
 
                 <div className="flex flex-col-reverse lg:flex-row gap-10 *:flex-1">
                     <div className="max-w-125">
-                        <Image
-                            src={"/images/home/about/about-bg.png"}
-                            width={500}
-                            height={459}
-                            className="w-full object-cover object-center h-full"
-                            alt={""}
-                        />
+                        <Image src={"/images/about/8 (ISNAD services section).png"} width={500} height={459} className="w-full object-cover object-center h-full" alt={""} />
                     </div>
 
                     <div className="">

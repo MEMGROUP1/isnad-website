@@ -1,38 +1,61 @@
 import FeatureCard from "../cards/feature-card";
+import { Link } from "@/i18n/routing";
 
 export default function HomeFeatureShowcase() {
     const cards = [
         {
-            image: "/images/home/feature-showcase/image-1.png",
-            features: ["الميزة الأولى", "الميزة الثانية"],
-            tags: ["الوسم الأول", "الوسم الثاني", "الوسم الثالث"],
+            type: "Furniture",
+            image: "/images/home/feature-showcase/Furniture/image.png",
+            features: ["Furniture", "اثاث"],
         },
         {
-            image: "/images/home/feature-showcase/image-2.png",
-            features: ["الميزة الثالثة", "الميزة الرابعة"],
-            tags: ["الوسم الرابع", "الوسم الخامس"],
+            type: "Kitchens",
+            image: "/images/home/feature-showcase/Kitchens/image.png",
+            features: ["Kitchens", "مطابخ"],
         },
         {
-            image: "/images/home/feature-showcase/image-3.png",
-            features: ["الميزة الخامسة", "الميزة السادسة"],
-            tags: ["الوسم السادس", "الوسم السابع", "الوسم الثامن", "الوسم التاسع"],
+            type: "HighEndFullSolutions",
+            image: "/images/home/feature-showcase/High End Full Solutions/image.png",
+            features: ["High End Full Solutions", "حلول منزلية متكاملة"],
         },
         {
-            image: "/images/home/feature-showcase/image-1.png",
-            features: ["الميزة السابعة", "الميزة الثامنة"],
-            tags: ["الوسم العاشر", "الوسم الحادي عشر"],
+            type: "WoodWorkFurnishing",
+            image: "/images/home/feature-showcase/Wood Work Furnishing/image.png",
+            features: ["Wood Work Furnishing", "اعمال خشبية شاملة"],
         },
         {
-            image: "/images/home/feature-showcase/image-1.png",
-            features: ["الميزة الأولى", "الميزة الثانية"],
-            tags: ["الوسم الأول", "الوسم الثاني", "الوسم الثالث"],
+            type: "ElectricalsAndElectronics",
+            image: "/images/home/feature-showcase/Electricals & Electronics/image.png",
+            features: ["Electricals & Electronics", "كهربائيات والكترونيات"],
+        },
+        {
+            type: "HomeSupplies",
+            image: "/images/home/feature-showcase/Home Supplies/image.png",
+            features: ["Home Supplies", "منزلية"],
+        },
+        {
+            type: "CurtainsAndBedding",
+            image: "/images/home/feature-showcase/Curtains & Bedding/image.png",
+            features: ["Curtains & Bedding", "ستائر ومفروشات"],
+        },
+        {
+            type: "PorcelainCeramicsSanitary",
+            image: "/images/home/feature-showcase/Porcelain, Ceramics & Sanitary ware/image.png",
+            features: ["Porcelain, Ceramics & Sanitary ware", "بورسلين, سيراميك و صحيات"],
+        },
+        {
+            type: "Insurance",
+            image: "/images/home/feature-showcase/Insurance/image.png",
+            features: ["Insurance", "تأمين"],
         },
     ];
 
     return (
         <section className="flex flex-wrap items-stretch gap-2 overflow-auto *:flex-1 bg-primary">
             {cards.map((card, index) => (
-                <FeatureCard key={card.image + index} image={card.image} features={card.features} tags={card.tags} />
+                <Link key={card.type + index} href={`/companies/category/${card.type}`} className="flex-1 block">
+                    <FeatureCard image={card.image} features={card.features} tags={[]}  />
+                </Link>
             ))}
         </section>
     );
