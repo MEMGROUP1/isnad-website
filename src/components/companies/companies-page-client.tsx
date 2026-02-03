@@ -17,16 +17,7 @@ export default function CompaniesPageClient({ companies }: Props) {
     const locale = useLocale();
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-    const categoriesKeys = [
-        "furniture",
-        "kitchens",
-        "home_supplies",
-        "electrical_appliances",
-        "ceramics",
-        "insurance",
-        "wood_work",
-        "curtains_bedding",
-    ];
+    const categoriesKeys = ["furniture", "kitchens", "home_supplies", "electrical_appliances", "ceramics", "insurance", "wood_work", "curtains_bedding"];
 
     const filteredCompanies = selectedCategory
         ? companies.filter((c) =>
@@ -35,17 +26,14 @@ export default function CompaniesPageClient({ companies }: Props) {
                   const categoryName = tHome(`categories.${selectedCategory}`);
                   // Simple check: does the API type string contain the category name?
                   return typeName && categoryName && typeName.includes(categoryName);
-              })
+              }),
           )
         : companies;
 
     return (
         <Section className="lg:h-auto py-14">
             <Section.Inner>
-                <h1
-                    className="text-[32px] md:text-[38px] lg:text-[48px] mb-10 text-white"
-                    dangerouslySetInnerHTML={{ __html: t("title") }}
-                ></h1>
+                <h1 className="text-[32px] md:text-[38px] lg:text-[48px] mb-10 text-white mt-16" dangerouslySetInnerHTML={{ __html: t("title") }}></h1>
 
                 {/* Filter Buttons */}
                 <div className="flex flex-wrap gap-3 mb-10">
@@ -53,9 +41,7 @@ export default function CompaniesPageClient({ companies }: Props) {
                         onClick={() => setSelectedCategory(null)}
                         className={cn(
                             "px-4 py-2 rounded-full border transition-colors text-sm",
-                            selectedCategory === null
-                                ? "bg-white text-primary border-white"
-                                : "bg-transparent text-white border-white/30 hover:bg-white/10"
+                            selectedCategory === null ? "bg-white text-primary border-white" : "bg-transparent text-white border-white/30 hover:bg-white/10",
                         )}
                     >
                         {tHome("show_partners") || "الكل"} {/* Fallback to "All" or "Show Partners" label */}
@@ -66,9 +52,7 @@ export default function CompaniesPageClient({ companies }: Props) {
                             onClick={() => setSelectedCategory(key)}
                             className={cn(
                                 "px-4 py-2 rounded-full border transition-colors text-sm",
-                                selectedCategory === key
-                                    ? "bg-white text-primary border-white"
-                                    : "bg-transparent text-white border-white/30 hover:bg-white/10"
+                                selectedCategory === key ? "bg-white text-primary border-white" : "bg-transparent text-white border-white/30 hover:bg-white/10",
                             )}
                         >
                             {tHome(`categories.${key}`)}
@@ -78,9 +62,7 @@ export default function CompaniesPageClient({ companies }: Props) {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredCompanies.length > 0 ? (
-                        filteredCompanies.map((company) => (
-                            <CompanyCard key={company.id} company={company} disableHoverEffect />
-                        ))
+                        filteredCompanies.map((company) => <CompanyCard key={company.id} company={company} disableHoverEffect />)
                     ) : (
                         <div className="col-span-full text-center text-white/50 py-10">
                             {/* No results message */}

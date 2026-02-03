@@ -10,7 +10,7 @@ export default async function Page() {
     return (
         <Section className="lg:h-auto py-14">
             <Section.Inner>
-                <h1 className="text-[32px] md:text-[38px] lg:text-[48px] mb-10 text-white" dangerouslySetInnerHTML={{ __html: t.raw("title") }}></h1>
+                <h1 className="text-[32px] md:text-[38px] lg:text-[48px] mb-10 text-white mt-16" dangerouslySetInnerHTML={{ __html: t.raw("title") }}></h1>
 
                 <PrefetchBoundary
                     queries={[
