@@ -58,8 +58,9 @@ export default function VerticalSwiper<T>({
             else diff += items.length;
         }
 
-        // eslint-disable-next-line react-hooks/set-state-in-effect
+         
         setVirtualIndex((prev) => prev + diff);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [activeIndex, items.length]);
 
     const { reset: resetAutoplay } = useSwiperAutoplay(() => {
