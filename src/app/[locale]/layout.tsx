@@ -8,6 +8,7 @@ import { getMessages } from "next-intl/server";
 import localFont from "next/font/local";
 import { notFound } from "next/navigation";
 import "../globals.css";
+import Script from "next/script";
 
 const expoArabic = localFont({
     src: [
@@ -69,6 +70,18 @@ export default async function LocaleLayout({
 
     return (
         <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+            <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-KCETV292NZ"
+  strategy="afterInteractive"
+/>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-KCETV292NZ');
+  `}
+</Script>
             <body className={`${expoArabic.variable} font-sans antialiased bg-primary`}>
                 <Providers>
                     <NextIntlClientProvider messages={messages}>
